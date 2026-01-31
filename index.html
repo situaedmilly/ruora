@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roura.online — Enterprise SaaS Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300,400,500,600,700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=8" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <div class="veil" id="veil" aria-hidden="true"></div>
+  <div class="aura" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <main class="portal">
+    <header class="top">
+      <div class="mark">
+        <span class="sigil"></span>
+        <div class="brand">
+          <span class="word">ROURA</span>
+          <span class="tagline">Enterprise SaaS studio</span>
+        </div>
+      </div>
+
+      <nav class="rcp" aria-label="Roura primary navigation">
+        <a class="rcp-link" href="#solutions" data-glyph="◈">
+          <span class="rcp-glyph" aria-hidden="true">◈</span>
+          <span class="rcp-label">Solutions</span>
+        </a>
+
+        <a class="rcp-link" href="#services" data-glyph="⌬">
+          <span class="rcp-glyph" aria-hidden="true">⌬</span>
+          <span class="rcp-label">Services</span>
+        </a>
+
+        <a class="rcp-link" href="#process" data-glyph="⟁">
+          <span class="rcp-glyph" aria-hidden="true">⟁</span>
+          <span class="rcp-label">Process</span>
+        </a>
+
+        <a class="rcp-link" href="#work" data-glyph="✶">
+          <span class="rcp-glyph" aria-hidden="true">✶</span>
+          <span class="rcp-label">Case Studies</span>
+        </a>
+
+        <a class="rcp-link" href="#contact" data-glyph="✷">
+          <span class="rcp-glyph" aria-hidden="true">✷</span>
+          <span class="rcp-label">Contact</span>
+        </a>
+
+        <button class="rcp-toggle" id="ritualMode" type="button" aria-pressed="false" title="Focus Mode">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="rcp-label">Focus</span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Enterprise-grade digital systems for SaaS teams.</p>
+        <h1>Websites and SaaS products built for scale.</h1>
+        <p class="sub">
+          Roura is a full-stack design and development partner for teams who need a site, product UX, and infrastructure
+          built for growth. We blend strategy, conversion-focused UX, and reliable hosting you control.
+        </p>
+
+        <div class="cta">
+          <button class="btn primary" id="enterBtn">See Solutions</button>
+          <a class="btn ghost" href="#contact">Start a Project</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <span class="stat">24–72h</span>
+            <span class="stat-label">Prototype cycles</span>
+          </div>
+          <div>
+            <span class="stat">100%</span>
+            <span class="stat-label">Infrastructure ownership</span>
+          </div>
+          <div>
+            <span class="stat">99.9%</span>
+            <span class="stat-label">Reliability target</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="signal-board">
+          <div class="signal-card card">
+            <span class="badge">UX</span>
+            <div class="card-icon">
+              <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect class="icon-stroke" x="8" y="8" width="32" height="32" rx="8"></rect>
+                <path class="icon-stroke" d="M14 28l6-7 6 5 8-11"></path>
+                <circle class="icon-pulse" cx="34" cy="16" r="2.4"></circle>
+              </svg>
+            </div>
+            <h3>Product UX</h3>
+            <p>Clear IA, conversion paths, and interaction patterns that scale.</p>
+          </div>
+          <div class="signal-card card">
+            <span class="badge">STACK</span>
+            <div class="card-icon">
+              <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path class="icon-stroke" d="M8 20l16-8 16 8-16 8-16-8z"></path>
+                <path class="icon-stroke" d="M12 28l12 6 12-6"></path>
+                <circle class="icon-orbit" cx="24" cy="24" r="16"></circle>
+              </svg>
+            </div>
+            <h3>Managed Hosting</h3>
+            <p>VPS, SSL, backups, business email. Infrastructure you own.</p>
+          </div>
+          <div class="signal-card card">
+            <span class="badge">BUILD</span>
+            <div class="card-icon">
+              <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path class="icon-stroke" d="M16 12h16v24H16z"></path>
+                <path class="icon-stroke" d="M20 18h8M20 24h8M20 30h5"></path>
+                <circle class="icon-pulse" cx="34" cy="30" r="2.4"></circle>
+              </svg>
+            </div>
+            <h3>Custom Software</h3>
+            <p>Dashboards, client areas, automations, and data-driven systems.</p>
+          </div>
+        </div>
+
+        <div class="seal" id="seal" role="button" tabindex="0" aria-label="Interaction Preview">
+          <div class="seal-core"></div>
+          <div class="seal-ring"></div>
+          <div class="seal-ring r2"></div>
+        </div>
+        <p class="micro">Tap to preview the interaction.</p>
+      </div>
+    </section>
+
+    <section id="solutions" class="section">
+      <div class="section-head">
+        <h2>SaaS Solutions</h2>
+        <p class="sub">Choose the system type. Every solution is aligned to your revenue model.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+              <rect class="icon-stroke" x="10" y="10" width="28" height="28" rx="6"></rect>
+              <path class="icon-stroke" d="M16 24h16M16 30h10M16 18h12"></path>
+              <circle class="icon-orbit" cx="24" cy="24" r="16"></circle>
+            </svg>
+          </div>
+          <h3>Marketing Site</h3>
+          <p>High-conversion landing experience built for pipeline growth.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path class="icon-stroke" d="M12 30V18M22 30V14M32 30V22"></path>
+              <path class="icon-stroke" d="M10 34h28"></path>
+              <circle class="icon-pulse" cx="32" cy="20" r="2.4"></circle>
+            </svg>
+          </div>
+          <h3>Analytics + Ops</h3>
+          <p>Decision-ready dashboards with role-based visibility.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path class="icon-stroke" d="M14 14h20v20H14z"></path>
+              <path class="icon-stroke" d="M18 20h12M18 26h9"></path>
+              <circle class="icon-orbit" cx="24" cy="24" r="16"></circle>
+            </svg>
+          </div>
+          <h3>Content + SEO Hub</h3>
+          <p>Publishing system optimized for growth and distribution.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path class="icon-stroke" d="M14 16h20v16H14z"></path>
+              <path class="icon-stroke" d="M18 20h12M18 24h9"></path>
+              <circle class="icon-pulse" cx="34" cy="18" r="2.4"></circle>
+            </svg>
+          </div>
+          <h3>Onboarding + Activation</h3>
+          <p>Flows, trials, and checklists that improve activation rate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section split">
+      <div>
+        <h2>Services</h2>
+        <p class="sub">Full-stack delivery: strategy, design, build, hosting, launch.</p>
+        <div class="stack">
+          <div class="stack-item">
+            <span>01</span>
+            <div>
+              <h3>Web Design + Build</h3>
+              <p>Enterprise marketing sites, landing pages, and brand systems.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span>02</span>
+            <div>
+              <h3>Web Apps / SaaS</h3>
+              <p>Dashboards, client areas, internal tools, MVPs, and workflows.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span>03</span>
+            <div>
+              <h3>Managed Hosting</h3>
+              <p>VPS + control panel stack. SSL, backups, monitoring.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span>04</span>
+            <div>
+              <h3>Business Email</h3>
+              <p>Domain email setup + hosting with direct support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel card">
+        <h3>Stack Highlights</h3>
+        <ul>
+          <li>Design sprints + brand system definition</li>
+          <li>Performance budgets + LCP optimization</li>
+          <li>Automations, integrations, and custom tools</li>
+          <li>Hosting ownership with monitoring + backups</li>
+          <li>Launch support and post-launch optimization</li>
+        </ul>
+        <a class="btn ghost" href="#contact">Start a project</a>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="section-head">
+        <h2>Delivery Process</h2>
+        <p class="sub">A six-step cadence from discovery to launch with clear checkpoints.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item card">
+          <span class="badge">01</span>
+          <h3>Discovery</h3>
+          <p>Align on goals, scope, constraints, and success metrics.</p>
+        </div>
+        <div class="timeline-item card">
+          <span class="badge">02</span>
+          <h3>Strategy + Architecture</h3>
+          <p>System map, UX flows, content strategy, and performance plan.</p>
+        </div>
+        <div class="timeline-item card">
+          <span class="badge">03</span>
+          <h3>Design</h3>
+          <p>High-fidelity design, interaction studies, and brand alignment.</p>
+        </div>
+        <div class="timeline-item card">
+          <span class="badge">04</span>
+          <h3>Build + Integrate</h3>
+          <p>Frontend, backend, integrations, and hosting configuration.</p>
+        </div>
+        <div class="timeline-item card">
+          <span class="badge">05</span>
+          <h3>QA + Launch</h3>
+          <p>Testing, accessibility, handoff, and launch support.</p>
+        </div>
+        <div class="timeline-item card">
+          <span class="badge">06</span>
+          <h3>Optimization</h3>
+          <p>Iteration, new modules, and continuous improvement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <h2>Case Studies</h2>
+      <p class="sub">Enterprise-ready experiences built for measurable outcomes.</p>
+      <div class="proof-points">
+        <div class="proof-point">
+          <span class="stat">Activation</span>
+          <span class="stat-label">Trial completion rate</span>
+        </div>
+        <div class="proof-point">
+          <span class="stat">Pipeline</span>
+          <span class="stat-label">Demo → SQL conversion</span>
+        </div>
+        <div class="proof-point">
+          <span class="stat">Retention</span>
+          <span class="stat-label">NRR + churn reduction</span>
+        </div>
+        <div class="proof-point">
+          <span class="stat">Time-to-Value</span>
+          <span class="stat-label">Onboarding speed</span>
+        </div>
+      </div>
+
+      <div class="grid proof">
+        <article class="card proof-card">
+          <div class="proof-top">
+            <span class="badge">BUILD</span>
+            <span class="pill">Speed + Clarity</span>
+          </div>
+          <h3>Roura VPS Dashboard Standard</h3>
+          <p>Enterprise control panel UI with clarity, hierarchy, and conversion focus.</p>
+          <div class="proof-kpis">
+            <span>KPIs: feature adoption, time-to-task, CSAT</span>
+            <span>Focus: admin workflows and visibility</span>
+          </div>
+          <div class="proof-meta">
+            <span>Deliverable: UI + Build</span>
+            <span>Focus: Performance</span>
+          </div>
+        </article>
+
+        <article class="card proof-card">
+          <div class="proof-top">
+            <span class="badge">APP</span>
+            <span class="pill">Systems + Operations</span>
+          </div>
+          <h3>Client Platform / Web App</h3>
+          <p>Auth, dashboards, workflows, clean data states, future-proof scaling.</p>
+          <div class="proof-kpis">
+            <span>KPIs: activation rate, trial-to-paid, TTV</span>
+            <span>Focus: onboarding and product adoption</span>
+          </div>
+          <div class="proof-meta">
+            <span>Deliverable: App + Hosting</span>
+            <span>Focus: Product Ops</span>
+          </div>
+        </article>
+
+        <article class="card proof-card">
+          <div class="proof-top">
+            <span class="badge">HOST</span>
+            <span class="pill">Owned Infrastructure</span>
+          </div>
+          <h3>In-House Hosting + Business Email</h3>
+          <p>Kamatera + CyberPanel stack. SSL. Backups. Email creation + hosting.</p>
+          <div class="proof-kpis">
+            <span>KPIs: uptime, incident response, latency</span>
+            <span>Focus: reliability and control</span>
+          </div>
+          <div class="proof-meta">
+            <span>Deliverable: Infra</span>
+            <span>Focus: Reliability</span>
+          </div>
+        </article>
+
+        <article class="card proof-card">
+          <div class="proof-top">
+            <span class="badge">BRAND</span>
+            <span class="pill">Identity + Presence</span>
+          </div>
+          <h3>Brand System + Launch Plan</h3>
+          <p>Logo, color system, tone, content system, rollout plan.</p>
+          <div class="proof-kpis">
+            <span>KPIs: conversion rate, CAC payback, pipeline velocity</span>
+            <span>Focus: positioning and demand capture</span>
+          </div>
+          <div class="proof-meta">
+            <span>Deliverable: Brand Kit</span>
+            <span>Focus: Brand Systems</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2>Contact</h2>
+      <p class="sub">
+        Tell us about your project. We’ll respond with a tailored build plan and timeline.
+        Please describe your goals and requirements in detail.
+      </p>
+
+      <form id="contactForm"
+            action="https://formspree.io/f/xdakwovn"
+            method="POST"
+            class="form">
+
+        <label>
+          <span>Your Name</span>
+          <input type="text" name="name" placeholder="Full Name" required />
+        </label>
+
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="email" placeholder="Email" required />
+        </label>
+
+        <label>
+          <span>Phone (optional)</span>
+          <input type="tel" name="phone" placeholder="Phone Number" />
+        </label>
+
+        <label>
+          <span>Company / Brand</span>
+          <input type="text" name="company" placeholder="Brand or Company Name" required />
+        </label>
+
+        <label>
+          <span>Project Type</span>
+          <select name="project_type" required>
+            <option value="">Select</option>
+            <option value="Website / Landing Page">Website / Landing Page</option>
+            <option value="Web App / Dashboard">Web App / Dashboard</option>
+            <option value="Brand Identity & Logo">Brand Identity & Logo</option>
+            <option value="Hosting / Platform Setup">Hosting / Platform Setup</option>
+            <option value="Full Digital Presence">Full Digital Presence</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Project Summary</span>
+          <textarea name="summary" rows="4" placeholder="Describe the project (goals, audience, timeline)" required></textarea>
+        </label>
+
+        <label>
+          <span>Key Objectives (select all that apply)</span>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="objective[]" value="Design / UX" /> Design / UX</label>
+            <label><input type="checkbox" name="objective[]" value="Development / Full Stack" /> Development / Full Stack</label>
+            <label><input type="checkbox" name="objective[]" value="Brand Strategy" /> Brand Strategy</label>
+            <label><input type="checkbox" name="objective[]" value="SEO / Traffic" /> SEO / Traffic</label>
+            <label><input type="checkbox" name="objective[]" value="Monetization / Sales" /> Monetization / Sales</label>
+            <label><input type="checkbox" name="objective[]" value="Other" /> Other</label>
+          </div>
+        </label>
+
+        <label>
+          <span>Budget Range</span>
+          <select name="budget" required>
+            <option value="">Select</option>
+            <option value="under $1k">under $1k</option>
+            <option value="$2k–$5k">$2k–$5k</option>
+            <option value="$5k–$10k">$5k–$10k</option>
+            <option value="$10k–$20k">$10k–$20k</option>
+            <option value="$20k+">$20k+</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Desired Timeline</span>
+          <input type="text" name="timeline" placeholder="e.g. Launch by Q2 2026" required />
+        </label>
+
+        <button class="btn primary compact" id="sendBtn" type="submit">Request a proposal</button>
+
+        <div id="formSuccess" class="message hidden">
+          <p>Thanks — we received your request. Expect a response within 48 hours.</p>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Roura.online</span>
+      <span class="hint">Built with precision. Launched for growth.</span>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+  <div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
+</body>
+</html>
