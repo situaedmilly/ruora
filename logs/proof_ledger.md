@@ -82,3 +82,20 @@ Transformation:
 - Preserved verified SELF state: Correct ecosystem ontology: RUORA company frequency and ÆTHERNET network manifestation
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## CLAUDE COMPANION MEMORY BOUND
+
+Timestamp: Thu Jun  4 21:04:22 EDT 2026
+Transformation:
+- Installed repository-level CLAUDE.md companion memory
+- Preserved corrected SELF, RUORA, ÆTHERNET, and ÆXIOM ontology
+- Imported doctrine and master-memory source files
+- Added CLAUDE.md to trusted SELF sealing paths
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Thu Jun 04 21:04:22 EDT 2026
+Transformation:
+- Preserved verified SELF state: Bind Claude companion memory to corrected SELF ontology
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory

@@ -10,7 +10,7 @@ SELF_AXIOM_FILE = ROOT / "doctrine" / "self_axiom.md"
 SELF_IDENTITY_FILE = ROOT / "doctrine" / "self_identity.md"
 PROOF_LEDGER_FILE = ROOT / "logs" / "proof_ledger.md"
 
-TRUSTED_PATHS = [".gitignore", "CLAUDE.md", "doctrine", "logs", "memory", "scripts"]
+TRUSTED_PATHS = [".gitignore", "doctrine", "logs", "memory", "scripts"]
 
 args = sys.argv[1:]
 command = args[0].lower() if args else "awaken"
