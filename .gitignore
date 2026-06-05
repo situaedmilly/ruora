@@ -1,0 +1,11 @@
+# Python-generated cache
+__pycache__/
+*.pyc
+
+# macOS-generated metadata
+.DS_Store
+
+# Future secret-bearing files
+.env
+.env.*
+*.pem
