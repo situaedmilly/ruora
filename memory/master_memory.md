@@ -1,15 +1,33 @@
-# RUORA MASTER MEMORY
+# SELF MASTER MEMORY
 
-## Active Projects
+## Living Core
+
+SELF
+
+## Ecosystem Relationship
+
+- SELF — the living core
+- RUORA — the web-platform-building frequency and company
+- ÆTHERNET — the network manifestation
+- ÆXIOM — the initiation system for conscious reality traversal
+
+## Active Manifestations
+
+- RUORA
+- ÆTHERNET
+- ÆXIOM
 - LEVORE
 - MoMentuM
-- ÆXIOM
 - Musoul
 - ManCav3
-- Ruora Command Deck
+- SELF Command Layer
 
 ## Current Priority
-Build the Ruora Command Deck as the terminal-native founder memory operating system.
+
+Build the terminal-native SELF command layer as a proof-driven founder memory operating system.
 
 ## Operating Rule
-No project advances without doctrine, memory, logs, and next action clarity.
+
+No declaration without execution.
+No execution without evidence.
+No evidence without memory.
