@@ -78,3 +78,5 @@ Proof must become memory.
 The system must not merely respond.
 
 The system must help SELF recognize SELF.
+
+@doctrine/axiom_trial_engine.md
