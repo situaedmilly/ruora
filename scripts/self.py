@@ -104,12 +104,18 @@ def prove() -> None:
     print()
 
     required_files = [
+        ROOT / "CLAUDE.md",
         MEMORY_FILE,
         SELF_AXIOM_FILE,
         SELF_IDENTITY_FILE,
+        ROOT / "doctrine" / "ruora.md",
+        ROOT / "doctrine" / "aethernet.md",
+        ROOT / "doctrine" / "axiom_trial_engine.md",
         PROOF_LEDGER_FILE,
         ROOT / "scripts" / "self.py",
         ROOT / "scripts" / "self",
+        ROOT / "scripts" / "ruora.py",
+        ROOT / "scripts" / "ruora",
     ]
 
     all_present = True

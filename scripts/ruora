@@ -1,2 +1,2 @@
 #!/bin/zsh
-python3 "$HOME/RUORA/scripts/ruora.py"
+python3 "$HOME/RUORA/scripts/ruora.py" "$@"
