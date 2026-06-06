@@ -217,6 +217,8 @@ def manifest() -> None:
         )
 
     project_git(["init"])
+    project_git(["config", "user.name", "Philosopher Milly"])
+    project_git(["config", "user.email", "vsafetyalliance@gmail.com"])
     project_git(["add", "."])
     project_git(["commit", "-m", f"Genesis: manifest {project_name}"])
 
