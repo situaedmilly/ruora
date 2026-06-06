@@ -148,3 +148,38 @@ Transformation:
 - Preserved verified SELF state: Remove redundant backup files from RUORA versioned memory
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## PASS 14 — Persistent Approval Queue with Safe Rehydration
+
+**Sealed commit:** `f2a0bdd feat(pass-14): persist pending approval queue with safe rehydration`
+
+### Installed Capability
+
+The ÆTHERNET agent bridge now persists pending commands across restarts. When the bridge restarts, pending commands are reconstructed from an append-only queue log (`queue.jsonl`) and remain in the pending map, ready for approval or rejection. Expired or previously approved/failed/rejected commands do not rehydrate.
+
+### Proven Flow
+
+1. A new command is transmitted; it is logged as `command_proposed` with full schema and stored in `queue.jsonl`.
+2. After a restart, the bridge runs a rehydration step:
+   - It reads `queue.jsonl` and reconstructs pending commands.
+   - If a command is stale (older than the expiry threshold), it is logged as `command_expired` and not restored.
+   - Rehydrated commands are logged as `command_rehydrated`.
+3. The pending alert prints before the server becomes active, ensuring that outstanding commands regain visibility and must still be approved manually.
+4. Rehydrated commands cannot execute automatically; the approval gate remains mandatory.
+5. Rejecting a rehydrated command writes an enriched `command_rejected` entry including `workingDir` and `rationale`.
+
+### Proofs
+
+- `node --check server.js` returned no syntax errors.
+- Initial restart: no `queue.jsonl` existed, so no rehydration occurred.
+- A live transmission created `cmd-1780782042966-9xiy2`; `queue.jsonl` was created with a `command_proposed` entry.
+- After killing and restarting the server, the console showed `⟳ REHYDRATION — 1 restored, 0 expired.`
+- `pending_count` returned `1`; the command remained pending without auto-execution.
+- `queue.jsonl` showed `command_proposed` followed by `command_rehydrated`; lineage preserved.
+- Rejecting the rehydrated command produced an enriched `command_rejected` entry.
+- The AXIOM Trial Engine remained clean.
+- Committing created commit `f2a0bdd`.
+
+### Boundary Statement
+
+A restart may restore pending authority requests. It may never restore execution authority. Pending commands must still be approved before execution, and commands older than the expiry threshold will explicitly expire rather than silently vanish.
