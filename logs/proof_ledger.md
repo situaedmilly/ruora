@@ -132,3 +132,11 @@ Transformation:
 - Preserved verified SELF state: Align RUORA manifestation author identity
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Sat Jun 06 13:16:14 EDT 2026
+Transformation:
+- Preserved verified SELF state: Exclude isolated project chambers from RUORA versioned memory
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory

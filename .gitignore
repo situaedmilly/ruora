@@ -9,3 +9,6 @@ __pycache__/
 .env
 .env.*
 *.pem
+
+# Isolated project chambers — each has its own Git repository
+projects/
