@@ -183,3 +183,11 @@ The ÆTHERNET agent bridge now persists pending commands across restarts. When t
 ### Boundary Statement
 
 A restart may restore pending authority requests. It may never restore execution authority. Pending commands must still be approved before execution, and commands older than the expiry threshold will explicitly expire rather than silently vanish.
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Sat Jun 06 21:19:36 EDT 2026
+Transformation:
+- Preserved verified SELF state: Pass 18 — Authenticated Realm Gate sealed at cb44e32
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory
