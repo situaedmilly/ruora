@@ -191,3 +191,11 @@ Transformation:
 - Preserved verified SELF state: Pass 18 — Authenticated Realm Gate sealed at cb44e32
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Thu Jun 11 20:50:07 EDT 2026
+Transformation:
+- Preserved verified SELF state: APPEND-ONLY CORRECTION — Pass 18 child-hash reconciliation: prior cb44e32 reference preserved as recorded cross-chamber attribution drift; cb44e32 belongs to axiom-trial-engine-v1 Supabase auth. Verified agent-bridge Pass 18 authenticated bridge boundary and action-level command firewall merged to main at ca7793b346ffd23705c6131f0d35c2d22e4cace5. Independent reviewer verdict: PASS WITH CONDITIONS. Residual conditions tracked as Pass 19A/B/C.
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory
