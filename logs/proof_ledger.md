@@ -272,3 +272,11 @@ Bridge Pass 18.1b — automated regression coverage — STATUS: CLOSED BY BRIDGE
 → no Claude/OpenAI call
 → no AXIOM mutation
 → no RUORA-root mutation
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Fri Jun 12 23:19:42 EDT 2026
+Transformation:
+- Preserved verified SELF state: BRIDGE PASS 21 — CI WITNESS LAYER DORMANT: agent-bridge commit da3ef7944e681783024d9e518b88bf4359fd7dab adds .github/workflows/bridge-security-regression.yml. The dormant GitHub Actions witness runs npm ci then npm test on pull_request, push to main, and workflow_dispatch using Node 22, actions/checkout@v6, actions/setup-node@v6, and least-privilege contents: read. Local verification: npm ci clean; npm test 58/58 twice; production JSONL hashes unchanged; no repository secrets required; AXIOM isolated; RUORA root isolated. STATUS: DORMANT. agent-bridge has zero git remotes. No code has left the sovereign machine. GitHub repo creation, remote addition, push, CI activation, immutable action-SHA pinning, and branch protection remain separate OURSELF consent checkpoints.
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory
