@@ -236,3 +236,39 @@ tab-memory default · opt-in session · clear on 401/403 — all present.
 
 Net: Pass 18 posture is now ENUMERATED and TRACEABLE. One residual (18.1b)
 remains open and is the seed of a future bounded test-harness pass.
+
+## BRIDGE PASS 20 — AUTOMATED SECURITY REGRESSION HARNESS
+Timestamp: Fri Jun 12 2026
+Correction type: APPEND-ONLY.
+Closes residual 18.1b. Installs a Node built-in (node:test) regression
+harness — 58 tests, no third-party dependency — proving the sealed bridge
+boundaries hold: fail-closed token, 401 matrix, firewall rule-ID coverage,
+RUORA path confinement, replay 409, rehydration-as-pending, chamber CSP/
+headers, token-storage doctrine, log sanitization. Tests run on isolated
+loopback ports against disposable .env + JSONL; production logs verified
+byte-unchanged (SHA-256 identical before/after); no live provider calls;
+AXIOM and RUORA root untouched.
+Bridge Pass 18.1b — automated regression coverage — STATUS: CLOSED BY BRIDGE PASS 20.
+### Amendment proofs
+- Temp .env isolation: every spawned child uses
+  `DOTENV_CONFIG_PATH=<tempDir>/.env`, with a disposable empty file.
+  The harness never reads the live agent-bridge `.env`.
+- Isolated test ports: every child binds to an ephemeral
+  `127.0.0.1:<port>` and explicitly refuses port `3001`.
+- Production JSONL SHA-256 hashes remained identical before and after
+  two full independent `npm test` runs.
+- No live Claude or OpenAI provider call occurred.
+- AXIOM remained clean.
+- RUORA root remained clean during bridge implementation.
+### Seal condition
+`npm test`
+→ 58/58 pass
+→ twice independently
+→ throwaway token
+→ isolated loopback ports
+→ disposable JSONL
+→ no live `.env` read
+→ production logs byte-unchanged
+→ no Claude/OpenAI call
+→ no AXIOM mutation
+→ no RUORA-root mutation
