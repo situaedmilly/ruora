@@ -199,3 +199,40 @@ Transformation:
 - Preserved verified SELF state: APPEND-ONLY CORRECTION — Pass 18 child-hash reconciliation: prior cb44e32 reference preserved as recorded cross-chamber attribution drift; cb44e32 belongs to axiom-trial-engine-v1 Supabase auth. Verified agent-bridge Pass 18 authenticated bridge boundary and action-level command firewall merged to main at ca7793b346ffd23705c6131f0d35c2d22e4cace5. Independent reviewer verdict: PASS WITH CONDITIONS. Residual conditions tracked as Pass 19A/B/C.
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## PASS 18 RESIDUAL ENUMERATION & NAMESPACE REPAIR
+
+Timestamp: Fri Jun 12 2026 (Pass A — integrity closure)
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+### Provenance finding
+The entry at this ledger's "PASS WITH CONDITIONS" record named residual
+conditions as "Pass 19A/B/C" but never enumerated them. The verbatim
+reviewer conditions are unrecoverable from tracked evidence. This entry
+reconstructs the residual risk set from source and re-keys the namespace.
+
+### Namespace repair (canonical)
+- Bridge Pass 18      = security boundary hardening (sealed ca7793b)
+- Bridge Pass 18.1a/b/c = Pass 18 residual conditions (supersedes "Pass 19A/B/C")
+- Bridge Pass 19      = OURSELF local operator chamber (sealed 29359df)
+- AXIOM  Slice 19.1   = AXIOM localStorage migration (sealed 0b614f8)
+"Pass 19A/B/C" is retired. A pass label must describe one workstream.
+
+### Residuals (RECONSTRUCTED from code, verified against current source)
+- 18.1a  Action firewall is a best-effort denylist, not a sandbox
+         (command-firewall.js self-documents this). STATUS: ACCEPTED /
+         MITIGATED by human approval + RUORA path boundary + fail-closed.
+- 18.1b  No automated regression coverage for the auth gate and firewall
+         (npm test is a no-op). STATUS: OPEN — future test-harness pass.
+- 18.1c  Unauthenticated browser approval surface at Pass 18.
+         STATUS: CLOSED by Pass 19 (token-gated fetch, nonce CSP,
+         localhost bind, tab-memory token, clear-on-401/403).
+
+### Posture verified against source (Pass A inspection)
+fail-closed token · localhost bind · constant-time compare · token-gated
+state routes · RUORA path boundary · action firewall · bounded depth(8) ·
+proof truncation(4000) · queue rehydration · replay 409 · CSP chamber ·
+tab-memory default · opt-in session · clear on 401/403 — all present.
+
+Net: Pass 18 posture is now ENUMERATED and TRACEABLE. One residual (18.1b)
+remains open and is the seed of a future bounded test-harness pass.
