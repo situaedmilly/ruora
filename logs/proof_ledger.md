@@ -288,3 +288,51 @@ Transformation:
 - Preserved verified SELF state: AGENT-BRIDGE SECURITY KERNEL MERGED TO MAIN. agent-bridge main advanced da3ef7944e681783024d9e518b88bf4359fd7dab to 1954f0cb6dbb7391f14a9814934fac6081ab92d2 by PURE FAST-FORWARD (no merge commit), unifying two sealed security passes: Pass 19B installed a deterministic, non-injectable POST /test route (caller action/working_dir ignored; queues only a fixed read-only 'git status --short' diagnostic in the bridge repo; still token-gated, still requires approval, still firewall-enforced); Pass 19C installed Realm Gate failed-token rate limiting (per-client lockout with 429 + Retry-After after threshold failures within a window; env-tunable defaults 10 failures / 60s window / 300s lockout; a VALID token is never rate-limited and clears the failure record; presented tokens are never logged). Verification on main: npm test 64/64 pass; production JSONL logs byte-unchanged; AXIOM untouched; RUORA root untouched until this authorized seal; zero git remotes; nothing published. DESIGNATION: Security Kernel Baseline = 1954f0c — the named historical reference point for future passes. Next: Pass 20 Evolution (Constrained Execution Classes).
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## BRIDGE PASS 20A — CONSTRAINED EXECUTION CLASSES
+
+Timestamp: Mon Jun 15 03:21:05 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Pass 20A was committed on the bridge at `64f57045b1b281c99d0d20cdd3488276a1a88faf`,
+and agent-bridge main advanced `1954f0cb6dbb7391f14a9814934fac6081ab92d2` →
+`64f57045b1b281c99d0d20cdd3488276a1a88faf` by PURE FAST-FORWARD (no merge commit).
+
+### Installed capability
+Pass 20A installs a constrained execution-class permission skeleton over the
+sealed Security Kernel Baseline. Eight typed classes now govern every command:
+
+  inspect · test · build · git-read · git-write-local ·
+  project-mutation · reverse_engineer · forbidden
+
+- Every queued command now carries execution-class metadata (class + risk),
+  attached at all four enqueue sites: /transmit proposal, agent continuation
+  proposal, the fixed /test diagnostic (classified git-read), and startup
+  rehydration (carries the persisted class, or reclassifies a pre-20A entry).
+- The classifier (`tools/execution-classes.js`) consults the Pass 18 firewall
+  FIRST, so it is never weaker than the firewall, and is fail-closed: unknown,
+  secret-bearing, audit-log-mutating, remote/network (plain `git push`,
+  `git remote`, `gh`, curl/scp/ssh, …), and out-of-RUORA-boundary commands all
+  resolve to `forbidden`.
+- /approve re-classifies the command live and FAILS CLOSED — recording the
+  command as `failed`, returning 403, and never reaching the executor — for any
+  missing, unknown, forbidden, non-terminal, or stored↔live mismatched class.
+  The action-level firewall remains the final guard for allowed classes.
+- `reverse_engineer` exists as a first-class schema member that is non-mutating,
+  terminal-forbidden, and analysis-only; no shell command ever classifies as it,
+  and its full structured manifestation route is DEFERRED to Pass 20C.
+- Class/risk metadata is surfaced in command logs and /ourself/state and never
+  contains secret values or presented tokens.
+
+### Verification (on main after the fast-forward)
+- npm test on main: 87/87 pass (and 87/87 twice in the pre-merge dry-run).
+- Production JSONL logs byte-unchanged (SHA-256 identical before/after):
+  transmissions.jsonl 7d88d1a6…051dae5a · queue.jsonl d02cc57a…05e08125.
+- node --check clean on server.js, tools/execution-classes.js, and the new
+  test/execution-classes.test.js.
+- AXIOM untouched. RUORA root untouched until this authorized seal.
+- Zero git remotes. Nothing published.
+
+DESIGNATION: Execution Class Baseline = 64f5704 — the named reference point onto
+which Pass 20B (firewall-by-class hardening) and Pass 20C (reverse_engineer
+structured route) will attach.
