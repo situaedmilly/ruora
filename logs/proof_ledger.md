@@ -336,3 +336,56 @@ sealed Security Kernel Baseline. Eight typed classes now govern every command:
 DESIGNATION: Execution Class Baseline = 64f5704 — the named reference point onto
 which Pass 20B (firewall-by-class hardening) and Pass 20C (reverse_engineer
 structured route) will attach.
+
+## BRIDGE PASS 20B — FIREWALL-BY-CLASS HARDENING
+
+Timestamp: Fri Jun 19 18:00:13 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Pass 20B was committed on the bridge at `e2a09bd751ad84c5f34611ec826f7506453e2bc4`,
+and agent-bridge main advanced `64f57045b1b281c99d0d20cdd3488276a1a88faf` →
+`e2a09bd751ad84c5f34611ec826f7506453e2bc4` by PURE FAST-FORWARD (no merge commit).
+
+Preceded by a Root Hygiene Pass (RUORA root commit `542938d`) that added the
+benign OURSELF preservation/quarantine directories (backups/, systems/,
+quarantine/) to .gitignore — kept on disk, never tracked, no secrets — restoring
+root cleanliness before this seal.
+
+### Installed capability
+Pass 20B turns the execution-class METADATA from 20A into ACTIVE per-class
+enforcement at the point of execution — the muscle layer over the skeleton.
+
+- `tools/command-firewall.js` gains `enforceClassPolicy(action, executionClass)`:
+  per-class command-shape policy. inspect = read-only only; test = test/check
+  runners only; build = local build/dependency only (no deploy/publish/upload);
+  git-read = read-only git (+ branch/worktree listing), no writes/network;
+  git-write-local = local git mutations only, still forbids push/remote/gh/
+  publish; project-mutation = in-boundary writes only, never .env/secrets/*.pem/
+  credentials/audit-logs or outside the RUORA boundary. forbidden and
+  reverse_engineer are terminal-forbidden (never reach the shell). This is an
+  INDEPENDENT second implementation of the shapes (no import of execution-classes)
+  — defense in depth: classifier and policy must agree or the command is refused.
+- `tools/terminal.js` enforces the class policy in executeCommand BEFORE the
+  generic denylist, failing closed (classPolicyDenied) without spawning a shell.
+  The Pass 18 denylist (inspectCommand) remains the always-on FINAL fail-closed
+  backstop; class permissions are never weaker than it. Legacy no-class callers
+  keep the prior firewall-only path unchanged.
+- `server.js` /approve passes the already-validated cmd.executionClass into
+  executeCommand, so the terminal re-verifies the class at execution time.
+
+### Verification (on main after the fast-forward)
+- npm test on main: 107/107 pass (and 107/107 twice in the pre-merge dry-run,
+  with NO flake observed in the dry-run).
+- Known caveat: one NON-REPRODUCIBLE environmental flake occurred once across 33
+  pre-commit runs (never recurred in 32 retries), attributed to the pre-existing
+  Realm Gate rate-limit wall-clock timing — to be made deterministic in Pass 20B.1.
+- Production JSONL logs byte-unchanged (SHA-256 identical before/after):
+  transmissions.jsonl 7d88d1a6…051dae5a · queue.jsonl d02cc57a…05e08125.
+- node --check clean on all changed JS.
+- Realm Gate / token gate / rate limiter / approval gate / RUORA boundary
+  unchanged. AXIOM untouched. RUORA root clean (542938d) until this authorized
+  seal. Zero git remotes. Nothing published.
+
+DESIGNATION: Firewall-by-Class Baseline = e2a09bd — the named reference point onto
+which Pass 20B.1 (deterministic rate-limit timing) and Pass 20C (reverse_engineer
+structured route) will attach.
