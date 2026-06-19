@@ -12,3 +12,11 @@ __pycache__/
 
 # Isolated project chambers — each has its own Git repository
 projects/
+
+# OURSELF preservation / quarantine infrastructure (benign, persistent, kept
+# on disk but not tracked into the doctrine repo). Audited 2026-06-15:
+# home-git preservation bundle, extracted OURSELF bridge system, quarantined
+# home .git. No secret-bearing files (only a .env.example template).
+backups/
+systems/
+quarantine/
