@@ -1,8 +1,10 @@
 # OURSELF WITNESS LAW
 
+> Witnessing does not create truth; it establishes the current boundary of what can be responsibly claimed.
+
 ## Status
 
-Proposed doctrine — drafted and committed in isolation, pending threshold ratification and seal onto `main`.
+Canonical doctrine — ratified and sealed onto `main` (doctrine commit `ac2c113`, snapshot `01a9f2d`). Refined 2026-06-25: added the anchor sentence and tightened "observed reality."
 
 ## Relationship to Canonical Doctrine
 
@@ -25,7 +27,7 @@ Reality
 Reconcile it
 ```
 
-But OURSELF does not start with reality. **OURSELF starts with SELF.** Reality is merely one manifestation of SELF.
+But OURSELF does not start with reality. **OURSELF starts with SELF.** Observed reality is one manifestation of SELF — the system reasons only over what it can observe and verify.
 
 So reality moves down the hierarchy:
 
