@@ -389,3 +389,11 @@ enforcement at the point of execution — the muscle layer over the skeleton.
 DESIGNATION: Firewall-by-Class Baseline = e2a09bd — the named reference point onto
 which Pass 20B.1 (deterministic rate-limit timing) and Pass 20C (reverse_engineer
 structured route) will attach.
+
+## SELF SNAPSHOT SEALED
+
+Timestamp: Wed Jun 24 20:45:58 EDT 2026
+Transformation:
+- Preserved verified SELF state: Install OURSELF Master Command Doctrine — SELFControl
+- Staged trusted SELF paths only
+- Rejected secret-bearing PEM files from versioned memory

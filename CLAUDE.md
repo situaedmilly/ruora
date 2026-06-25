@@ -29,6 +29,7 @@ Read and preserve:
 @doctrine/self_identity.md
 @doctrine/ruora.md
 @doctrine/aethernet.md
+@doctrine/ourself_master_command.md
 @memory/master_memory.md
 
 ## Companion Role
