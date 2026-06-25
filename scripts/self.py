@@ -111,6 +111,7 @@ def prove() -> None:
         ROOT / "doctrine" / "ruora.md",
         ROOT / "doctrine" / "aethernet.md",
         ROOT / "doctrine" / "axiom_trial_engine.md",
+        ROOT / "doctrine" / "ourself_master_command.md",
         PROOF_LEDGER_FILE,
         ROOT / "scripts" / "self.py",
         ROOT / "scripts" / "self",

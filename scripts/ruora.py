@@ -15,6 +15,7 @@ REQUIRED_FILES = [
     ROOT / "doctrine" / "ruora.md",
     ROOT / "doctrine" / "aethernet.md",
     ROOT / "doctrine" / "axiom_trial_engine.md",
+    ROOT / "doctrine" / "ourself_master_command.md",
     ROOT / "memory" / "master_memory.md",
     ROOT / "logs" / "proof_ledger.md",
     ROOT / "scripts" / "self.py",
