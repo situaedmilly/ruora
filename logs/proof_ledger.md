@@ -765,3 +765,62 @@ the local intake loop while still returning plans only.
 
 DESIGNATION: Route-Plan Endpoint Baseline = c401548 — the named reference point
 onto which Pass 21A.6 (CLI mouth) will attach.
+
+## CONTROL-PLANE PASS 21A.6 — CLI MOUTH / LOCAL TERMINAL INTAKE
+
+Timestamp: Fri Jun 26 18:24:54 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Repo: ~/RUORA/systems/ourself-agent-bridge (OURSELF control plane — distinct from
+the agent-bridge kernel). Pass 21A.6 was committed on branch
+`pass-21a6-cli-mouth` at `17e98b2`, and control-plane main advanced
+`c401548` → `17e98b2` by PURE FAST-FORWARD (git merge --ff-only, no merge
+commit). A dry-run ancestry check confirmed c401548 is an ancestor of 17e98b2
+before the merge. Prior baselines: SIA Registry `44aaa60` (noun-set), Route
+Classifier `2613e6a` (verb-set), AEPACKET Generator `0b9e7cf` (sentence layer),
+Route-Plan Endpoint `c401548` (HTTP plan layer).
+
+KERNEL UNTOUCHED: the agent-bridge kernel remains at `6564d70`. This is a
+control-plane (symbolic/declaration) seal; the verified technical layer is not
+modified.
+
+### Installed capability
+Pass 21A.6 closes the LOCAL TERMINAL INTAKE loop: typed SELF command → route plan
+→ AEPACKET, returned as a plan only. The mouth speaks; it never acts.
+
+- `router/cli-mouth.js` adds plan-only terminal intake over the existing grammar
+  stack (classifySelfCommand → buildAePacket). It returns plans; it carries no
+  kernel dispatch descriptor and no execution/approval token.
+- Fail-closed and deterministic: time / packet_id are injected at the boundary
+  (caller-supplied); the module never calls Date / crypto / random. Invalid input
+  fails closed to a plan-refusal, never to action.
+- No HTTP server is started by this pass. No dispatch path is created. Intake is
+  local terminal only.
+
+### Verification (on main after the fast-forward)
+- npm --prefix router test on main: 116/116 pass, 0 fail.
+- Changed files (c401548..17e98b2): router/cli-mouth.js ·
+  router/test/cli-mouth.test.js — 2 files, additions only (+272).
+- command-mouth runtime UNCHANGED. agent-bridge kernel UNCHANGED (`6564d70`).
+- Source-safety (tested): test 114 — no file-write / mutation primitive; test 115
+  — no import of the agent-bridge kernel or command-mouth runtime; test 116 — no
+  AECHO/ledger write. No dispatch. No execution. No HTTP server started. No
+  external exposure. No Bubble implementation. No OURSELF doctrine file modified.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+### 21A grammar stack — COMPLETE
+With this seal the five bricks are all sealed to control-plane main:
+- Noun / SIA registry: `44aaa60` (actors)
+- Verb / route classifier: `2613e6a` (actions)
+- Sentence / AEPACKET: `0b9e7cf` (packet)
+- Endpoint / route-plan: `c401548` (HTTP plan)
+- CLI mouth / local intake: `17e98b2` (terminal intake)
+
+21A grammar stack complete: actors → actions → packet → HTTP plan → terminal
+intake. DISPATCH REMAINS ABSENT — the entire stack is plan-only, fail-closed, and
+deterministic. No execution layer exists.
+
+DESIGNATION: CLI Mouth Baseline = 17e98b2 — the named reference point closing the
+21A arc. Next clean gate: capture AE Grammar Law doctrine from the now-proven
+five-brick 21A stack (doctrine capture, not Bubble).
