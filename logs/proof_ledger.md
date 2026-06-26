@@ -710,3 +710,58 @@ endpoint) will expose plan generation without dispatch — still plan-only.
 
 DESIGNATION: AEPACKET Generator Baseline = 0b9e7cf — the named reference point
 onto which Pass 21A.5 (route-plan endpoint) will attach.
+
+## CONTROL-PLANE PASS 21A.5 — ROUTE-PLAN ENDPOINT / LOCAL PLAN EXPOSURE
+
+Timestamp: Fri Jun 26 17:55:00 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Repo: ~/RUORA/systems/ourself-agent-bridge (OURSELF control plane — distinct from
+the agent-bridge kernel). Pass 21A.5 was committed on branch
+`pass-21a5-route-plan-endpoint` at `c401548`, and control-plane main advanced
+`0b9e7cf` → `c401548` by PURE FAST-FORWARD (no merge commit). A dry-run ancestry
+check confirmed the fast-forward before the merge. Prior baselines: SIA Registry
+`44aaa60` (noun-set), Route Classifier `2613e6a` (verb-set), AEPACKET Generator
+`0b9e7cf` (sentence layer), RUORA ledger seal for 21A.4 `36a952c`.
+
+KERNEL UNTOUCHED: the agent-bridge kernel remains at `6564d70`. This is a
+control-plane (symbolic/declaration) seal; the verified technical layer is not
+modified.
+
+### Installed capability
+Pass 21A.5 establishes LOCAL-ONLY PLAN EXPOSURE: SELF command → route plan →
+AEPACKET. It exposes planning, never action.
+
+- `router/plan-endpoint.js` exposes createRoutePlan(input, options),
+  handleRoutePlanRequest(body, options), createRouterPlanServer(options), and the
+  constants ROUTE_PLAN_ENDPOINT (`/route-plan`) and ROUTE_PLAN_METHOD (`POST`).
+- The pipeline: classifySelfCommand → buildAePacket → { ok, route_plan, packet,
+  error }. now + packet_id are injected at the boundary (caller-supplied), so the
+  module never calls Date / crypto / random.
+- Local node:http server binds 127.0.0.1 ONLY (never 0.0.0.0, never external);
+  POST /route-plan → plan; non-POST → 405; unknown path → 404; request body bounded.
+- Fail-closed: invalid JSON, missing now, missing packet_id, invalid node/source,
+  and unsafe target on a non-discard route → ok:false / HTTP 400. discard commands
+  → discarded packet. Output carries NO kernel dispatch descriptor and NO
+  execution/approval token.
+
+### Verification (on main after the fast-forward)
+- npm --prefix router test on main: 92/92 pass, 0 fail (19 registry + 26
+  classifier + 23 aepacket + 24 endpoint).
+- node --check clean on router/plan-endpoint.js and its test.
+- Changed files (0b9e7cf..c401548): router/plan-endpoint.js ·
+  router/test/plan-endpoint.test.js — 2 files.
+- command-mouth runtime UNCHANGED. agent-bridge kernel UNCHANGED (`6564d70`).
+- No dispatch path created. No CLI mouth created. No external exposure created. No
+  Bubble implementation. No OURSELF doctrine file modified.
+- Source-safety (tested): no shell/child_process/spawn/exec; no OUTBOUND network
+  (fetch/https/net./tls/dgram); no file-write; no Date/crypto/random; no import of
+  the kernel or command-mouth; no AECHO/ledger writes; binds 127.0.0.1 only.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+DOCTRINE NOTE: 21A.5 exposes planning without action. 21A.6 (CLI mouth) will close
+the local intake loop while still returning plans only.
+
+DESIGNATION: Route-Plan Endpoint Baseline = c401548 — the named reference point
+onto which Pass 21A.6 (CLI mouth) will attach.
