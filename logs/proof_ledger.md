@@ -650,3 +650,63 @@ layer.
 
 DESIGNATION: Route Classifier Baseline = 2613e6a — the named reference point onto
 which Pass 21A.4 (AEPACKET generator) will attach.
+
+## CONTROL-PLANE PASS 21A.4 — AEPACKET GENERATOR / SENTENCE LAYER
+
+Timestamp: Fri Jun 26 17:35:00 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Repo: ~/RUORA/systems/ourself-agent-bridge (OURSELF control plane — distinct from
+the agent-bridge kernel). Pass 21A.4 was committed on branch
+`pass-21a4-aepacket-generator` at `0b9e7cf`, and control-plane main advanced
+`2613e6a` → `0b9e7cf` by PURE FAST-FORWARD (no merge commit). A dry-run ancestry
+check confirmed the fast-forward before the merge. Prior baselines: SIA Registry
+`44aaa60` (noun-set), Route Classifier `2613e6a` (verb-set), RUORA ledger seal
+for 21A.3 `23247ee`.
+
+KERNEL UNTOUCHED: the agent-bridge kernel remains at `6564d70`. This is a
+control-plane (symbolic/declaration) seal; the verified technical layer is not
+modified.
+
+### Installed capability
+Pass 21A.4 establishes the FIRST OURSELF SENTENCE LAYER: a deterministic AEPACKET
+generator that binds noun-set + verb-set + object + mode + proof requirement into
+a frozen, schema-valid packet. It builds only — it never dispatches, executes,
+mutates, calls the kernel, writes AECHO, writes the ledger, creates an endpoint,
+or performs I/O.
+
+- `router/aepacket.js` exposes buildAePacket(input, routePlan, options),
+  assertValidAePacket, freezeAePacket, normalizePacketTarget,
+  normalizePacketIntent, AE_PACKET_STATUSES, AE_PACKET_REQUIRED_FIELDS.
+- Determinism law: never calls Date / crypto / random; the caller injects
+  options.now and options.packet_id (or options.id). Identical input + routePlan +
+  options yields an identical packet (deepEqual proven).
+- Binds noun↔verb: preserves routePlan.sia and routePlan.route, validated against
+  the sealed registry (canSiaUseRoute) and route taxonomy (execution_class/flags).
+- Fail-closed: missing now/id, unknown route, unknown SIA, invalid node/source,
+  execution-class/route mismatch, empty proof for non-discard, and unsafe target
+  on a non-discard route all throw.
+- Status: non-discard → planned; discard → discarded. Packet carries NO kernel
+  dispatch descriptor and NO execution/approval token. parent_aecho is string|null
+  only (the packet does not read or write AECHO).
+
+### Verification (on main after the fast-forward)
+- npm --prefix router test on main: 68/68 pass, 0 fail (19 registry + 26
+  classifier + 23 aepacket).
+- node --check clean on router/aepacket.js and its test.
+- Changed files (2613e6a..0b9e7cf): router/aepacket.js · router/test/aepacket.test.js
+  — 2 files.
+- command-mouth runtime UNCHANGED. agent-bridge kernel UNCHANGED (`6564d70`).
+- No API endpoint created. No CLI mouth created. No dispatch path created. No
+  Bubble implementation. No OURSELF doctrine file modified.
+- Source-safety (tested): no shell/child_process/spawn/exec; no network; no
+  file-write; no Date/crypto/random; no import of the kernel or command-mouth; no
+  AECHO/ledger writes.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+DOCTRINE NOTE: 21A.4 seals the first OURSELF sentence layer. 21A.5 (route-plan
+endpoint) will expose plan generation without dispatch — still plan-only.
+
+DESIGNATION: AEPACKET Generator Baseline = 0b9e7cf — the named reference point
+onto which Pass 21A.5 (route-plan endpoint) will attach.
