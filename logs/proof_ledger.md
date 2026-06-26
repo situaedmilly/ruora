@@ -445,3 +445,44 @@ Transformation:
 - Preserved verified SELF state: Ledger 20:44 EDT: queue Mutation Accounting + Economics axis (candidates)
 - Staged trusted SELF paths only
 - Rejected secret-bearing PEM files from versioned memory
+
+## BRIDGE PASS 20B.1 — DETERMINISTIC RATE-LIMIT TIMING
+
+Timestamp: Fri Jun 26 14:45:26 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Pass 20B.1 was committed on the bridge at `860a9a576b35d461dc92800f0e58f40da35f68f3`,
+and agent-bridge main advanced `e2a09bd751ad84c5f34611ec826f7506453e2bc4` →
+`860a9a576b35d461dc92800f0e58f40da35f68f3` by PURE FAST-FORWARD (no merge commit).
+
+Sealed from branch `pass-20b1-deterministic-rate-limit-timing` (worktree
+`agent-bridge-pass-20b1`).
+
+### Installed capability
+Pass 20B.1 makes the Realm Gate rate-limit timing DETERMINISTIC, resolving the
+non-reproducible wall-clock timing flake recorded in Pass 20B (one flake across 33
+pre-commit runs, attributed there to the pre-existing rate-limit wall-clock timing).
+
+- New `tools/realm-gate.js` isolates the rate-limit/lockout primitive behind an
+  injectable time source, so window expiry and lockout expiry are reached by
+  ADVANCING INJECTED TIME, not by wall-clock waiting — making the gate's timing
+  testable and deterministic.
+- New `test/realm-gate.test.js` exercises the gate deterministically: a valid token
+  is never rate-limited and clears the failure record; a valid token passes even
+  while a key is locked out; lockout expiry is reached by advancing injected time;
+  a fresh window starts after the window elapses; and the limiter never receives or
+  stores a token value.
+- `server.js` and `test/rate-limit.test.js` updated to consume the deterministic
+  gate. Token secrecy preserved: presented tokens are never received, stored, or
+  logged by the limiter.
+
+### Verification
+- npm test on branch `pass-20b1` before seal: 116/116 pass, 0 fail.
+- npm test on main after the PURE FAST-FORWARD: 116/116 pass, 0 fail.
+- Files changed (e2a09bd..860a9a5): server.js · test/rate-limit.test.js ·
+  test/realm-gate.test.js (new) · tools/realm-gate.js (new) — 4 files, +233/-30.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published.
+
+DESIGNATION: Security Kernel Baseline = 860a9a5 — the named reference point onto
+which Pass 20C (reverse_engineer structured route) will attach.
