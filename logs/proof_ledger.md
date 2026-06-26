@@ -486,3 +486,53 @@ pre-commit runs, attributed there to the pre-existing rate-limit wall-clock timi
 
 DESIGNATION: Security Kernel Baseline = 860a9a5 — the named reference point onto
 which Pass 20C (reverse_engineer structured route) will attach.
+
+## BRIDGE PASS 20C — REVERSE_ENGINEER ANALYSIS ORGAN
+
+Timestamp: Fri Jun 26 15:20:00 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Pass 20C was committed on the bridge at `6564d70` (branch
+`pass-20c-reverse-engineer-route`), and agent-bridge main advanced
+`860a9a576b35d461dc92800f0e58f40da35f68f3` → `6564d70` by PURE FAST-FORWARD
+(no merge commit). A dry-run ancestry check confirmed the fast-forward before
+the merge.
+
+### Installed capability
+Pass 20C manifests the deferred `reverse_engineer` execution class as the
+bridge's FIRST ANALYSIS ORGAN: a non-terminal, approval-gated, read-only
+structural inspection route — perception of structure without the right to
+alter it.
+
+- New route `POST /reverse-engineer` (token-gated) enqueues a NON-TERMINAL
+  analysis request (kind:'analysis', class:reverse_engineer). The target path is
+  boundary-gated and secret-path-refused at enqueue, using the kernel's SINGLE
+  SECRET_PATH source of truth (symlinks resolved via realpath first).
+- Approval-gated: the request runs only after explicit `POST /approve/:id`. The
+  /approve analysis branch dispatches to the in-process inspector and RETURNS
+  before the Pass 20A execution-class gate (evaluateApproval) and before
+  executeCommand — so analysis can never reach the shell.
+- New `tools/reverse-engineer.js` performs in-process, read-only filesystem
+  inspection (realpath/readdir/stat/lstat/readFile only) and returns a STRICT
+  JSON artifact: request_id, class, analysis_only, mutation, terminal, target,
+  summary, structure, signals (routes/schemas/workflows/dependencies), risks,
+  non_actions. Bounded (depth/entry/scan caps). No shell, no spawn/child_process,
+  no network, no writes. Secret-bearing files surface as risks and are NEVER read.
+
+### Verification (on main after the fast-forward)
+- npm test on main: 132/132 pass, 0 fail (116 prior baseline + 16 new).
+- Changed files (860a9a5..6564d70): server.js · tools/reverse-engineer.js (new) ·
+  tools/execution-classes.js · test/reverse-engineer.test.js (new) — 4 files.
+- tools/terminal.js UNCHANGED. tools/command-firewall.js UNCHANGED.
+- tools/execution-classes.js change was EXPORT-ONLY: `const SECRET_PATH` →
+  `export const SECRET_PATH` (+ explanatory comment). The frozen class schema is
+  untouched: reverse_engineer remains mutation:false, terminal:false,
+  analysisOnly:true, requiresApproval:true.
+- Shell guarantees preserved: classifyCommand never emits reverse_engineer;
+  evaluateApproval('reverse_engineer', <shell>) still fails closed
+  (non_terminal_class).
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+DESIGNATION: Reverse-Engineer Analysis Baseline = 6564d70 — the named reference
+point onto which Pass 21A (OURSELF Mouth / SIA Router) will attach.
