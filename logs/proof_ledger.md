@@ -590,3 +590,63 @@ the first verb-set layer) will consume this registry as its recognized actor set
 
 DESIGNATION: SIA Registry Baseline = 44aaa60 — the named reference point onto
 which Pass 21A.3 (route classifier) will attach.
+
+## CONTROL-PLANE PASS 21A.3 — ROUTE CLASSIFIER / VERB-SET LAYER
+
+Timestamp: Fri Jun 26 16:05:00 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Repo: ~/RUORA/systems/ourself-agent-bridge (OURSELF control plane — distinct from
+the agent-bridge kernel). Pass 21A.3 was committed on branch
+`pass-21a3-route-classifier` at `2613e6a`, and control-plane main advanced
+`44aaa60` → `2613e6a` by PURE FAST-FORWARD (no merge commit). A dry-run ancestry
+check confirmed the fast-forward before the merge. Parent noun-set: SIA Registry
+Baseline `44aaa60` (RUORA ledger seal `abab6b0`).
+
+KERNEL UNTOUCHED: the agent-bridge kernel remains at `6564d70`. This is a
+control-plane (symbolic/declaration) seal; the verified technical layer is not
+modified.
+
+### Installed capability
+Pass 21A.3 establishes the FIRST OURSELF VERB-SET LAYER: a pure, deterministic,
+fail-closed route classifier that maps validated SELF language into a DRY-RUN
+route plan. It consumes the sealed SIA registry (noun-set) and can never
+contradict it. It never dispatches, executes, mutates, calls the kernel, writes
+AECHO, writes the ledger, or creates an endpoint.
+
+- `router/route-classifier.js` declares a 13-route taxonomy (per
+  doctrine/21A-MOUTH-ROUTER-SPEC.md §6) whose allowed_sias are DERIVED from the
+  registry, so the verb-set is automatically consistent with the noun-set.
+- classifySelfCommand(input) returns a plan: route, sia, execution_class,
+  mutation, requires_approval, proof_required, reason, status (planned|discarded).
+- Fail-closed: unknown / empty / unsafe (publish/push/deploy/secret/.env) and any
+  unmatched input resolve to `discard` — never a guessed route.
+- Laws enforced + tested: cognition routes use execution_class null;
+  project-mutation maps only to ClaudeCodeSELF (high approval + before/after
+  proof); mutating routes require approval and map only to mutating SIAs;
+  reverse_engineer → class reverse_engineer / mutation false / approval true;
+  output carries NO kernel dispatch descriptor.
+- Exports: ROUTE_TAXONOMY, ROUTE_IDS, classifySelfCommand, getRoute, listRoutes,
+  assertValidRouteTaxonomy, isMutatingRoute, routeRequiresApproval,
+  getAllowedSiasForRoute.
+
+### Verification (on main after the fast-forward)
+- npm --prefix router test on main: 45/45 pass, 0 fail (19 registry + 26 classifier).
+- node --check clean on router/route-classifier.js and its test.
+- Changed files (44aaa60..2613e6a): router/route-classifier.js ·
+  router/test/route-classifier.test.js — 2 files.
+- command-mouth runtime UNCHANGED. agent-bridge kernel UNCHANGED (`6564d70`).
+- No AEPACKET generator created. No API endpoint created. No CLI mouth created.
+  No Bubble implementation. No OURSELF doctrine file modified.
+- Source-safety (tested): no shell/child_process/spawn/exec, no network, no
+  file-write primitives; no import of the kernel or command-mouth; no AECHO/ledger
+  writes.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+DOCTRINE NOTE: 21A.3 seals the first OURSELF verb-set layer. 21A.4 (AEPACKET
+generator) will consume the noun-set and verb-set to build the first sentence
+layer.
+
+DESIGNATION: Route Classifier Baseline = 2613e6a — the named reference point onto
+which Pass 21A.4 (AEPACKET generator) will attach.
