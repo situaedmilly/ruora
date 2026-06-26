@@ -536,3 +536,57 @@ alter it.
 
 DESIGNATION: Reverse-Engineer Analysis Baseline = 6564d70 — the named reference
 point onto which Pass 21A (OURSELF Mouth / SIA Router) will attach.
+
+## CONTROL-PLANE PASS 21A.2 — FROZEN SIA REGISTRY SCHEMA
+
+Timestamp: Fri Jun 26 15:35:00 EDT 2026
+Correction type: APPEND-ONLY. No prior entry rewritten.
+
+Repo: ~/RUORA/systems/ourself-agent-bridge (OURSELF control plane — distinct from
+the agent-bridge kernel). Pass 21A.2 was committed on branch
+`pass-21a2-sia-registry-schema` at `44aaa60`, and control-plane main advanced
+`8bfebbb` → `44aaa60` by PURE FAST-FORWARD (no merge commit). A dry-run ancestry
+check confirmed the fast-forward before the merge. Parent spec: `8bfebbb`
+(doctrine: 21A Mouth/SIA Router spec, child of AECHO seal `10c5342`).
+
+KERNEL UNTOUCHED: the agent-bridge kernel remains at `6564d70`. This is a
+control-plane (symbolic/declaration) seal; the verified technical layer is not
+modified.
+
+### Installed capability
+Pass 21A.2 establishes the FIRST OURSELF NOUN-SET: the frozen SELFIntelligence
+Agent (SIA) registry — the recognized actor set the Router will route against.
+Data + validation only; it never executes, routes, or mutates.
+
+- New self-contained `router/` subsystem (sibling of `command-mouth/`),
+  zero-dependency ESM, `node --test`.
+- `router/sia-registry.js` declares seven SIAs — ChatSELF, ClaudeCodeSELF,
+  CodexSELF, BubbleSELF, LedgerSELF, ObserverSELF, ReviewerSELF — each with:
+  allowed_routes, forbidden_routes, can_mutate, approval_required,
+  records_touched, handoff_rules, proof_required, notes.
+- Invariants (validated at import, deep-frozen at runtime): unique ids; non-empty
+  role; allowed/forbidden never overlap; no non-mutating SIA may hold a mutating
+  route; every mutating SIA requires approval; ≥1 proof requirement each;
+  unknown SIA and unknown route lookups FAIL CLOSED.
+- Exports: SIA_REGISTRY, SIA_IDS, getSia, listSias, assertValidSiaRegistry,
+  canSiaUseRoute, canSiaMutate, getSiasForRoute (+ KNOWN_ROUTES, MUTATING_ROUTES).
+
+### Verification (on main after the fast-forward)
+- npm --prefix router test on main: 19/19 pass, 0 fail.
+- node --check clean on router/sia-registry.js and router/test/sia-registry.test.js.
+- Changed files (8bfebbb..44aaa60): router/package.json · router/sia-registry.js ·
+  router/test/sia-registry.test.js — 3 files.
+- command-mouth runtime UNCHANGED. agent-bridge kernel UNCHANGED (`6564d70`).
+- No route classifier created. No AEPACKET generator created. No API endpoint
+  created. No Bubble implementation. No OURSELF doctrine file modified.
+- Source-safety (tested): no shell/child_process/spawn/exec, no network, no
+  file-write primitives; no import of the kernel or command-mouth; no AECHO/ledger
+  writes.
+- History shape: linear, no merge commit. Final git status: clean.
+- Zero git remotes. Nothing pushed. Nothing published. No deploy.
+
+DOCTRINE NOTE: 21A.2 seals the first OURSELF noun-set. 21A.3 (route classifier —
+the first verb-set layer) will consume this registry as its recognized actor set.
+
+DESIGNATION: SIA Registry Baseline = 44aaa60 — the named reference point onto
+which Pass 21A.3 (route classifier) will attach.
