@@ -873,3 +873,66 @@ five-brick 21A stack (doctrine capture, not Bubble).
 
 DESIGNATION: Pass 19 COMPLETE — localStorage Migration Bridge fully proven.
 Next authorized gate: manual browser proof obligations complete ✓ — Pass 20 may now proceed through a named pass.
+
+---
+
+## AXIOM Trial Engine v1 — Pass 20 Slice 1 Remote Verification Proof
+
+**Date:** 2026-06-29
+**Project:** axiom-trial-engine-v1
+**Commit:** d4c7404 — Install Pass 20 Slice 1 — evidence artifact schema + storage genesis
+**Branch:** main
+**Supabase project:** wqymfmsljapxyooshhfs
+
+### Migration
+
+- File: `supabase/migrations/20260629072107_evidence_artifact_genesis.sql`
+- Remote migration `20260629072107`: APPLIED via `supabase db push`
+- Migration history drift resolved: `20260625000735` + `20260625003540` marked reverted (Supabase platform governance additions, not AXIOM application schema)
+- Migration list after push: Local + Remote in sync for both `20260607005319` and `20260629072107`
+
+### Remote Verification (read-only queries against wqymfmsljapxyooshhfs)
+
+| Object | Status |
+|--------|--------|
+| `public.evidence_artifacts` table | LIVE — 15 columns confirmed |
+| RLS enabled on `evidence_artifacts` | YES |
+| `evidence_artifacts: owner select` policy | LIVE — `auth.uid() = user_id` |
+| `evidence_artifacts: owner insert` policy | LIVE — `auth.uid() = user_id` |
+| UPDATE policy | NOT created (append-only) |
+| DELETE policy | NOT created (append-only) |
+| `evidence-artifacts` Storage bucket | LIVE — private, `file_size_limit: 10485760` (10 MiB) |
+| Bucket MIME types | 9 types: `image/jpeg`, `image/png`, `image/webp`, `image/gif`, `application/pdf`, `video/mp4`, `audio/mpeg`, `audio/wav`, `text/plain` |
+| `evidence-artifacts: owner upload` Storage policy | LIVE — INSERT, path-scoped to `auth.uid()` |
+| `evidence-artifacts: owner read` Storage policy | LIVE — SELECT, path-scoped to `auth.uid()` |
+| Storage UPDATE policy | NOT created |
+| Storage DELETE policy | NOT created |
+
+### Storage Path Law (sealed)
+
+```
+{user_id}/{trial_id}/{linked_type}/{linked_id}/{uuid}.{ext}
+```
+
+First path segment enforced as `auth.uid()` by Storage policy — cross-user access blocked by design.
+
+### What Is NOT Yet Implemented
+
+- Frontend upload UI (`EvidenceArtifactUploader`) — NOT YET
+- Frontend list UI (`EvidenceArtifactList`) — NOT YET
+- `src/lib/artifacts.js` — NOT YET
+- `audit_events` write for `evidence_artifact_created` — NOT YET (Slice 2)
+- `.claude/` governance — separate pass, still pending
+
+### Lint / Build
+
+- Lint: clean
+- Build: clean (142 modules, `dist/` produced)
+
+### Full Pass 20 Chain
+
+- Pass 20 Slice 1 — `d4c7404` — evidence artifact schema + storage genesis (code-sealed + remote-verified)
+- Pass 20 Slice 2 — frontend upload + list — GATE CLOSED until authorized
+
+DESIGNATION: Pass 20 Slice 1 COMPLETE — Evidence Artifact Schema + Storage Genesis remote-verified and locally sealed.
+Next authorized gate: Pass 20 Slice 2 — frontend upload implementation.
