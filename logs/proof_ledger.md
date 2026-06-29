@@ -824,3 +824,52 @@ deterministic. No execution layer exists.
 DESIGNATION: CLI Mouth Baseline = 17e98b2 — the named reference point closing the
 21A arc. Next clean gate: capture AE Grammar Law doctrine from the now-proven
 five-brick 21A stack (doctrine capture, not Bubble).
+
+---
+
+## AXIOM Trial Engine v1 — Pass 19 Slice 2 Runtime Proof
+
+**Date:** 2026-06-29
+**Project:** axiom-trial-engine-v1
+**Commit:** 3ec44c7 — Install Pass 19 Slice 2 — localStorage migration sync
+**Branch:** main
+
+### Code Seal
+- 7 files committed: `.gitignore` · `CLAUDE.md` · `README.md` ·
+  `src/components/MigrationPrompt.jsx` · `src/lib/migration.js` ·
+  `src/lib/migrationSync.js` · `src/lib/trialSync.js`
+- `.claude/` excluded — separate governance pass pending
+- Lint: clean. Build: clean (142 modules). All 5 routes 200 OK.
+
+### Runtime Proof (manual browser verification by Philosopher Milly)
+
+**First import:**
+- Records inserted: 2 (1 distinction, 1 event, 0 reviews)
+- Audit event written: YES — `audit_events` row count = 1
+- localStorage SELF keys: PRESERVED (not deleted, not modified)
+
+**Second import (idempotency proof):**
+- Records inserted: 0
+- 1 distinction already in ledger · 1 event already in ledger · 0 reviews
+- Audit event: NOT written (audit_events count unchanged = 1)
+- localStorage SELF keys: PRESERVED
+
+### Proof Assertions
+
+| Assertion | Result |
+|-----------|--------|
+| dedup-before-insert law | PROVEN |
+| second run inserts zero | PROVEN |
+| audit_events at exactly 1 after two runs | PROVEN — screenshot witnessed |
+| localStorage preservation | PROVEN |
+| service_role unused | PROVEN (RLS-bound writes only) |
+| no background auto-sync | PROVEN |
+| explicit authenticated action only | PROVEN |
+
+### Full Pass 19 Chain
+
+- Pass 19 Slice 1 — `0b614f8` — localStorage migration detection + consent (code-sealed)
+- Pass 19 Slice 2 — `3ec44c7` — localStorage migration sync (code-sealed + runtime-proven)
+
+DESIGNATION: Pass 19 COMPLETE — localStorage Migration Bridge fully proven.
+Next authorized gate: manual browser proof obligations complete ✓ — Pass 20 may now proceed through a named pass.
