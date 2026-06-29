@@ -232,21 +232,21 @@ The 90-day path expands only what proves useful:
 - [x] `PROOF-006` — First response check recorded
   - Proof rule: MASTER_BLUEPRINT records Response Check 01 metrics.
   - Proof status: SATISFIED
-- [ ] `PROFILE-001` — LinkedIn headline finalized
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
-- [ ] `PROFILE-002` — LinkedIn About section finalized
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
-- [ ] `PROFILE-003` — RUORA experience section added
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
-- [ ] `PROFILE-004` — Project bios added
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
-- [ ] `PROFILE-005` — Featured artifact added
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
+- [x] `PROFILE-001` — LinkedIn headline finalized
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
+- [x] `PROFILE-002` — LinkedIn About section finalized
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
+- [x] `PROFILE-003` — RUORA experience section added
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
+- [x] `PROFILE-004` — Project bios added
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
+- [x] `PROFILE-005` — Featured artifact added
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
 - [ ] `OFFER-001` — First RUORA offer defined
   - Proof rule: Manual proof required.
   - Proof status: MANUAL_REQUIRED
@@ -281,6 +281,16 @@ The updater must never auto-check manual-proof tasks.
 Manual tasks require Human_TURN proof and a later authorized edit.
 
 ## 16. Manual-only tasks
+
+## Manual Human_TURN Proof Confirmations
+
+<!-- MANUAL_PROOF:START -->
+- `PROFILE-001` — CONFIRMED — Human_TURN declared LinkedIn headline finalized.
+- `PROFILE-002` — CONFIRMED — Human_TURN declared LinkedIn About section finalized.
+- `PROFILE-003` — CONFIRMED — Human_TURN declared RUORA experience section added.
+- `PROFILE-004` — CONFIRMED — Human_TURN declared project bios added.
+- `PROFILE-005` — CONFIRMED — Human_TURN declared Featured artifact added.
+<!-- MANUAL_PROOF:END -->
 
 Manual-only tasks:
 
