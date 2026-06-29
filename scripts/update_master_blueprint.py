@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 import re
 
@@ -109,6 +109,7 @@ def replace_status_block(
     evidence_total: int,
 ) -> str:
     completion = 0.0 if evidence_total == 0 else (evidence_complete / evidence_total) * 100
+    today_label = date.today().isoformat()
     replacement = "\n".join(
         [
             START,
@@ -118,7 +119,7 @@ def replace_status_block(
             f"Evidence-backed tasks complete: {evidence_complete}",
             f"Evidence-backed task total: {evidence_total}",
             f"Evidence-backed completion rate: {completion:.1f}%",
-            f"Last blueprint update: {datetime.now().isoformat(timespec='seconds')}",
+            f"Last blueprint update: {today_label}",
             END,
         ]
     )
@@ -132,9 +133,13 @@ def main() -> None:
     target_date = date.fromisoformat(launch_target)
     days_until = (target_date - date.today()).days
 
-    text, evidence_complete, evidence_total, manual_unchanged = update_tasks(text)
-    text = replace_status_block(text, launch_target, days_until, evidence_complete, evidence_total)
-    BLUEPRINT.write_text(text, encoding="utf-8")
+    updated_text, evidence_complete, evidence_total, manual_unchanged = update_tasks(text)
+    updated_text = replace_status_block(
+        updated_text, launch_target, days_until, evidence_complete, evidence_total
+    )
+    changed = updated_text != text
+    if changed:
+        BLUEPRINT.write_text(updated_text, encoding="utf-8")
 
     completion = 0.0 if evidence_total == 0 else (evidence_complete / evidence_total) * 100
     print(f"Launch target: {launch_target}")
@@ -143,6 +148,7 @@ def main() -> None:
     print(f"Evidence-backed total count: {evidence_total}")
     print(f"Completion percentage: {completion:.1f}%")
     print(f"Manual tasks unchanged count: {manual_unchanged}")
+    print(f"Blueprint changed: {'yes' if changed else 'no'}")
 
 
 if __name__ == "__main__":

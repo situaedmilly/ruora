@@ -56,7 +56,7 @@ Days until launch: 30
 Evidence-backed tasks complete: 6
 Evidence-backed task total: 6
 Evidence-backed completion rate: 100.0%
-Last blueprint update: 2026-06-29T14:52:51
+Last blueprint update: 2026-06-29
 <!-- LAUNCH_STATUS:END -->
 
 Only `scripts/update_master_blueprint.py` should replace the managed block above.
