@@ -250,9 +250,9 @@ The 90-day path expands only what proves useful:
 - [x] `OFFER-001` — First RUORA offer defined
   - Proof rule: Manual Human_TURN confirmation required.
   - Proof status: HUMAN_CONFIRMED
-- [ ] `SITE-001` — RUORA landing page copy drafted
+- [x] `SITE-001` — RUORA landing page copy drafted
   - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
+  - Proof status: HUMAN_CONFIRMED
 - [ ] `CHAMBER-002` — 14-day chamber schema authorized
   - Proof rule: Manual proof required.
   - Proof status: MANUAL_REQUIRED
@@ -291,6 +291,7 @@ Manual tasks require Human_TURN proof and a later authorized edit.
 - `PROFILE-004` — CONFIRMED — Human_TURN declared project bios added.
 - `PROFILE-005` — CONFIRMED — Human_TURN declared Featured artifact added.
 - `OFFER-001` — CONFIRMED — Human_TURN declared first RUORA offer defined as Reality Architecture Diagnostic.
+- `SITE-001` — CONFIRMED — Human_TURN declared RUOЯA.info Landing Realm v0.1 copy final.
 <!-- MANUAL_PROOF:END -->
 
 Manual-only tasks:
@@ -615,6 +616,243 @@ Current boundary:
 - Proof status is HUMAN_CONFIRMED
 - no price is final
 - no public offer launch is claimed until the next launch gate authorizes publication
+
+## RUOЯA.info Landing Realm v0.1
+
+### Page identity
+
+- Site domain: ruora.info
+- Display mark: RUOЯA
+- Plain-text name: RUORA
+- Version: Landing Realm v0.1
+- Launch state: Public Surface Ignition
+- Offer: Reality Architecture Diagnostic
+- Deliverable: Reality Architecture Map v1
+
+The display mark `RUOЯA` is visual-facing brand expression only. The repository, domain, plain-text name, commands, scripts, proof language, filenames, and code identifiers remain `RUORA` and `ruora.info`.
+
+### 1. Above-the-fold realm
+
+The first viewport should feel like entering a systems house, not landing on a normal agency page.
+
+Public copy:
+
+```text
+RUOЯA
+AI-native reality architecture for founders who need proof, not performance.
+
+Turn scattered vision into a proof-backed operating map.
+
+RUOЯA helps founders, creators, operators, and small teams convert fragmented projects, invisible patterns, stalled execution, and raw doctrine into a launchable architecture: what is real, what is missing, what must be built next, and what should not be touched yet.
+
+[Request a Reality Architecture Diagnostic]
+[View the proof chain]
+```
+
+### 2. Hero eyebrow
+
+AI-native reality architecture for founders who need proof, not performance.
+
+### 3. Hero headline
+
+Turn scattered vision into a proof-backed operating map.
+
+### 4. Hero subheadline
+
+RUOЯA helps founders, creators, operators, and small teams convert fragmented projects, invisible patterns, stalled execution, and raw doctrine into a launchable architecture: what is real, what is missing, what must be built next, and what should not be touched yet.
+
+### 5. Primary call-to-action
+
+Request a Reality Architecture Diagnostic
+
+### 6. Secondary call-to-action
+
+View the proof chain
+
+### 7. The fracture / problem section
+
+Most founders do not suffer from a lack of ideas.
+
+They suffer from ungoverned complexity.
+
+There are too many open loops, too many platforms, too many unfinished artifacts, too many possible directions, and no authoritative map separating signal from performance.
+
+The result is expensive drift:
+
+- public identity without proof architecture
+- strong vision with weak launch sequence
+- tools before doctrine
+- automation before evidence
+- design before decision clarity
+- execution scattered across too many lanes
+- projects that feel alive internally but illegible externally
+
+RUOЯA begins where the pattern becomes visible.
+
+### 8. What RUOЯA is
+
+RUOЯA is not a content agency, productivity coach, software shop, or motivation brand. RUOЯA is a reality architecture house: a system for turning vision into doctrine, doctrine into proof, proof into launch sequence, and launch sequence into executable gates.
+
+RUORA works across identity, offers, platforms, proof surfaces, no-code systems, AI-native workflows, and launch architecture. The work is not to make scattered material look better. The work is to reveal what is structurally true enough to build from.
+
+### 9. The method
+
+The method is proof-led architecture.
+
+RUORA reads the current state, names the active lanes, identifies proof gaps, freezes premature implementation, and defines the next authorized gate.
+
+Method sequence:
+
+```text
+Vision
+→ doctrine
+→ proof
+→ architecture
+→ launch sequence
+→ executable gate
+```
+
+If a lane has no proof, it remains hypothesis.
+
+If a claim has no artifact, it remains unsealed.
+
+If implementation would create drift, it is blocked until the architecture is clean.
+
+### 10. Reality Architecture Diagnostic section
+
+Reality Architecture Diagnostic is the first public RUORA offer.
+
+Promise:
+
+In one focused diagnostic, RUORA converts scattered founder vision into a proof-backed operating map: what is real, what is missing, what must be built next, and what should not be touched yet.
+
+This diagnostic is for founders, creators, operators, and small teams who need a governed map before they invest more energy into websites, automations, launches, offers, or software builds.
+
+### 11. Reality Architecture Map v1 section
+
+The diagnostic delivers Reality Architecture Map v1.
+
+Reality Architecture Map v1 includes:
+
+- Current state summary
+- Doctrine / identity layer
+- Active projects and lanes
+- Critical path
+- Proof gaps
+- Blocked lanes
+- 7-day action sequence
+- 30-day build sequence
+- Risk register
+- Next authorized gate
+
+The map is designed to make the next move harder to avoid and premature moves easier to refuse.
+
+### 12. Proof-chain section
+
+RUORA does not ask the public to believe vague claims.
+
+Current proof chain:
+
+- UREEL Realm Vision doctrine is sealed.
+- Remote Build-Node Control Plane doctrine is sealed.
+- Remote Worker Selection Matrix doctrine is sealed.
+- FREED SELF Reality Acquisition Chamber doctrine is sealed.
+- MASTER BLUEPRINT lifeline is operational.
+- LinkedIn profile foundation is Human_TURN confirmed.
+- Reality Architecture Diagnostic is Human_TURN confirmed.
+
+The repo remains proof body. Public posts are proof surfaces, not proof body.
+
+### 13. Who this is for
+
+This is for:
+
+- founders with a serious vision but scattered execution
+- creators whose body of work is stronger than their public architecture
+- operators carrying too many systems without a clean launch path
+- small teams with active projects but weak proof sequencing
+- builders who need to know what to build next and what to leave untouched
+- people who want decision clarity before implementation
+
+### 14. Who this is not for
+
+This is not for:
+
+- people looking for instant transformation
+- teams seeking guaranteed revenue claims
+- anyone seeking psychological treatment
+- anyone seeking investment advice
+- founders who want automation before evidence
+- teams who want implementation without proof review
+- brands that only want aesthetic polish
+- people unwilling to distinguish public performance from operational proof
+
+### 15. Founder / philosophy section
+
+RUORA is built from a simple operating conviction:
+
+Vision is not enough.
+
+Language must become command.
+
+Command must become system state.
+
+System state must become observable proof.
+
+Proof must become the next authorized gate.
+
+The founder's role is not to perform certainty. The founder's role is to make reality legible enough that the correct next action can be commanded.
+
+### 16. Public proof boundary
+
+Public proof boundary:
+
+- repo remains proof body
+- public posts are proof surfaces, not proof body
+- response signals are not proof of doctrine adoption
+- current state is Public Surface Ignition
+- no full product/service launch claim yet
+- no deployment claim yet
+- no Unreal implementation claim yet
+
+RUORA does not promise instant transformation, guaranteed revenue, psychological treatment, investment outcomes, or automatic execution. RUORA provides architecture, distinction, proof structure, launch sequencing, and decision clarity.
+
+### 17. First intake questions
+
+First intake questions:
+
+1. What reality are you trying to build?
+2. What projects, platforms, offers, or systems are currently active?
+3. Where is execution stalling?
+4. What has already been built or proven?
+5. What keeps repeating even when you try to move differently?
+6. What decision feels expensive because the architecture is unclear?
+7. What should not be touched yet?
+8. What would count as proof that the diagnostic worked?
+
+### 18. Final CTA
+
+Request a Reality Architecture Diagnostic.
+
+Bring the scattered notes, unfinished systems, public profile, offer fragments, stalled builds, open loops, and decisions you keep circling.
+
+Leave with Reality Architecture Map v1: a proof-backed operating map for what is real, what is missing, what must be built next, and what should not be touched yet.
+
+### 19. Footer doctrine line
+
+RUOЯA turns vision into doctrine, doctrine into proof, and proof into the next executable gate.
+
+### SITE-001 review boundary
+
+`SITE-001` is complete because Human_TURN declared RUOЯA.info Landing Realm v0.1 copy final enough for public use.
+
+Current boundary:
+
+- checkbox is checked
+- Proof status is HUMAN_CONFIRMED
+- no landing page build is authorized
+- no deployment is authorized
+- no public site launch is claimed
 
 ## 28. Launch readiness scorecard
 
