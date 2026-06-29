@@ -20,3 +20,8 @@ projects/
 backups/
 systems/
 quarantine/
+
+# Local secrets
+.env
+.env.*
+!.env.example
