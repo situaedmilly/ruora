@@ -247,9 +247,9 @@ The 90-day path expands only what proves useful:
 - [x] `PROFILE-005` — Featured artifact added
   - Proof rule: Manual Human_TURN confirmation required.
   - Proof status: HUMAN_CONFIRMED
-- [ ] `OFFER-001` — First RUORA offer defined
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
+- [x] `OFFER-001` — First RUORA offer defined
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
 - [ ] `SITE-001` — RUORA landing page copy drafted
   - Proof rule: Manual proof required.
   - Proof status: MANUAL_REQUIRED
@@ -290,6 +290,7 @@ Manual tasks require Human_TURN proof and a later authorized edit.
 - `PROFILE-003` — CONFIRMED — Human_TURN declared RUORA experience section added.
 - `PROFILE-004` — CONFIRMED — Human_TURN declared project bios added.
 - `PROFILE-005` — CONFIRMED — Human_TURN declared Featured artifact added.
+- `OFFER-001` — CONFIRMED — Human_TURN declared first RUORA offer defined as Reality Architecture Diagnostic.
 <!-- MANUAL_PROOF:END -->
 
 Manual-only tasks:
@@ -469,24 +470,151 @@ The blueprint may reference the boundary but may not modify child repos.
 
 ## 27. First offer / client pathway
 
-First offer is not sealed.
+First offer is defined by Human_TURN. Pricing remains pending Human_TURN decision.
 
-Current likely offer direction:
+## First RUORA Offer — Reality Architecture Diagnostic
 
-- doctrine-to-platform clarity session
-- proof-led launch blueprint
-- founder public surface ignition
-- manual SELF reality chamber facilitation
-- premium no-code/code platform architecture
+### Offer name
 
-Offer must define:
+Reality Architecture Diagnostic
 
-- who it serves
-- what changes
-- what proof is produced
-- what is not included
-- price or next-action path
-- intake boundary
+### One-sentence promise
+
+In one focused diagnostic, RUORA converts scattered founder vision into a proof-backed operating map: what is real, what is missing, what must be built next, and what should not be touched yet.
+
+### Who it is for
+
+This offer is for founders, creators, operators, and small teams who have meaningful vision but scattered execution, unclear architecture, competing project lanes, stalled launch momentum, or invisible operating patterns that keep pulling the build out of focus.
+
+It is especially suited for people who already have raw material: notes, offers, prototypes, tools, public profiles, rituals, dashboards, automations, or doctrine fragments that need to become an executable launch path.
+
+### Who it is not for
+
+This offer is not for clients seeking generic AI automation, instant branding, passive motivation, guaranteed revenue, therapy, investment advice, done-for-you product launch, or a vendor who will execute without requiring proof discipline.
+
+It is not for teams unwilling to distinguish desire from evidence.
+
+### Core pain
+
+The core pain is not lack of ideas.
+
+The core pain is ungoverned complexity: too many open loops, unclear priority, invisible assumptions, mixed lanes, weak proof surfaces, and no authoritative map showing what should be built, paused, refused, or sealed next.
+
+### What RUORA diagnoses
+
+RUORA diagnoses:
+
+- current reality-state
+- doctrine / identity layer
+- active projects and lanes
+- launch posture
+- public proof surface
+- offer clarity
+- system gaps
+- proof gaps
+- blocked lanes
+- decision gates
+- technical and no-code architecture pressure
+- places where implementation is premature
+
+### What the client receives
+
+The client receives a clear architecture readout and next-action sequence that separates what is real, what is missing, what is blocked, and what must happen next.
+
+The diagnostic produces a launch-facing map, not a vague strategy call.
+
+### Proof artifact delivered
+
+The first deliverable is Reality Architecture Map v1.
+
+Reality Architecture Map v1 includes:
+
+- Current state summary
+- Doctrine / identity layer
+- Active projects and lanes
+- Critical path
+- Proof gaps
+- Blocked lanes
+- 7-day action sequence
+- 30-day build sequence
+- Risk register
+- Next authorized gate
+
+### Intake questions
+
+Initial intake should ask:
+
+- What are you trying to bring into reality?
+- What is already built, written, posted, sold, tested, or committed?
+- Which projects or lanes are active right now?
+- Where is execution stalled?
+- What decision keeps repeating without closure?
+- What proof artifacts already exist?
+- What public surface currently represents the work?
+- What must not be touched yet?
+- What would make the next 7 days obviously aligned?
+- What outcome would make the diagnostic useful even if no implementation begins?
+
+### Boundary of responsible claims
+
+RUORA does not promise instant transformation, guaranteed revenue, psychological treatment, investment outcomes, or automatic execution. RUORA provides architecture, distinction, proof structure, launch sequencing, and decision clarity.
+
+### What is not included
+
+This diagnostic does not include:
+
+- Bubble schema creation
+- frontend build
+- backend build
+- Unreal implementation
+- deployment
+- paid ad strategy
+- guaranteed client acquisition
+- therapy or diagnosis
+- financial or investment advice
+- passive sensing
+- automation setup
+- ongoing retainer work unless separately authorized
+
+### Upgrade path
+
+Possible upgrade paths:
+
+- manual FREED SELF chamber facilitation
+- launch blueprint implementation support
+- Bubble/no-code architecture pass
+- public proof surface buildout
+- offer and intake system buildout
+- retained architecture partner relationship
+- UREEL / Unreal topology planning after worker decision
+
+### Launch version
+
+Launch version: v0.1 manual diagnostic.
+
+Delivery should remain human-led, proof-first, and bounded until repeatable evidence shows which parts deserve productization.
+
+### Pricing boundary
+
+Pricing is pending Human_TURN decision.
+
+Possible pricing lanes only:
+
+- free founding diagnostic
+- low-ticket paid diagnostic
+- premium founder architecture session
+- retained architecture partner
+
+### Manual proof completion
+
+`OFFER-001` is complete because Human_TURN declared the Reality Architecture Diagnostic final enough to define RUORA's first public offer.
+
+Current boundary:
+
+- checkbox is checked
+- Proof status is HUMAN_CONFIRMED
+- no price is final
+- no public offer launch is claimed until the next launch gate authorizes publication
 
 ## 28. Launch readiness scorecard
 
