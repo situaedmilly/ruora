@@ -52,11 +52,11 @@ This target may be changed later by editing the launch target line inside the ma
 <!-- LAUNCH_STATUS:START -->
 Launch target: 2026-07-29
 Launch target status: Working launch target — pending Human_TURN ratification
-Days until launch: 30
+Days until launch: 29
 Evidence-backed tasks complete: 6
 Evidence-backed task total: 6
 Evidence-backed completion rate: 100.0%
-Last blueprint update: 2026-06-29
+Last blueprint update: 2026-06-30
 <!-- LAUNCH_STATUS:END -->
 
 Only `scripts/update_master_blueprint.py` should replace the managed block above.
