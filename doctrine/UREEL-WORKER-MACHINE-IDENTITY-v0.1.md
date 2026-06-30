@@ -37,7 +37,26 @@ These seals establish the command boundary:
 - implementation hold preserved
 - worker command identity now captured
 
-## 4. Machine Identity Card
+## 4. Current inspection surface
+
+The current inspected machine is the Local Mac command console, not the UREEL worker.
+
+Verified local facts:
+
+- Machine type: Mac mini
+- Model identifier: Mac16,10
+- Chip: Apple M4
+- Total cores: 10
+- Memory: 16 GB
+- Operating system: macOS 26.5
+- Root filesystem size: 228 Gi
+- Root filesystem available: 37 Gi
+
+These facts describe the command console used for governance and proof review.
+
+They do not identify the UREEL worker.
+
+## 5. Machine Identity Card
 
 - Command name: `UREEL`
 - Machine type: PENDING_IDENTIFICATION
@@ -60,7 +79,7 @@ Unknown values remain unknown until Human_TURN identifies the actual worker mach
 
 No pending field may be treated as resolved by assumption.
 
-## 5. Selected candidate topology
+## 6. Selected candidate topology
 
 Selected topology from UNREAL-001:
 
@@ -77,7 +96,7 @@ Current interpretation:
 
 UREEL must be a real workstation-class or remote workstation-class machine capable of carrying Unreal storage, editor, GPU/render, compile, packaging, and simulation pressure after explicit authorization.
 
-## 6. Local Mac command role
+## 7. Local Mac command role
 
 The Local Mac remains:
 
@@ -92,7 +111,7 @@ The Local Mac is not the render factory.
 
 The Local Mac does not become UREEL merely because it can issue commands.
 
-## 7. Worker pressure role
+## 8. Worker pressure role
 
 UREEL may eventually carry:
 
@@ -106,9 +125,11 @@ UREEL may eventually carry:
 
 This pressure role remains dormant until UNREAL-002 is explicitly authorized against the identified UREEL machine.
 
-## 8. No-authorization boundary
+## 9. No-authorization boundary
 
 Naming UREEL does not authorize Unreal installation, project creation, remote access, cloud provisioning, hardware purchase, UWebBrowser implementation, worker execution, secret transfer, Git write access, deployment, Pixel Streaming, or public release.
+
+Machine facts do not authorize implementation.
 
 This file names the worker identity only.
 
@@ -118,7 +139,7 @@ No worker setup begins from identity capture.
 
 No account, machine, storage, remote tool, credential, or Unreal path is changed by this document.
 
-## 9. Pre-implementation checklist
+## 10. Pre-implementation checklist
 
 Before any implementation incision, UREEL must have:
 
@@ -136,7 +157,7 @@ Before any implementation incision, UREEL must have:
 
 If any checklist item remains unresolved, UNREAL-002 remains blocked.
 
-## 10. UNREAL-002 relationship
+## 11. UNREAL-002 relationship
 
 UNREAL-002 remains incomplete and MANUAL_REQUIRED until Human_TURN explicitly authorizes the first minimal UREEL Unreal proof-chamber implementation incision against the identified UREEL machine.
 
@@ -144,7 +165,7 @@ The sealed authorization brief defines what the first incision may be.
 
 This identity document defines what the worker is called before that incision can be evaluated against a real machine.
 
-## 11. Secret boundary
+## 12. Secret boundary
 
 UREEL has no secrets access.
 
@@ -162,7 +183,7 @@ No browser projection may expose raw credentials.
 
 Any future secret access requires separate Human_TURN authorization and must not be inferred from worker identity.
 
-## 12. Git boundary
+## 13. Git boundary
 
 UREEL has no Git write access.
 
@@ -176,7 +197,7 @@ Future worker output must return to Local Mac / repo review as candidate evidenc
 
 Repo remains proof body.
 
-## 13. Remote access boundary
+## 14. Remote access boundary
 
 Remote access is NOT_AUTHORIZED.
 
@@ -186,7 +207,7 @@ Access method remains PENDING_IDENTIFICATION.
 
 Remote access may be considered only after Human_TURN identifies the worker machine and explicitly authorizes access setup.
 
-## 14. Install boundary
+## 15. Install boundary
 
 Unreal install location is NOT_AUTHORIZED.
 
@@ -198,7 +219,7 @@ No Unreal project shell is created by this document.
 
 No plugin, asset, package, project setting, UWebBrowser surface, or bridge placeholder is created by this document.
 
-## 15. Launch boundary
+## 16. Launch boundary
 
 - This is not product launch.
 - This is not public deployment.
