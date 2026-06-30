@@ -260,7 +260,7 @@ The 90-day path expands only what proves useful:
   - Proof rule: Manual Human_TURN confirmation required.
   - Proof status: HUMAN_CONFIRMED
 - [ ] `UNREAL-002` — Unreal implementation authorized
-  - Proof rule: Manual proof required; default blocked.
+  - Proof rule: Manual Human_TURN confirmation required.
   - Proof status: MANUAL_REQUIRED
 
 ## 15. Evidence-backed completion rules
@@ -547,6 +547,25 @@ UNREAL-001 selects the worker topology only. It does not authorize Unreal instal
 ### 10. Next gate: UNREAL-002
 
 UNREAL-002 remains blocked until Human_TURN separately authorizes Unreal implementation.
+
+## UNREAL-002 Brief Sealed / Implementation Hold
+
+- UNREAL-002 Implementation Authorization Brief is sealed at commit 3134de2.
+- Brief file: `doctrine/UNREAL-002-IMPLEMENTATION-AUTHORIZATION-BRIEF-v0.1.md`.
+- The brief defines the first controlled implementation incision.
+- UNREAL-002 itself remains incomplete.
+- UNREAL-002 remains MANUAL_REQUIRED.
+- No implementation is authorized yet.
+- No worker execution is authorized yet.
+- No Unreal installation is authorized yet.
+- No project files are authorized yet.
+- No remote access is authorized yet.
+- No UWebBrowser implementation is authorized yet.
+- No deployment is authorized yet.
+
+The brief is sealed; the build is not authorized.
+
+UNREAL-002 may be marked complete only after Human_TURN explicitly authorizes the first minimal UREEL Unreal proof-chamber implementation incision against an identified worker machine.
 
 ## 26. OURSELF Agent Bridge boundary
 
