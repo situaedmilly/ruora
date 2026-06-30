@@ -253,9 +253,9 @@ The 90-day path expands only what proves useful:
 - [x] `SITE-001` — RUORA landing page copy drafted
   - Proof rule: Manual proof required.
   - Proof status: HUMAN_CONFIRMED
-- [ ] `CHAMBER-002` — 14-day chamber schema authorized
+- [x] `CHAMBER-002` — 14-day chamber schema authorized
   - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
+  - Proof status: HUMAN_CONFIRMED
 - [ ] `UNREAL-001` — Unreal worker selected
   - Proof rule: Manual proof required.
   - Proof status: MANUAL_REQUIRED
@@ -292,6 +292,7 @@ Manual tasks require Human_TURN proof and a later authorized edit.
 - `PROFILE-005` — CONFIRMED — Human_TURN declared Featured artifact added.
 - `OFFER-001` — CONFIRMED — Human_TURN declared first RUORA offer defined as Reality Architecture Diagnostic.
 - `SITE-001` — CONFIRMED — Human_TURN declared RUOЯA.info Landing Realm v0.1 copy final.
+- `CHAMBER-002` — CONFIRMED — Human_TURN authorized FREED SELF 14-day chamber manual schema.
 <!-- MANUAL_PROOF:END -->
 
 Manual-only tasks:
@@ -371,6 +372,7 @@ Doctrine currently sealed:
 - Remote Build-Node Control Plane: `doctrine/OURSELF-REMOTE-BUILD-NODE-CONTROL-PLANE-v0.1.md`
 - Remote Worker Selection Matrix: `doctrine/REMOTE-WORKER-SELECTION-MATRIX-v0.1.md`
 - FREED SELF Reality Acquisition Chamber: `doctrine/FREED-SELF-REALITY-ACQUISITION-CHAMBER-v0.1.md`
+- FREED SELF 14-Day Chamber Manual Schema: `doctrine/FREED-SELF-14-DAY-CHAMBER-MANUAL-SCHEMA-v0.1.md`
 
 Companion doctrine:
 
@@ -438,12 +440,43 @@ Current status:
 
 - Doctrine captured and committed.
 - Manual chamber architecture exists.
-- No Bubble schema authorized.
+- Manual chamber schema authorized.
+- No Bubble schema implementation authorized.
 - No automation authorized.
 - No passive sensing authorized.
 - No diagnosis or psychological treatment claim authorized.
 
-Next valid move is a manual worksheet, command path, or report template, not schema.
+Next valid move is a manual worksheet, command path, report template, or Bubble schema proposal. None is implemented by this gate.
+
+## FREED SELF 14-Day Chamber Manual Schema v0.1
+
+`CHAMBER-002` authorizes the manual chamber schema that future implementation must obey.
+
+The authorized manual schema defines:
+
+- 14-day chamber fields
+- daily ritual templates
+- proof event structure
+- distinction event structure
+- transmutation event structure
+- reality event structure
+- audit event structure
+- manual scoring logic
+- output report structure
+- manual-first rules
+- implementation boundary
+
+Boundary:
+
+- this is schema authorization only
+- this is not Bubble schema mutation
+- this is not database schema
+- this is not frontend implementation
+- this is not backend implementation
+- this is not automation
+- this is not passive sensing
+- this is not diagnosis
+- this is not product launch
 
 ## 25. UREEL / Unreal topology
 
