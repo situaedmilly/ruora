@@ -256,9 +256,9 @@ The 90-day path expands only what proves useful:
 - [x] `CHAMBER-002` — 14-day chamber schema authorized
   - Proof rule: Manual proof required.
   - Proof status: HUMAN_CONFIRMED
-- [ ] `UNREAL-001` — Unreal worker selected
-  - Proof rule: Manual proof required.
-  - Proof status: MANUAL_REQUIRED
+- [x] `UNREAL-001` — Unreal worker selected
+  - Proof rule: Manual Human_TURN confirmation required.
+  - Proof status: HUMAN_CONFIRMED
 - [ ] `UNREAL-002` — Unreal implementation authorized
   - Proof rule: Manual proof required; default blocked.
   - Proof status: MANUAL_REQUIRED
@@ -293,6 +293,7 @@ Manual tasks require Human_TURN proof and a later authorized edit.
 - `OFFER-001` — CONFIRMED — Human_TURN declared first RUORA offer defined as Reality Architecture Diagnostic.
 - `SITE-001` — CONFIRMED — Human_TURN declared RUOЯA.info Landing Realm v0.1 copy final.
 - `CHAMBER-002` — CONFIRMED — Human_TURN authorized FREED SELF 14-day chamber manual schema.
+- `UNREAL-001` — CONFIRMED — Human_TURN selected the first Unreal worker topology as dedicated Windows workstation or Shadow/Parsec-style remote workstation, with Local Mac remaining command console.
 <!-- MANUAL_PROOF:END -->
 
 Manual-only tasks:
@@ -488,11 +489,64 @@ Remote worker selection is governed by sealed matrix doctrine.
 
 Current status:
 
+- Worker topology selected by Human_TURN.
 - No Unreal implementation authorized.
 - No Unreal project files authorized.
 - No cloud provisioning authorized.
 - No hardware purchase authorized.
 - UWebBrowser remains bridge only.
+
+## UNREAL-001 Worker Selection
+
+### 1. Selected topology
+
+UNREAL-001 selected topology: Dedicated Windows workstation or Shadow/Parsec-style remote workstation, with Local Mac remaining command console.
+
+### 2. Decision rationale
+
+The selected topology follows the sealed Remote Worker Selection Matrix: the Local Mac remains the command console while a real workstation-class worker carries Unreal pressure. A dedicated Windows workstation is the strongest first serious worker when ownership, compatibility, artifact custody, and long-term viability matter. A Shadow/Parsec-style remote workstation is the acceptable near-term alternate when access speed matters more than hardware ownership.
+
+### 3. Local Mac role
+
+The Local Mac remains command console.
+
+It may write doctrine, command bounded agents, review proof, run local blueprint updates, control Git, and decide whether worker output is accepted. It does not become the render factory.
+
+### 4. Worker machine role
+
+The worker machine carries Unreal storage, editor load, GPU/render pressure, compile pressure, packaging pressure, simulation pressure, and exploratory realm embodiment work after separate implementation authorization.
+
+Worker output remains candidate output until Human_TURN reviews and seals it.
+
+### 5. Why external SSD alone is insufficient
+
+External SSD storage may relieve local disk pressure, but it does not solve GPU, render, compile, thermal, simulation, editor, or packaging pressure. It may support storage hygiene, but it is not the worker strategy.
+
+### 6. Why cloud GPU / EC2 is deferred
+
+Cloud GPU and EC2-style workers remain later-stage options because they introduce cost governance, provisioning complexity, credential boundaries, artifact custody questions, remote access policy, and teardown discipline. They may become useful after the first worker pattern is proven.
+
+### 7. Rejected worker-class boundary
+
+The existing canonical rejection line in the current state remains governing and unchanged. UNREAL-001 restores no rejected worker class, helper, relay, fallback, edge node, bridge, or control appliance.
+
+### 8. What this decision authorizes
+
+This decision authorizes only the worker topology selection for future planning:
+
+- Local Mac as command console
+- dedicated Windows workstation as first preferred worker class
+- Shadow/Parsec-style remote workstation as acceptable near-term alternate
+- external SSD only as storage relief
+- cloud GPU / EC2 as deferred later-stage path
+
+### 9. What this decision does not authorize
+
+UNREAL-001 selects the worker topology only. It does not authorize Unreal installation, project creation, cloud provisioning, hardware purchase, deployment, Pixel Streaming, UWebBrowser implementation, remote Git access, secret transfer, or worker execution.
+
+### 10. Next gate: UNREAL-002
+
+UNREAL-002 remains blocked until Human_TURN separately authorizes Unreal implementation.
 
 ## 26. OURSELF Agent Bridge boundary
 
