@@ -1,0 +1,401 @@
+packet_id: UREEL-MACHINE-BODY-FACT-PACKET-0001
+packet_status: HUMAN_TURN_DRAFT_FACTS_SUPPLIED_REFERENCES_ONLY
+candidate_name: UREEL-OURSELFCLOUD-NODE-0
+candidate_source: HUMAN_TURN_SUPPLIED
+candidate_class: SOVEREIGN_WORKER_NODE_CANDIDATE
+prepared_by: HUMAN_TURN
+prepared_for: RUORA_CANDIDATE_INTAKE
+evaluation_status: NOT_EVALUATED
+unreal_002_status: MANUAL_REQUIRED
+implementation_status: NOT_AUTHORIZED
+reverse_engineered_candidate_thesis: >
+  UREEL-OURSELFCLOUD-NODE-0 is intended to be the sovereign candidate node where
+  OUR SELFSERVER provides the infrastructure body, OURSELFCLOUD provides the governed
+  evidence/storage layer, RUORA preserves proof references, and UREEL later receives
+  implementation only after evidence intake, candidate evaluation, and separate
+  Human_TURN authorization.
+existence_facts:
+  candidate_name:
+    value: UREEL-OURSELFCLOUD-NODE-0
+    source_type: HUMAN_TURN_ATTESTATION
+    source_name: Human_TURN command
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Named sovereign UREEL candidate node.
+  machine_identifier:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must identify the actual SELFSERVER body or provider node without exposing secrets.
+  machine_type:
+    value: SELFSERVER_OR_REMOTE_WORKSTATION_BODY_PENDING
+    source_type: HUMAN_TURN_ATTESTATION
+    source_name: Human_TURN architecture distinction
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Candidate body must be a real machine/server/workstation, not a concept.
+  ownership_or_rental_status:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required to determine sovereignty and rollback boundary.
+  local_or_remote:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must specify whether candidate body is local, remote, hosted, rented, or self-owned.
+  physical_or_provider_location:
+    value: REDACTED_OR_ABSTRACTED_LOCATION_REQUIRED
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Do not include full home address or unnecessary precise location.
+capability_facts:
+  operating_system:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT_OR_HUMAN_TURN
+    source_type: SYSTEM_REPORT_OR_HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Evaluation target prefers Windows 11 Pro or later for Unreal worker body.
+  gpu_class:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Evaluation requires discrete NVIDIA RTX-class GPU or equivalent.
+  gpu_vram_if_known:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Useful for Unreal capacity assessment.
+  ram_amount:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Evaluation target requires 32 GB minimum.
+  cpu_class:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Needed for candidate capacity record.
+  storage_capacity:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Evaluation target requires 1 TB NVMe minimum.
+  storage_type:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: NVMe preferred for Unreal workspace.
+  available_storage:
+    value: UNKNOWN_PENDING_SYSTEM_REPORT
+    source_type: SYSTEM_REPORT_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Needed before install/project planning.
+access_facts:
+  access_method:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must identify allowed access method without credentials.
+  account_owner:
+    value: HUMAN_TURN_OR_OURSELF_CONTROL_REQUIRED
+    source_type: HUMAN_TURN_ATTESTATION_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must confirm who governs the account or machine body.
+  authentication_boundary:
+    value: NO_SECRETS_IN_RUORA_NO_TOKENS_IN_PACKET
+    source_type: GOVERNANCE_POLICY
+    source_name: Sealed RUORA evidence boundary
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Packet may describe auth boundary, not store secrets.
+  remote_access_tool_if_any:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Examples could include remote desktop class tools, but do not infer actual tool.
+  who_can_access:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must define operator/inspector boundary.
+  access_revocation_path:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required before candidate can be considered safe.
+isolation_facts:
+  unreal_install_location_proposal:
+    value: UNKNOWN_PENDING_MACHINE_BODY_SELECTION
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must remain proposal only until UNREAL-002 authorization.
+  project_location_proposal:
+    value: UNKNOWN_PENDING_MACHINE_BODY_SELECTION
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must not create project path yet.
+  secrets_policy:
+    value: NO_PRODUCTION_SECRETS
+    source_type: GOVERNANCE_POLICY
+    source_name: Sealed RUORA / UREEL boundary
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: No tokens, passwords, API keys, deployment keys, or service-role keys.
+  git_policy:
+    value: NO_REMOTE_GIT_WRITE_WITHOUT_HUMAN_TURN
+    source_type: GOVERNANCE_POLICY
+    source_name: Sealed RUORA / UREEL boundary
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Candidate body cannot push or mutate remotes without authorization.
+  production_connection_policy:
+    value: NO_PRODUCTION_BACKEND_CONNECTION
+    source_type: GOVERNANCE_POLICY
+    source_name: Sealed RUORA / UREEL boundary
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Candidate must not connect to production backend during intake/evaluation.
+  bubble_connection_policy:
+    value: NO_BUBBLE_PRODUCTION_CONNECTION
+    source_type: GOVERNANCE_POLICY
+    source_name: Sealed RUORA / UREEL boundary
+    evidence_reference: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: No Bubble mutation or production connection.
+rollback_facts:
+  rollback_path_proposal:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required before implementation can be considered.
+  uninstall_path:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required if installed software is later authorized.
+  artifact_export_path:
+    value: OURSELFCLOUD_REFERENCE_REQUIRED
+    source_type: HUMAN_TURN_ARCHITECTURE
+    source_name: SELFSERVER / OURSELFCLOUD doctrine
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Export path should point to governed OURSELFCLOUD vault reference, not raw artifact in Git.
+  account_cancellation_path_if_rented:
+    value: UNKNOWN_IF_APPLICABLE
+    source_type: HUMAN_TURN_REQUIRED_IF_RENTED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required for rented/cloud/provider body.
+  data_deletion_path:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required for evidence and project cleanup.
+  cost_stop_path:
+    value: UNKNOWN_IF_COST_BEARING
+    source_type: HUMAN_TURN_REQUIRED_IF_RENTED_OR_PAID
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Required if candidate has recurring cost.
+cost_sovereignty_facts:
+  cost_status:
+    value: UNKNOWN_PENDING_HUMAN_TURN_SUPPLY
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must distinguish owned, free, rented, subscription, or paid cloud.
+  billing_boundary_if_rented:
+    value: UNKNOWN_IF_APPLICABLE
+    source_type: HUMAN_TURN_REQUIRED_IF_RENTED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Do not include payment data.
+  open_source_preference_checked:
+    value: REQUIRED_NOT_YET_CONFIRMED
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must confirm whether no-cost/open-source path was checked.
+  no_cost_first_checked:
+    value: REQUIRED_NOT_YET_CONFIRMED
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Must confirm no-cost-first search before paid exception.
+  self_owned_or_self_governed_status:
+    value: OURSELF_GOVERNANCE_INTENDED_NOT_PROVEN
+    source_type: HUMAN_TURN_ARCHITECTURE
+    source_name: SELFSERVER / OURSELFCLOUD doctrine
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Architecture intent is known; actual machine body governance remains unproven.
+  exception_needed:
+    value: UNKNOWN_PENDING_COST_AND_BODY_FACTS
+    source_type: HUMAN_TURN_REQUIRED
+    source_name:
+    evidence_reference: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    notes: Paid/rented/cloud exception cannot be inferred.
+evidence_references:
+  - artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    category: EXISTENCE
+    supports_packet_fields:
+      - candidate_name
+      - machine_identifier
+      - machine_type
+      - ownership_or_rental_status
+      - local_or_remote
+      - physical_or_provider_location
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+  - artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    category: CAPABILITY
+    supports_packet_fields:
+      - operating_system
+      - gpu_class
+      - gpu_vram_if_known
+      - ram_amount
+      - cpu_class
+      - storage_capacity
+      - storage_type
+      - available_storage
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+  - artifact_id: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    category: ACCESS
+    supports_packet_fields:
+      - access_method
+      - account_owner
+      - authentication_boundary
+      - remote_access_tool_if_any
+      - who_can_access
+      - access_revocation_path
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+  - artifact_id: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    category: ISOLATION
+    supports_packet_fields:
+      - unreal_install_location_proposal
+      - project_location_proposal
+      - secrets_policy
+      - git_policy
+      - production_connection_policy
+      - bubble_connection_policy
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+  - artifact_id: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    category: ROLLBACK
+    supports_packet_fields:
+      - rollback_path_proposal
+      - uninstall_path
+      - artifact_export_path
+      - account_cancellation_path_if_rented
+      - data_deletion_path
+      - cost_stop_path
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+  - artifact_id: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    category: COST_SOVEREIGNTY
+    supports_packet_fields:
+      - cost_status
+      - billing_boundary_if_rented
+      - open_source_preference_checked
+      - no_cost_first_checked
+      - self_owned_or_self_governed_status
+      - exception_needed
+    artifact_status: REFERENCE_ONLY_NOT_ATTACHED
+    storage_boundary: OURSELFCLOUD_ON_SELFSERVER_AUTHORIZATION_REQUIRED
+missing_facts:
+  - field: machine_identifier
+    reason_missing: Actual SELFSERVER / candidate machine identifier not yet supplied.
+    required_before_intake_review: true
+  - field: ownership_or_rental_status
+    reason_missing: Ownership, rental, or provider status not yet supplied.
+    required_before_intake_review: true
+  - field: local_or_remote
+    reason_missing: Machine body locality not yet supplied.
+    required_before_intake_review: true
+  - field: operating_system
+    reason_missing: OS fact not yet supported by Human_TURN or system report.
+    required_before_intake_review: true
+  - field: gpu_class
+    reason_missing: GPU fact not yet supported by system report.
+    required_before_intake_review: true
+  - field: ram_amount
+    reason_missing: RAM fact not yet supported by system report.
+    required_before_intake_review: true
+  - field: storage_capacity
+    reason_missing: Storage fact not yet supported by system report.
+    required_before_intake_review: true
+  - field: access_method
+    reason_missing: Access method not yet supplied.
+    required_before_intake_review: true
+  - field: access_revocation_path
+    reason_missing: Revocation path not yet supplied.
+    required_before_intake_review: true
+  - field: rollback_path_proposal
+    reason_missing: Rollback path not yet supplied.
+    required_before_intake_review: true
+  - field: cost_status
+    reason_missing: Cost/ownership status not yet supplied.
+    required_before_intake_review: true
+human_turn_confirmation:
+  supplied_by: HUMAN_TURN
+  confirmation_text: >
+    I confirm this Gate 1 packet copy contains Human_TURN-supplied architecture
+    and governance claims plus declared unknowns. Evidence references are pointers
+    only. No raw evidence artifacts are attached. No secrets, passwords, tokens,
+    payment data, full home address, or credentials are included. This packet does
+    not perform intake review, candidate evaluation, UNREAL-002 authorization, or
+    implementation.
+  confirmation_date:
