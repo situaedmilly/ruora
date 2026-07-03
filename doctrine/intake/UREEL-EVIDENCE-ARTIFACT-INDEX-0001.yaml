@@ -1,0 +1,254 @@
+evidence_index_id: UREEL-EVIDENCE-ARTIFACT-INDEX-0001
+index_status: HUMAN_TURN_REAL_REDACTED_POINTERS_SUPPLIED
+candidate_name: UREEL-OURSELFCLOUD-NODE-0
+packet_id: UREEL-MACHINE-BODY-FACT-PACKET-0001
+storage_authorization_id: UREEL-EVIDENCE-STORAGE-AUTH-0001
+storage_location: OURSELFCLOUD_ON_OUR_SELFSERVER
+repo_raw_artifact_storage_allowed: false
+transient_review_allowed: true
+intake_review_status: NOT_REVIEWED
+candidate_evaluation_status: NOT_EVALUATED
+unreal_002_status: MANUAL_REQUIRED
+implementation_status: NOT_AUTHORIZED
+pointer_redaction_policy:
+  direct_urls_stored_in_ruora: false
+  signed_urls_stored_in_ruora: false
+  credentials_stored_in_ruora: false
+  exact_private_server_paths_stored_in_ruora: false
+  raw_sensitive_artifacts_stored_in_ruora: false
+  ruora_allowed_to_store:
+    - artifact_id
+    - redacted_uri
+    - vault_name
+    - folder_or_collection
+    - redacted_object_name
+    - artifact_category
+    - storage_authorization_id
+    - redaction_status
+    - review_availability
+    - field_mapping
+    - safe_checksum_if_available
+    - Human_TURN_confirmation
+artifact_pointers:
+  - artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_category: EXISTENCE
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0001_EXISTENCE/UREEL-EVIDENCE-0001-EXISTENCE-REDACTED--MACHINE-BODY-PROOF--REDACTED.pdf
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0001_EXISTENCE/
+      object_name_redacted: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED--MACHINE-BODY-PROOF--REDACTED.pdf
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD existence artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_category: CAPABILITY
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0002_CAPABILITY/UREEL-EVIDENCE-0002-CAPABILITY-REDACTED--SYSTEM-CAPABILITY-REPORT--REDACTED.pdf
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0002_CAPABILITY/
+      object_name_redacted: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED--SYSTEM-CAPABILITY-REPORT--REDACTED.pdf
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD capability artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_category: ACCESS
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0003_ACCESS/UREEL-EVIDENCE-0003-ACCESS-REDACTED--ACCESS-BOUNDARY--REDACTED.md
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0003_ACCESS/
+      object_name_redacted: UREEL-EVIDENCE-0003-ACCESS-REDACTED--ACCESS-BOUNDARY--REDACTED.md
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD access artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_category: ISOLATION
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0004_ISOLATION/UREEL-EVIDENCE-0004-ISOLATION-REDACTED--ISOLATION-POLICY--REDACTED.yaml
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0004_ISOLATION/
+      object_name_redacted: UREEL-EVIDENCE-0004-ISOLATION-REDACTED--ISOLATION-POLICY--REDACTED.yaml
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD isolation artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_category: ROLLBACK
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0005_ROLLBACK/UREEL-EVIDENCE-0005-ROLLBACK-REDACTED--ROLLBACK-REMOVAL-PATH--REDACTED.md
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0005_ROLLBACK/
+      object_name_redacted: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED--ROLLBACK-REMOVAL-PATH--REDACTED.md
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD rollback artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_category: COST_SOVEREIGNTY
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0006_COST_SOVEREIGNTY/UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED--COST-SOVEREIGNTY-PROOF--REDACTED.md
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0006_COST_SOVEREIGNTY/
+      object_name_redacted: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED--COST-SOVEREIGNTY-PROOF--REDACTED.md
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD cost/sovereignty artifact for transient review only."
+  - artifact_id: UREEL-EVIDENCE-0007-DISRUPTIVE-READINESS-SIGNAL-REDACTED
+    artifact_category: DISRUPTIVE_READINESS_SIGNAL
+    artifact_status: REAL_REDACTED_POINTER_SUPPLIED
+    selfserver_body:
+      server_identifier_redacted: SELFSERVER-UREEL-NODE-0-REDACTED
+      ownership_or_control_status: HUMAN_TURN_CONTROLLED
+      access_boundary: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW
+    selfcloud_pointer:
+      pointer_status: REAL_REDACTED_POINTER_SUPPLIED
+      uri_redacted: ourselfcloud://UREEL/INTAKE/0007_DISRUPTIVE_READINESS_SIGNAL/UREEL-EVIDENCE-0007-DISRUPTIVE-READINESS-SIGNAL-REDACTED--CANDIDATE-COHERENCE-MAP--REDACTED.md
+      vault_name: OURSELFCLOUD
+      folder_or_collection: OURSELFCLOUD/UREEL/INTAKE/0007_DISRUPTIVE_READINESS_SIGNAL/
+      object_name_redacted: UREEL-EVIDENCE-0007-DISRUPTIVE-READINESS-SIGNAL-REDACTED--CANDIDATE-COHERENCE-MAP--REDACTED.md
+      direct_url_stored_in_ruora: false
+      external_reference_only: true
+      access_method: HUMAN_TURN_AUTHORIZED_TRANSIENT_REVIEW
+    redaction:
+      redaction_status: REDACTED_BEFORE_REVIEW
+      redaction_confirmed_by: HUMAN_TURN
+      secrets_excluded: true
+    technical_integrity:
+      checksum_available: false
+      checksum_type:
+      checksum_value_redacted_or_safe:
+      artifact_version: v0.1
+      captured_date: "2026-07-02"
+      last_verified_date: "2026-07-02"
+    human_turn_confirmation:
+      confirmed_as_real_artifact_pointer: true
+      confirmation_text: "Human_TURN confirms this redacted pointer identifies the intended OURSELFCLOUD disruptive readiness signal artifact for transient review only."
+human_turn_confirmation:
+  supplied_by: HUMAN_TURN
+  confirmation_text: >
+    I confirm these are real redacted OURSELFCLOUD pointer records for Gate 3.
+    The referenced artifacts exist in OURSELFCLOUD on OUR SELFSERVER under the
+    sealed Gate 2 authorization. RUORA may store redacted pointers, artifact IDs,
+    field mappings, review availability, and safe integrity metadata only. RUORA
+    may not store raw sensitive artifacts, direct public URLs, credentials, tokens,
+    private keys, payment data, bank data, full home address, or secrets. This
+    pointer set does not perform intake review, candidate evaluation, UNREAL-002
+    authorization, or implementation.
+  confirmation_date: "2026-07-02"
