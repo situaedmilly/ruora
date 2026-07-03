@@ -1,0 +1,121 @@
+evidence_authorization_id: UREEL-EVIDENCE-STORAGE-AUTH-0001
+authorization_status: HUMAN_TURN_AUTHORIZED_STORAGE_BOUNDARY
+authorized_by: HUMAN_TURN
+candidate_name: UREEL-OURSELFCLOUD-NODE-0
+packet_id: UREEL-MACHINE-BODY-FACT-PACKET-0001
+storage_decision:
+  storage_class: STORAGE_CLASS_C
+  retention_class: RETENTION_UNTIL_EVALUATION
+  sensitivity_class: SENSITIVITY_HIGH
+  storage_location: OURSELFCLOUD_ON_OUR_SELFSERVER
+  allowed_artifact_types:
+    - REDACTED_TEXT_SUMMARY
+    - REDACTED_SCREENSHOT
+    - REDACTED_SYSTEM_REPORT
+    - REDACTED_PROVIDER_DOCUMENT
+    - REDACTED_HUMAN_TURN_ATTESTATION
+  redaction_required: true
+  redaction_confirmed: REQUIRED_PER_ARTIFACT_BEFORE_REVIEW
+  secrets_excluded: REQUIRED_AND_MANDATORY
+  who_may_inspect:
+    - HUMAN_TURN
+    - CODEX_INTAKE_REVIEW_ONLY_AFTER_HUMAN_TURN_PERMISSION
+  deletion_or_removal_path: HUMAN_TURN_CAN_REMOVE_FROM_OURSELFCLOUD_AND_INVALIDATE_RUORA_REFERENCE
+  external_storage_if_any: OURSELFCLOUD_ONLY
+  repo_storage_allowed: false
+  transient_review_allowed: true
+  notes: >
+    This authorization permits OURSELFCLOUD-hosted evidence references and transient
+    review only. RUORA may store artifact IDs, redacted references, field mappings,
+    authorization status, and review outcomes. RUORA may not store raw sensitive
+    artifacts. No evidence artifact is attached by this authorization.
+artifact_authorizations:
+  - artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    artifact_category: EXISTENCE
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_HIGH
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support machine identity, machine type, ownership/control status,
+      local/remote status, and redacted location/provider facts.
+  - artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    artifact_category: CAPABILITY
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_MEDIUM
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support operating system, GPU, VRAM, RAM, CPU, storage capacity,
+      storage type, and available storage facts through redacted system report
+      or screenshot.
+  - artifact_id: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    artifact_category: ACCESS
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_HIGH
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support access method, account owner, authentication boundary,
+      remote access tool, who may access, and revocation path. Must not expose
+      credentials, tokens, session data, passwords, or private account details.
+  - artifact_id: UREEL-EVIDENCE-0004-ISOLATION-REDACTED
+    artifact_category: ISOLATION
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_MEDIUM
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support install-location proposal, project-location proposal,
+      no-production-secrets policy, no-remote-git-write policy, no-production-
+      backend policy, and no-Bubble-production-connection policy.
+  - artifact_id: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    artifact_category: ROLLBACK
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_MEDIUM
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support rollback path, uninstall path, artifact export path,
+      account cancellation path if rented, data deletion path, and cost stop path.
+  - artifact_id: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    artifact_category: COST_SOVEREIGNTY
+    storage_class: STORAGE_CLASS_C
+    retention_class: RETENTION_UNTIL_EVALUATION
+    sensitivity_class: SENSITIVITY_HIGH
+    authorized_for_repo: false
+    authorized_for_external_reference: true
+    authorized_for_transient_review: true
+    redaction_confirmed: REQUIRED_BEFORE_REVIEW
+    notes: >
+      May support cost status, billing boundary if rented, no-cost-first check,
+      open-source preference check, self-owned/self-governed status, and exception
+      requirement. Must not expose payment card data, bank data, billing secrets,
+      or full personal account identifiers.
+human_turn_confirmation:
+  supplied_by: HUMAN_TURN
+  confirmation_text: >
+    I authorize Gate 2 storage boundary for UREEL-EVIDENCE-STORAGE-AUTH-0001.
+    Evidence artifacts may be hosted in OURSELFCLOUD on OUR SELFSERVER under
+    redaction, sensitivity, retention, inspection, and deletion constraints.
+    RUORA may store references, artifact IDs, field mappings, authorization status,
+    and later review outcomes only. RUORA may not store raw sensitive artifacts.
+    No evidence artifacts are attached by this authorization. This authorization
+    does not perform intake review, candidate evaluation, UNREAL-002 authorization,
+    or implementation.
+  confirmation_date:
