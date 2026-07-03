@@ -1,0 +1,125 @@
+remediation_id: UREEL-REMEDIATION-REQUIRED-FACTS-0001
+remediation_status: HUMAN_TURN_REMEDIATION_CAPTURED
+candidate_name: UREEL-OURSELFCLOUD-NODE-0
+packet_id: UREEL-MACHINE-BODY-FACT-PACKET-0001
+storage_authorization_id: UREEL-EVIDENCE-STORAGE-AUTH-0001
+evidence_index_id: UREEL-EVIDENCE-ARTIFACT-INDEX-0001
+source_intake_review_id: UREEL-INTAKE-REVIEW-0001
+candidate_evaluation_status: NOT_EVALUATED
+unreal_002_status: MANUAL_REQUIRED
+implementation_status: NOT_AUTHORIZED
+remediated_fields:
+  - field: machine_identifier
+    value: UREEL-OURSELFCLOUD-NODE-0-REDACTED
+    source_type: HUMAN_TURN_ATTESTATION
+    source_name: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    pointer_required: true
+    notes: >
+      Human_TURN identifies the candidate machine body as UREEL-OURSELFCLOUD-NODE-0.
+      The public/repo-visible identifier remains redacted and abstracted.
+  - field: ownership_or_rental_status
+    value: HUMAN_TURN_CONTROLLED_OURSELF_GOVERNED_NODE
+    source_type: HUMAN_TURN_ATTESTATION
+    source_name: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    pointer_required: true
+    notes: >
+      Human_TURN asserts control over the candidate node for governed OURSELF use.
+      This does not expose provider, account, billing, or ownership-sensitive details.
+  - field: local_or_remote
+    value: OURSELFCLOUD_ON_OUR_SELFSERVER_GOVERNED_REMOTE_OR_ABSTRACTED_NODE
+    source_type: HUMAN_TURN_ATTESTATION
+    source_name: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0001-EXISTENCE-REDACTED
+    pointer_required: true
+    notes: >
+      The candidate is represented as a governed OURSELFCLOUD/SELFSERVER node.
+      Exact local, provider, network, or physical location details remain redacted.
+  - field: operating_system
+    value: WINDOWS_11_PRO_OR_EQUIVALENT_WORKSTATION_OS_CONFIRMED
+    source_type: REDACTED_SYSTEM_REPORT
+    source_name: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    pointer_required: true
+    notes: >
+      Redacted capability artifact confirms the node satisfies the workstation OS
+      requirement for the intended UREEL/UNREAL-ready machine body.
+  - field: gpu_class
+    value: DISCRETE_NVIDIA_RTX_CLASS_OR_EQUIVALENT_GPU_CONFIRMED
+    source_type: REDACTED_SYSTEM_REPORT
+    source_name: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    pointer_required: true
+    notes: >
+      Redacted capability artifact confirms a discrete RTX-class or equivalent GPU
+      suitable for UREEL visual/render workstation evaluation.
+  - field: ram_amount
+    value: 32GB_OR_GREATER_CONFIRMED
+    source_type: REDACTED_SYSTEM_REPORT
+    source_name: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    pointer_required: true
+    notes: >
+      Redacted capability artifact confirms memory capacity meets or exceeds the
+      32GB minimum workstation threshold.
+  - field: storage_capacity
+    value: 1TB_NVME_OR_GREATER_CONFIRMED
+    source_type: REDACTED_SYSTEM_REPORT
+    source_name: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0002-CAPABILITY-REDACTED
+    pointer_required: true
+    notes: >
+      Redacted capability artifact confirms storage capacity and class meet or exceed
+      the 1TB NVMe/equivalent workstation threshold.
+  - field: access_method
+    value: HUMAN_TURN_CONTROLLED_TRANSIENT_REVIEW_ACCESS
+    source_type: REDACTED_ACCESS_POLICY
+    source_name: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    pointer_required: true
+    notes: >
+      Access is governed by Human_TURN-controlled transient review. No credentials,
+      tokens, sessions, direct login material, or private account data are stored in RUORA.
+  - field: access_revocation_path
+    value: HUMAN_TURN_CAN_REVOKE_ACCESS_AND_INVALIDATE_OURSELFCLOUD_REFERENCE
+    source_type: REDACTED_ACCESS_POLICY
+    source_name: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0003-ACCESS-REDACTED
+    pointer_required: true
+    notes: >
+      Access can be revoked by Human_TURN by removing/restricting OURSELFCLOUD access
+      and invalidating the corresponding RUORA reference.
+  - field: rollback_path_proposal
+    value: REMOVE_TRANSIENT_ACCESS_DELETE_OR_RETAIN_ARTIFACTS_UNDER_GATE2_AND_REVERT_ANY_FUTURE_SINGLE_COMMIT_CHANGES
+    source_type: REDACTED_ROLLBACK_NOTE
+    source_name: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0005-ROLLBACK-REDACTED
+    pointer_required: true
+    notes: >
+      Rollback path is limited to the current doctrine stage: remove transient access,
+      keep/delete OURSELFCLOUD artifacts under Gate 2 retention rules, invalidate RUORA
+      references if needed, and revert any later authorized single-commit mutation.
+  - field: cost_status
+    value: COST_BOUNDARY_REDACTED_HUMAN_TURN_CONTROLLED_NO_PAYMENT_DATA_IN_RUORA
+    source_type: REDACTED_COST_NOTE
+    source_name: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    evidence_artifact_id: UREEL-EVIDENCE-0006-COST-SOVEREIGNTY-REDACTED
+    pointer_required: true
+    notes: >
+      Cost boundary is controlled by Human_TURN and represented only through the
+      redacted cost/sovereignty artifact. RUORA stores no payment data, bank data,
+      billing secrets, or full account identifiers.
+unresolved_after_remediation: []
+human_turn_confirmation:
+  supplied_by: HUMAN_TURN
+  confirmation_text: >
+    I confirm these remediation values for the 11 required open facts are supplied by
+    Human_TURN and mapped to already-governed OURSELFCLOUD evidence artifacts under
+    the sealed Gate 2 authorization and sealed Gate 3 evidence index. The disruptive
+    readiness signal may be used only as synthesis context and does not substitute for
+    any required remediation field. This remediation capture does not perform intake
+    review, candidate evaluation, UNREAL-002 authorization, implementation, deployment,
+    Bubble/schema mutation, cloud action, package install, API calls, or remote Git
+    activity.
+  confirmation_date: "2026-07-02"
