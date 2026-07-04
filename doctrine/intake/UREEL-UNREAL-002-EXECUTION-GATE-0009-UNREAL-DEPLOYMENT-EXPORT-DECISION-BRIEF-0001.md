@@ -7,15 +7,18 @@ candidate_name: UREEL-OURSELFCLOUD-NODE-0
 source_gate_human_decision_id: UREEL-UNREAL-002-EXECUTION-GATE-0008-UNREAL-CONNECTION-HUMAN-DECISION-0001
 decision_brief_status: HUMAN_TURN_GATE_0009_DECISION_REQUIRED
 gate_status: DECISION_PENDING
+departure_readiness_status: NOT_EVALUATED
 departure_authorization_status: DECISION_PENDING
 actual_departure_status: NOT_STARTED
-artifact_departure_status: CONTAINED
-distribution_status: PRIVATE
-public_visibility_status: NONE
+artifact_state: LOCAL_ONLY
+package_state: NOT_BUILT
+distribution_state: PRIVATE
+execution_state: NOT_EXECUTED
+containment_integrity: VERIFIED
 
 ## Gate Scope
 This brief prepares a Human_TURN decision for Gate 0009 departure scope only.
-Gate 0009 establishes whether the project has earned the right to leave containment. It does not package, cook, build, sign, or export anything yet.
+Gate 0009 witnesses readiness, authorization, and execution for departure. It establishes whether the project has earned the right to leave containment. It does not package, cook, build, sign, distribute, or export anything yet.
 
 Every gate through 0008 governs what the project is permitted to become internally: existence, matter, behavior, capability, connection. Gate 0009 governs something categorically different — whether the project is permitted to become observable outside itself.
 
@@ -43,6 +46,19 @@ A project exists inside three realities, and Gate 0009 governs the transition be
 **Reality 3 — Observed Reality.** Someone else can now execute the artifact. The artifact possesses agency outside its creator. This is Departure.
 
 A build alone does not cross into Reality 3. Departure begins when the artifact becomes distributable to a party other than its creator.
+
+## Containment Integrity
+Gate 0009 protects containment itself.
+
+Containment integrity is verified when:
+- no executable escaped
+- no archive escaped
+- no installer escaped
+- no published release exists
+- no hosted runtime exists
+- no streaming endpoint exists
+
+For this candidate, containment remains intact and no departure has occurred.
 
 ## Departure Covers Four Classes
 Any of the following mutating the project or its outputs falls under Gate 0009, not prior gates:
@@ -77,6 +93,7 @@ Project remains fully contained:
 - no release channels
 - no distribution targets
 - no departure authorization
+- containment integrity remains intact
 
 ## Departure Preconditions to Inspect
 Should this gate later authorize a departure baseline, verification would examine (read-only, not executed by this brief):
@@ -112,10 +129,15 @@ Meaning: Human_TURN authorizes creation of the minimum packaging/export infrastr
 AUTHORIZE_UNREAL_002_GATE_0009_NO_DEPARTURE_BASELINE_NEEDED
 
 Reason: the observed state is still —
+- departure readiness is not yet evaluated
 - no executable behavior requiring distribution
 - no acquired capability requiring packaging
 - no authorized external connection
 - no release artifact, distribution channel, hosted instance, or deployment target
+- artifact state remains local only
+- package state remains not built
+- distribution state remains private
+- execution state remains not executed
 
 Given the sequence already sealed (Gate 0006 → no executable behavior baseline needed, Gate 0007 → no capability baseline needed, Gate 0008 → no connection baseline needed), the consistent recommendation is deferral: containment precedes distribution, and distribution never precedes containment. Nothing has yet demonstrated the need to cross this boundary, and Departure carries the highest and most permanent consequence of any gate in this chain — every departure permanently expands the project's observable reality and cannot be un-published once another party has executed the artifact.
 
@@ -125,6 +147,11 @@ Given the sequence already sealed (Gate 0006 → no executable behavior baseline
 3. A build is not a departure. Departure begins when the artifact becomes distributable to a party other than its creator.
 4. Publication is evidence of authorization, not authorization itself.
 5. Every departure permanently expands the system's observable reality.
+6. No artifact becomes distributable before its integrity is witnessed.
+7. Packaging produces possibility. Distribution produces reality.
+8. Every departure permanently increases observable surface area.
+9. A copied artifact possesses the same authority as its source until explicitly revoked.
+10. Replication without authorization is an unauthorized departure.
 
 ## Recommendation Boundary
 The sealed Gate 0008 Human Decision supports a departure-authorization decision because connection scope is already resolved and closed. Codex may recommend, but Human_TURN must authorize.

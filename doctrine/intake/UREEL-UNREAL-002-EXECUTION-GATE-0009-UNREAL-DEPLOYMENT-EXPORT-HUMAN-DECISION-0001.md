@@ -7,8 +7,14 @@ candidate_name: UREEL-OURSELFCLOUD-NODE-0
 source_gate_decision_brief_id: UREEL-UNREAL-002-EXECUTION-GATE-0009-UNREAL-DEPLOYMENT-EXPORT-DECISION-BRIEF-0001
 human_turn_decision: AUTHORIZE_UNREAL_002_GATE_0009_NO_DEPARTURE_BASELINE_NEEDED
 gate_status: GATE_0009_NO_DEPARTURE_BASELINE_NEEDED_CONFIRMED_BY_HUMAN_TURN
+departure_readiness_status: NOT_EVALUATED
 departure_authorization_status: DEPARTURE_BASELINE_NOT_NEEDED
-actual_departure_mutation_status: NOT_STARTED
+actual_departure_status: NOT_STARTED
+artifact_state: LOCAL_ONLY
+package_state: NOT_BUILT
+distribution_state: PRIVATE
+execution_state: NOT_EXECUTED
+containment_integrity: VERIFIED
 
 ## Human_TURN Decision
 Human_TURN chooses:
@@ -26,6 +32,7 @@ Gate 0009 decision brief found:
 - no shippable executable artifact, store submission, hosted instance, or distributable release artifact currently exists
 - repo status remained clean
 - MASTER_BLUEPRINT.md remained unchanged
+- containment integrity remained intact
 
 ## Doctrine Confirmation
 Gate 0009 is confirmed as governing Departure Authorization: whether this system may cross the containment boundary established during development. That doctrine is now sealed at the Human_TURN decision layer and carries forward unchanged as the gate's meaning for all future UREEL candidates.

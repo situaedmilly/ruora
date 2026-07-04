@@ -5,12 +5,15 @@ gate_authorization_checklist_id: UREEL-UNREAL-002-EXECUTION-GATE-0009-UNREAL-DEP
 gate_id: UREEL-UNREAL-002-EXECUTION-GATE-0009-UNREAL-DEPLOYMENT-EXPORT
 candidate_name: UREEL-OURSELFCLOUD-NODE-0
 source_gate_human_decision_id: UREEL-UNREAL-002-EXECUTION-GATE-0009-UNREAL-DEPLOYMENT-EXPORT-HUMAN-DECISION-0001
+departure_readiness_status: NOT_EVALUATED
 departure_authorization_status: DEPARTURE_BASELINE_NOT_NEEDED
 checklist_status: CHECKLIST_CAPTURED_NOT_EXECUTED
 actual_departure_status: NOT_STARTED
-artifact_departure_status: CONTAINED
-distribution_status: PRIVATE
-public_visibility_status: NONE
+artifact_state: LOCAL_ONLY
+package_state: NOT_BUILT
+distribution_state: PRIVATE
+execution_state: NOT_EXECUTED
+containment_integrity: VERIFIED
 
 ## Checklist Purpose
 This checklist defines the exact read-only verification actions for Gate 0009 when no departure baseline is needed.
@@ -32,28 +35,36 @@ Gate 0009 decision brief found:
 - a build is not a departure
 - publication is evidence of authorization, not authorization itself
 - no departure baseline is needed at this time
+- containment integrity is the protected boundary
 
 ## Authorized Verification Areas
 The later Gate 0009 execution pass may verify only:
 
-1. packaging settings
-2. cook targets
-3. build targets
-4. distribution profiles
-5. store manifests
-6. signing identities
-7. certificates
-8. provisioning profiles
-9. generated artifacts
-10. executable outputs
-11. installer outputs
-12. archive outputs
-13. hosted targets
-14. release targets
-15. distribution targets
-16. public visibility
-17. containment status
-18. repo root, HEAD, working tree state, remotes, and MASTER_BLUEPRINT.md drift
+1. departure readiness evidence
+2. departure authorization evidence
+3. actual departure state
+4. artifact state
+5. package state
+6. distribution state
+7. execution state
+8. containment integrity
+9. packaging settings
+10. cook targets
+11. build targets
+12. distribution profiles
+13. store manifests
+14. signing identities
+15. certificates
+16. provisioning profiles
+17. generated artifacts
+18. executable outputs
+19. installer outputs
+20. archive outputs
+21. hosted targets
+22. release targets
+23. distribution targets
+24. public visibility
+25. repo root, HEAD, working tree state, remotes, and MASTER_BLUEPRINT.md drift
 
 ## Approved Read-Only Command Classes
 Only read-only verification commands are permitted.
@@ -121,23 +132,30 @@ The later Gate 0009 execution pass must return:
 3. git status before verification pass
 4. remotes count
 5. MASTER_BLUEPRINT.md drift check
-6. packaging settings result
-7. cook targets result
-8. build targets result
-9. signing assets result
-10. provisioning assets result
-11. certificates result
-12. generated artifacts result
-13. executable outputs result
-14. installer outputs result
-15. archive outputs result
-16. hosted targets result
-17. release targets result
-18. distribution targets result
-19. public visibility result
-20. containment status result
-21. final git status
-22. recommended next gate
+6. departure readiness result
+7. departure authorization result
+8. actual departure result
+9. artifact state result
+10. package state result
+11. distribution state result
+12. execution state result
+13. containment integrity result
+14. packaging settings result
+15. cook targets result
+16. build targets result
+17. signing assets result
+18. provisioning assets result
+19. certificates result
+20. generated artifacts result
+21. executable outputs result
+22. installer outputs result
+23. archive outputs result
+24. hosted targets result
+25. release targets result
+26. distribution targets result
+27. public visibility result
+28. final git status
+29. recommended next gate
 
 ## Execution Boundary
 This checklist authorizes no departure by itself.
