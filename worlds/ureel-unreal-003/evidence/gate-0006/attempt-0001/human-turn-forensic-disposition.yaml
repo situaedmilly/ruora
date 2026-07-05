@@ -1,0 +1,32 @@
+schema: ruora.human-turn-forensic-disposition/v0.1
+world_id: ureel-unreal-003
+gate_id: gate-0006
+plan_id: gate-0006-sandbox-invocation-0001
+attempt_id: gate-0006-sandbox-invocation-0001-attempt-0001
+
+decision: ADMIT_AS_UNAUTHORIZED_UNVERIFIED_FORENSIC_EVIDENCE
+
+execution_authority: PREAUTHORIZATION_EXECUTION
+timeline_classification: EXECUTION_OCCURRED_BEFORE_FINAL_AUTHORIZATION
+
+attempt_consumption: CONSUMED
+rerun_authorized: false
+
+primary_claim: UNREAL_PYTHON_INVOCATION_NOT_VERIFIED
+capability_certification: NOT_GRANTED
+sandbox_verified: false
+production_eligible: false
+phase_3: BLOCKED
+
+world_state_transition_authorized: false
+
+decision_timestamp_utc: "2026-07-05T22:50:20Z"
+
+explicit_statements:
+  - "The execution was not authorized at reservation time."
+  - "Execution occurred at 2026-07-05T22:46:13.995047Z; final authorization occurred at 2026-07-05T22:48:22Z."
+  - "Frozen forensic evidence is admitted for forensic memory only; no state transition is authorized."
+  - "No success claim is admitted; no attempt reuse is permitted."
+  - "No evidence deletion is authorized; frozen artifacts remain immutable."
+  - "Attempt 0001 consumed via exclusive-create; mechanical enforcement prevents second invocation."
+  - "Primary claim fails predicate 4: Unreal-log nonce not found in actual Unreal logs."

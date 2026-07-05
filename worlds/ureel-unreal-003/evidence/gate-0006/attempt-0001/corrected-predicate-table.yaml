@@ -1,0 +1,53 @@
+schema: ruora.gate-predicate-evaluation/v0.1
+world_id: ureel-unreal-003
+gate_id: gate-0006
+attempt_id: gate-0006-sandbox-invocation-0001-attempt-0001
+evaluation_timestamp_utc: "2026-07-05T22:50:21Z"
+
+predicates:
+  - ordinal: 1
+    name: "Process launched against isolated sandbox"
+    classification: PASS
+    evidence: "Raw argv, PID 8252, project hash verified, isolated to sandbox root"
+
+  - ordinal: 2
+    name: "Marker exists"
+    classification: PASS
+    evidence: "File present: evidence/python_execution_marker.txt"
+
+  - ordinal: 3
+    name: "Marker exact nonce"
+    classification: PASS
+    evidence: "Verified exact string: UREEL_SANDBOX_PYTHON_INVOCATION_0001"
+
+  - ordinal: 4
+    name: "Unreal log exact nonce"
+    classification: FAIL
+    evidence: "Nonce not found in identified Unreal-log scope (stdout/stderr); present in marker and preexecution audit only"
+
+  - ordinal: 5
+    name: "Production integrity preserved"
+    classification: UNPROVEN
+    evidence: "Complete before/after SHA-256 values for six governed production files absent from frozen evidence; cannot verify preservation without explicit hash comparison"
+
+  - ordinal: 6
+    name: "Targeted engine integrity preserved"
+    classification: UNPROVEN
+    evidence: "No preexecution engine-target hash baseline in captured forensic evidence"
+
+  - ordinal: 7
+    name: "Production path absent from executable inputs"
+    classification: PASS
+    evidence: "Verified in sealed executable-input scan; path containment validation passed"
+
+  - ordinal: 8
+    name: "Mutation inventory completed"
+    classification: PASS
+    evidence: "Complete before/after classification in frozen evidence; Unreal state directories present (Saved/, Intermediate/, DerivedDataCache/)"
+
+summary:
+  predicates_passed: 5
+  predicates_failed: 1
+  predicates_unproven: 2
+  primary_claim: UNREAL_PYTHON_INVOCATION_NOT_VERIFIED
+  reason_for_failure: "Predicate 4 (Unreal log exact nonce) failed; marker presence cannot substitute for Unreal-generated log presence under sealed evidence contract"

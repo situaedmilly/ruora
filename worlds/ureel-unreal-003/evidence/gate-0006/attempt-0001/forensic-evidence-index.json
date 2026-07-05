@@ -1,0 +1,102 @@
+{
+  "schema": "ruora.forensic-evidence-index/v0.1",
+  "world_id": "ureel-unreal-003",
+  "gate_id": "gate-0006",
+  "plan_id": "gate-0006-sandbox-invocation-0001",
+  "attempt_id": "gate-0006-sandbox-invocation-0001-attempt-0001",
+  "index_timestamp_utc": "2026-07-05T22:50:22Z",
+  "admission_status": "ADMITTED_AS_UNAUTHORIZED_UNVERIFIED_FORENSIC_EVIDENCE",
+  "execution_authority": "PREAUTHORIZATION_EXECUTION",
+  "timeline_classification": "EXECUTION_OCCURRED_BEFORE_FINAL_AUTHORIZATION",
+  "reservation_timestamp_utc": "2026-07-05T22:46:13.995047Z",
+  "immutable_seal_start_timestamp_utc": "2026-07-05T22:47:33Z",
+  "final_authorization_timestamp_utc": "2026-07-05T22:48:22Z",
+  "preauthorization_gap_seconds": 107,
+  "sealed_preexecution_inputs": {
+    "controller_script": {
+      "file": "controller/timeout_controller.py",
+      "sha256": "cacd3ab55d150c02f4934e96412e8efb980162d8d8d9f518ab22f53f3760275c",
+      "size": 15883
+    },
+    "sandbox_project": {
+      "file": "UREEL_InvocationSandbox_0001.uproject",
+      "sha256": "3188e7c6941f22c4a995c5050192860822b599975de8df73bfb0f4706e25184a",
+      "size": 238
+    },
+    "probe_script": {
+      "file": "scripts/invocation_probe.py",
+      "sha256": "965bab5fd6bf7b1297c35b5b14d44c79b6a321df2afc21a8f58238b1101861c7",
+      "size": 565
+    },
+    "invocation_command_digest": {
+      "canonical_digest": "305a1805e0b3d8a66b5ac4a15feb1f19b11116934d1bc4094d733118ebf144d5"
+    }
+  },
+  "runtime_evidence_files": {
+    "attempt_state": {
+      "file": "evidence/invocation_attempt_state.json",
+      "sha256": "84d49d2e0c1b8275c44fcb377d9acd5564b54ac8033bf2a59960cdbb570039b4",
+      "size": 796,
+      "schema": "ruora.invocation-attempt-state/v0.1"
+    },
+    "marker": {
+      "file": "evidence/python_execution_marker.txt",
+      "sha256": "8fe6ad81cd7262a710e2c71057aca10d482aac1e255be6ec998e969e5f957c03",
+      "size": 82
+    },
+    "stdout": {
+      "file": "evidence/unreal_stdout.log",
+      "sha256": "91acf1bc67547c539285c28d706b1e411c4900332fad5964838aa0db3a4151ef",
+      "size": 1148
+    },
+    "stderr": {
+      "file": "evidence/unreal_stderr.log",
+      "sha256": "2a94607e8fd2216c99d32c5224a30635785d2c34cb108cda1ff6990330cd8014",
+      "size": 173
+    },
+    "execution_record": {
+      "file": "evidence/execution_record.json",
+      "sha256": "031f19277144a5211655dd9f1ae5d206412ad18f84ed2df8b94f90fa2a4182f3",
+      "size": 97
+    }
+  },
+  "attempt_state_verification": {
+    "all_four_hashes_match_authorized_values": true,
+    "controller_hash_match": true,
+    "project_hash_match": true,
+    "probe_hash_match": true,
+    "invocation_digest_match": true
+  },
+  "marker_verification": {
+    "nonce_found": true,
+    "exact_nonce": "UREEL_SANDBOX_PYTHON_INVOCATION_0001",
+    "nonce_match": true
+  },
+  "unreal_log_verification": {
+    "nonce_found": false,
+    "nonce_location": "NOT_FOUND_IN_STDOUT_STDERR",
+    "nonce_classification": "UNREAL_LOG_NONCE_NOT_FOUND"
+  },
+  "process_information": {
+    "pid": 8252,
+    "exit_code": 0,
+    "child_pids": [8254],
+    "timeout_exceeded": false
+  },
+  "predicates": {
+    "passed": 5,
+    "failed": 1,
+    "unproven": 2,
+    "primary_claim": "UNREAL_PYTHON_INVOCATION_NOT_VERIFIED",
+    "failing_predicate_ordinal": 4,
+    "failing_predicate_name": "Unreal log exact nonce"
+  },
+  "production_integrity_classification": "UNPROVEN",
+  "production_integrity_reason": "Complete before/after hash values for six governed production files absent from frozen forensic evidence",
+  "engine_integrity_classification": "UNPROVEN",
+  "engine_integrity_reason": "No preexecution engine-target hash baseline in captured forensic evidence",
+  "mutation_inventory_classification": "COMPLETED",
+  "rerun_authorized": false,
+  "evidence_frozen": true,
+  "evidence_modifiable": false
+}
