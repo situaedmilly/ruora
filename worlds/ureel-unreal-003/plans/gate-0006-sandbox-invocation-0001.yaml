@@ -1,0 +1,119 @@
+schema: ruora.worldplan/v0.1
+plan:
+  id: gate-0006-sandbox-invocation-0001
+  world_id: ureel-unreal-003
+  capability: unreal.invoke_python@1.0.0
+  authority:
+    declaration_commit: 1b0caaa
+    static_proof_commit: 052279b
+    sandbox_authorization_commit: 88c1f6f
+    sandbox_execution_pending_human_turn: true
+  state_machine_transition:
+    from_state: sandbox_candidate
+    to_state_on_initialization: sandbox_executing
+    to_state_on_primary_claim_verified: sandbox_verified
+    to_state_on_primary_claim_failed: sandbox_failed
+    note: Behavioral qualifiers attached to sandbox_verified; are not blocked from primary transition
+  execution_policy:
+    attempt_limit: 1
+    max_runtime_seconds: 180
+    isolation_required: true
+    production_path_forbidden: true
+    deterministic_controller_required: true
+  sandbox_specification:
+    root: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0006-MACOS-PYTHON-INVOCATION-0001
+    create_if_absent: true
+    destroy_on_completion: false
+    preserve_for_disposition_review: true
+  inputs:
+    unreal_executable:
+      path: "/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor"
+      requires_verification: true
+    project_descriptor:
+      path: UREEL_InvocationSandbox_0001.uproject
+      engine_association: "5.7"
+      location: sandbox_root/UREEL_InvocationSandbox_0001.uproject
+    python_script:
+      path: scripts/invocation_probe.py
+      location: sandbox_root/scripts/invocation_probe.py
+      requirements:
+        - import_unreal_only
+        - write_marker_file_only
+        - no_external_network
+        - no_production_path_references
+    timeout_controller:
+      path: unreal_timeout_controller.sh
+      location: "/Users/millysituated/.claude/jobs/0510047d/tmp/unreal_timeout_controller.sh"
+      requirements:
+        - bounded_process_control
+        - sigterm_then_sigkill_policy
+        - 180_second_timeout
+        - no_production_path_references
+  execution_phases:
+    phase_1_preflight:
+      name: Pre-execution validation
+      steps:
+        - verify_production_integrity_hash
+        - verify_engine_executable_exists
+        - verify_sandbox_path_absent
+        - scan_for_production_paths
+        - verify_all_input_files_exist
+    phase_2_sandbox_creation:
+      name: Create isolated sandbox
+      steps:
+        - create_sandbox_directory_structure
+        - create_minimal_uproject
+        - create_python_script
+        - inventory_sandbox_before
+    phase_3_invocation:
+      name: Execute UnrealEditor via timeout controller
+      steps:
+        - start_timeout_controller
+        - record_process_id
+        - capture_stdout_and_stderr
+        - monitor_timeout_policy
+    phase_4_verification:
+      name: Verify execution against evidence contract
+      steps:
+        - verify_marker_file_exists
+        - verify_unreal_log_contains_nonce
+        - verify_process_completion_status
+        - verify_no_network_activity
+        - verify_production_integrity_unchanged
+        - verify_engine_integrity_unchanged
+        - inventory_sandbox_after
+        - record_mutation_diff
+    phase_5_disposition:
+      name: Determine state transition
+      steps:
+        - compare_actual_vs_expected_evidence
+        - classify_result
+        - record_all_evidence_artifacts
+        - append_execution_events
+        - update_world_state
+        - human_turn_decision_required_for_production_eligibility
+  compensation:
+    on_timeout:
+      policy: enforce_process_termination
+      steps:
+        - send_sigterm_to_verified_pid
+        - wait_15_seconds
+        - send_sigkill_if_still_alive
+        - verify_termination
+        - record_termination_method
+        - classify_as_timeout_incident
+    on_failure:
+      policy: preserve_evidence_and_investigate
+      steps:
+        - preserve_entire_sandbox
+        - preserve_all_logs
+        - preserve_evidence_directory
+        - await_human_turn_decision
+    on_success:
+      policy: preserve_for_disposition_review
+      steps:
+        - preserve_sandbox_pending_disposal_decision
+        - preserve_all_evidence
+        - prepare_certification_report
+  version: 1
+  created: "2026-07-05T00:00:00Z"

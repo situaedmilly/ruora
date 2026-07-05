@@ -1,0 +1,108 @@
+schema: ruora.state-machine/v0.1
+machine:
+  id: unreal-capability-certification-v1
+  purpose: Govern lawful state transitions for Unreal node capability certification
+  initial_state: declared
+  states:
+    declared:
+      description: Capability name and intended semantics exist
+      allowed_transitions:
+        - to: statically_inspected
+          requires:
+            - static_evidence_complete
+          human_turn_required: false
+    statically_inspected:
+      description: Implementation paths and candidate syntax observed without execution
+      allowed_transitions:
+        - to: sandbox_candidate
+          requires:
+            - human_turn_decision_seal
+            - isolated_plan_complete
+          human_turn_required: true
+        - to: rejected
+          requires:
+            - human_turn_rejection_seal
+          human_turn_required: true
+    sandbox_candidate:
+      description: Isolated execution authorized but not yet performed
+      allowed_transitions:
+        - to: sandbox_executing
+          requires:
+            - preflight_passed
+            - authority_commit_reachable
+            - production_path_absent
+            - all_contracts_consistent
+          human_turn_required: false
+        - to: sandbox_halted
+          requires:
+            - preflight_failed
+          human_turn_required: false
+    sandbox_executing:
+      description: Capability execution in progress on isolated node
+      allowed_transitions:
+        - to: sandbox_verified
+          requires:
+            - evidence_contract_satisfied
+            - no_production_mutation_detected
+            - all_reversible_state_disposed
+          human_turn_required: false
+        - to: sandbox_failed
+          requires:
+            - failure_classification_present
+            - failure_evidence_captured
+          human_turn_required: false
+    sandbox_verified:
+      description: Primary capability evidence contract satisfied; execution verified under sandbox conditions
+      behavioral_qualifiers:
+        python_execution: verified
+        termination: natural | sigterm | sigkill | failed | unknown
+        ui_suppression: verified | failed | observation_incomplete
+        network_observation: none_observed | sockets_observed | observation_incomplete
+        production_integrity: preserved
+      production_eligibility: false
+      note: Behavioral qualifiers attached to state; production eligibility decided separately
+      allowed_transitions:
+        - to: production_candidate
+          requires:
+            - sandbox_proof_sealed
+            - separate_human_turn_decision
+            - policy_acceptance_of_behavioral_qualifiers
+          human_turn_required: true
+        - to: suspended
+          requires:
+            - evidence_stale_or_drift_detected
+          human_turn_required: false
+    sandbox_failed:
+      description: Execution failed; root cause classified
+      allowed_transitions:
+        - to: sandbox_candidate
+          requires:
+            - failure_remediated
+            - separate_human_turn_decision
+          human_turn_required: true
+        - to: rejected
+          requires:
+            - failure_unremedial
+            - human_turn_rejection_seal
+          human_turn_required: true
+    rejected:
+      description: Capability rejected; must not execute
+      allowed_transitions: []
+      terminal: true
+    suspended:
+      description: Previously verified capability; evidence stale or environment drifted
+      allowed_transitions:
+        - to: sandbox_candidate
+          requires:
+            - re_inspection_complete
+            - human_turn_decision
+          human_turn_required: true
+    revoked:
+      description: Capability revoked; incident or policy violation detected
+      allowed_transitions: []
+      terminal: true
+  guards:
+    all_transitions:
+      - production_integrity_must_be_verified_before_and_after
+      - no_production_path_in_executable_inputs
+      - one_execution_attempt_per_gate

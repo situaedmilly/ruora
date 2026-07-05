@@ -1,0 +1,37 @@
+schema: ruora.world/v0.1
+world:
+  id: ureel-unreal-003
+  name: UREEL Unreal Node Certification World
+  description: "Gate 0006 sandbox certification for unreal.invoke_python@1.0.0"
+  purpose: |
+    Certify Unreal Engine 5.7 as a governed manifestation node for UREEL.
+    Verify that the engine can receive intent, instantiate a Python execution capability
+    in isolation, produce verifiable evidence, and return state without contaminating production.
+    This is a single-capability node certification, not comprehensive Unreal integration.
+  doctrine:
+    - no_production_mutation
+    - evidence_before_claim
+    - one_authorized_execution_attempt_per_gate
+    - isolated_execution_before_production_eligibility
+    - all_reversible_state_must_be_reversed_or_preserved_pending_disposition
+  environment:
+    class: sandbox
+    production_world_ref: ureel-ourselfcloud-node-0
+    production_access: checksum_read_only_verification_only
+    isolation_boundary: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0006-MACOS-PYTHON-INVOCATION-0001
+  authority:
+    declaration_commit: 1b0caaa
+    static_inspection_proof_commit: 052279b
+    sandbox_execution_authorization_commit: 88c1f6f
+    human_turn_gates:
+      - gate_name: plan_review_and_approval
+        decision_commit: 88c1f6f
+      - gate_name: sandbox_execution_authorization
+        decision_commit: pending_human_turn
+  desired_capabilities:
+    - capability: unreal.invoke_python
+      version: 1.0.0
+      desired_certification: sandbox_verified
+  version: 1
+  created: "2026-07-05T00:00:00Z"
+  last_modified: "2026-07-05T00:00:00Z"

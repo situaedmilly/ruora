@@ -1,0 +1,50 @@
+schema: ruora.worldstate/v0.1
+world_id: ureel-unreal-003
+world_version: 1
+timestamp: "2026-07-05T00:00:00Z"
+certification:
+  unreal.invoke_python:
+    current_state: sandbox_candidate
+    desired_state: sandbox_verified
+    observed_state: statically_indicated
+    last_state_change: "2026-07-05T00:00:00Z"
+    authority_for_transition: human_turn_88c1f6f
+observed:
+  unreal_editor:
+    present: true
+    executable: true
+    version_source: "/Users/Shared/Epic Games/UE_5.7/Engine/Build/Build.version"
+    version: "5.7.4"
+    build: 51494982
+    platform: macos
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor"
+  python_script_plugin:
+    installed: true
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin"
+    descriptor_present: true
+    enabled_by_default: false
+    module_preload_present: true
+    module_uncooked_present: true
+    commandlet_source_present: true
+    runtime_loading_status: unknown_pending_sandbox_verification
+  production_project:
+    present: true
+    path_reference: PRODUCTION_PROJECT_ROOT
+    integrity_hash: ebdf69f4edacf4c55b0a44f99e005323e498ab19725ddf6b398aadcfef59bba1
+    integrity_verified: true
+  active_processes:
+    unreal: 0
+    python: 0
+    build: 0
+    cook: 0
+    package: 0
+drift:
+  - field: certification.unreal.invoke_python
+    desired: sandbox_verified
+    observed: statically_indicated
+    gap: runtime_loading_behavior_unproven
+    reconciliation_required: sandbox_execution_and_verification
+  - field: python_script_plugin.runtime_loading_status
+    desired: proven
+    observed: unknown
+    note: Commandlet source proves runtime loading possible; execution test required to verify

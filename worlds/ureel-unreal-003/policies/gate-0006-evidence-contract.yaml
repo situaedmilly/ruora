@@ -1,0 +1,104 @@
+schema: ruora.evidence-contract/v0.1
+world_id: ureel-unreal-003
+capability: unreal.invoke_python@1.0.0
+primary_claim:
+  id: unreal_python_invocation_verified
+  description: Python script execution within Unreal Engine sandbox is verified
+admission:
+  mode: all_required
+  required_evidence:
+    - id: unreal_process_launch_verified
+      category: process_evidence
+      source: process_record
+      validation:
+        process_launched_with_correct_project: true
+        process_completed_within_timeout: true
+      failure_meaning: UnrealEditor process did not launch or timed out
+    - id: marker_file_exists
+      category: filesystem_evidence
+      source: sandbox_file
+      path: evidence/python_execution_marker.txt
+      validation:
+        must_exist: true
+        must_contain: UREEL_SANDBOX_PYTHON_INVOCATION_0001
+      failure_meaning: Python script did not execute or failed to write marker
+    - id: marker_file_exact_nonce
+      category: filesystem_evidence
+      source: sandbox_file
+      validation:
+        exact_value: UREEL_SANDBOX_PYTHON_INVOCATION_0001
+      failure_meaning: Marker nonce does not match expected value
+    - id: unreal_log_contains_exact_nonce
+      category: log_evidence
+      source: unreal_editor_log
+      pattern: "[PROBE] UREEL_SANDBOX_PYTHON_INVOCATION_0001"
+      validation:
+        must_be_present: true
+      failure_meaning: Unreal logging system did not capture Python execution
+    - id: production_integrity_preserved
+      category: security_evidence
+      source: production_project_post_execution_hash
+      validation:
+        aggregate_hash: ebdf69f4edacf4c55b0a44f99e005323e498ab19725ddf6b398aadcfef59bba1
+        matches_authority: true
+      failure_meaning: Production project was modified; world integrity compromised
+    - id: engine_target_files_unchanged
+      category: security_evidence
+      source: engine_integrity_diff
+      scope: targeted engine files (not full engine scan)
+      files_checked:
+        - "/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor"
+        - "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin"
+      validation:
+        no_mutations_detected: true
+      failure_meaning: Engine installation was modified; execution may be unsafe
+    - id: no_production_path_in_executable_inputs
+      category: security_evidence
+      source: pre_execution_launch_gate_scan
+      pattern_forbidden: PRODUCTION_PROJECT_ROOT_FORBIDDEN
+      files_scanned:
+        - timeout_controller_script
+        - project_uproject_file
+        - python_script
+      validation:
+        pattern_absent_in_all: true
+      failure_meaning: Executable inputs reference production path; isolation violated
+    - id: mutation_inventory_completed
+      category: compliance_evidence
+      source: postflight_analysis
+      validation:
+        sandbox_files_inventoried: true
+        unexpected_mutations_recorded: true
+      failure_meaning: Postflight mutation analysis incomplete
+independent_claims:
+  clean_process_termination_verified:
+    description: UnrealEditor exited without forced termination
+    claim_id: process_clean_exit
+    modes:
+      - natural (exit code 0)
+      - sigterm (requested clean shutdown)
+      - sigkill (timeout enforcement)
+      - failed (killed forcefully)
+      - unknown (termination unobserved)
+    note: Does not affect primary capability claim; behavioral qualifier only
+  ui_suppression_verified:
+    description: UnrealEditor did not display interactive window
+    claim_id: ui_suppressed
+    modes:
+      - verified (no UI observed)
+      - failed (interactive UI appeared)
+      - observation_incomplete (Accessibility restriction prevents observation)
+    note: Does not affect primary capability claim; behavioral qualifier only
+  no_network_activity_observed:
+    description: No open network sockets detected on UnrealEditor process
+    claim_id: network_observation
+    scope: DEFINED_SAMPLING_WINDOWS_ONLY
+    modes:
+      - none_observed (lsof returned no sockets)
+      - sockets_observed (network activity detected)
+      - observation_incomplete (lsof unavailable or restricted)
+    language: NO_NETWORK_ACTIVITY_OBSERVED_WITHIN_DEFINED_SAMPLING_SCOPE
+    note: Does not prove absolute network impossibility; only observed state during monitoring
+admission_result:
+  primary_claim_status: pending_sandbox_execution_and_evidence_collection
+  production_eligibility: false (requires separate policy decision after primary claim verified)

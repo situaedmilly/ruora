@@ -1,0 +1,110 @@
+schema: ruora.capability/v0.1
+capability:
+  id: unreal.invoke_python
+  version: 1.0.0
+  name: Invoke Python Script in Unreal Engine 5.7
+  purpose: Execute a Python script within Unreal Editor using -ExecutePythonScript flag
+  provider:
+    node_id: unreal.node.local.001
+    node_type: renderer_adapter
+    engine:
+      family: unreal-engine
+      version: "5.7.4"
+      build: 51494982
+      platform: macos
+      installation: "/Users/Shared/Epic Games/UE_5.7"
+  mechanism:
+    method: "-ExecutePythonScript= command-line flag"
+    commandlet: PythonScriptCommandlet
+    plugin: PythonScriptPlugin
+    plugin_status:
+      installed: true
+      enabled_by_default: false
+      commandlet_source_present: true
+      runtime_loading_status: unknown_pending_sandbox_verification
+    plugin_location: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin"
+  inputs:
+    project_path:
+      type: path
+      required: true
+      description: Unreal project directory
+      constraints:
+        must_be_directory: true
+        must_contain_uproject: true
+        must_be_under:
+          - /Users/millysituated/UREEL-PROBE-SANDBOX/
+        must_not_be_under:
+          - PRODUCTION_PROJECT_ROOT_FORBIDDEN
+    script_path:
+      type: path
+      required: true
+      description: Python script to execute
+      constraints:
+        extension: .py
+        must_exist: true
+        must_be_under:
+          - /Users/millysituated/UREEL-PROBE-SANDBOX/
+        must_not_be_under:
+          - PRODUCTION_PROJECT_ROOT_FORBIDDEN
+  expected_outputs:
+    - id: python_execution_marker
+      type: file
+      path: evidence/python_execution_marker.txt
+      description: External evidence file written by Python script
+      content_requirements:
+        must_contain: UREEL_SANDBOX_PYTHON_INVOCATION_0001
+    - id: unreal_log_marker
+      type: log
+      source: Unreal Editor log
+      description: Log entry from Unreal logging system
+      content_requirements:
+        must_contain: "[PROBE] UREEL_SANDBOX_PYTHON_INVOCATION_0001"
+    - id: mutation_inventory
+      type: filesystem_diff
+      description: Before/after sandbox mutation report
+      expectations:
+        forbidden_paths:
+          - PRODUCTION_PROJECT_ROOT_FORBIDDEN
+        forbidden_mutations:
+          - engine_file_modification
+          - production_project_modification
+  side_effects:
+    expected:
+      - sandbox_file_creation
+      - sandbox_log_file_creation
+      - sandbox_intermediate_directory_creation
+      - sandbox_saved_state_creation
+    forbidden:
+      - production_project_mutation
+      - engine_file_mutation
+      - network_access
+      - build_artifact_creation
+      - cook_execution
+      - package_execution
+      - deployment_execution
+      - external_process_spawn
+  reversibility:
+    sandbox_directory:
+      class: reversible
+      condition: no_evidence_dependencies
+      operation: rm -rf sandbox_root
+      restores_original_state: true
+      external_effects: none
+    evidence_files:
+      class: irreversible_preserved
+      condition: evidence_bearing
+      note: Evidence cannot be forgotten; disposition requires Human_TURN decision
+      preservation_required: mandatory_until_proof_seal_and_disposal_decision
+    production_mutation:
+      class: prohibited
+      enforcement: immediate_incident_classification_if_detected
+      escalation: production_world_integrity_compromise
+  constraints:
+    execution_timeout_seconds: 180
+    execution_attempts_allowed: 1
+    concurrent_executions: 0
+    requires_isolation: true
+    requires_deterministic_controller: true
+  certification:
+    current: sandbox_candidate
+    production_eligible: false

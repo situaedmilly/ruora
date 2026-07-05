@@ -1,0 +1,105 @@
+schema: ruora.worldlock/v0.1
+lock:
+  id: gate-0006-sandbox-invocation-0001
+  plan_id: gate-0006-sandbox-invocation-0001
+  world_id: ureel-unreal-003
+  purpose: Pin exact versions, paths, and dependencies for deterministic execution
+  authority:
+    authorization_commit: 88c1f6f
+    static_proof_commit: 052279b
+    declaration_commit: 1b0caaa
+    human_turn_execution_authorization_pending: true
+  engine:
+    executable:
+      path: "/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor"
+      platform: macos
+    version:
+      source_path: "/Users/Shared/Epic Games/UE_5.7/Engine/Build/Build.version"
+      source_sha256: f4acff8af146d5d02f7618a4e988724d70f3b720c70e68d090bb90a240ae51f6
+      major: 5
+      minor: 7
+      patch: 4
+      changelist: 51494982
+      observed_value: "5.7.4"
+      observed_build: 51494982
+      collection_timestamp: "2026-07-05T00:00:00Z"
+  python_plugin:
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin"
+    installed: true
+    enabled_by_default: false
+    commandlet_source_present: true
+    runtime_loading_status: unknown_pending_sandbox_verification
+    note: Plugin is NOT runtime-loadable without execution test; commandlet source proves possible
+  sandbox:
+    root:
+      path: "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0006-MACOS-PYTHON-INVOCATION-0001"
+      create_if_absent: true
+      preserve_after_execution: true
+  inputs:
+    uproject:
+      relative_path: UREEL_InvocationSandbox_0001.uproject
+      engine_association: "5.7"
+      modules: []
+      plugins: []
+    python_script:
+      relative_path: scripts/invocation_probe.py
+      requires:
+        - import_unreal_module
+        - write_to_evidence_directory
+        - no_external_imports_except_os_datetime
+      imports_allowed:
+        - unreal
+        - os
+        - datetime
+      imports_forbidden:
+        - platform
+        - subprocess
+        - socket
+        - requests
+        - urllib
+    timeout_controller:
+      path: "/Users/millysituated/.claude/jobs/0510047d/tmp/unreal_timeout_controller.sh"
+      max_runtime_seconds: 180
+      policy: sigterm_then_sigkill
+      sigterm_wait_seconds: 15
+  capability:
+    id: unreal.invoke_python
+    version: 1.0.0
+    evidence_contract_version: gate-0006-evidence-contract.yaml
+  invocation_command:
+    template: |
+      /Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor       /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0006-MACOS-PYTHON-INVOCATION-0001/UREEL_InvocationSandbox_0001.uproject       -ExecutePythonScript=/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0006-MACOS-PYTHON-INVOCATION-0001/scripts/invocation_probe.py       -unattended -nullrhi -nop4 -nosplash -log
+  production_safeguards:
+    production_project:
+      identity: PRODUCTION_PROJECT_ROOT
+      reference_in_lock: intentionally_omitted_from_executable_contract
+      integrity_hash_before: ebdf69f4edacf4c55b0a44f99e005323e498ab19725ddf6b398aadcfef59bba1
+      must_not_appear_in:
+        - invocation_command
+        - python_script
+        - timeout_controller
+        - uproject
+    production_access: checksum_verification_only
+    note: Production project path is forbidden from all executable inputs; reference stored elsewhere
+  lock_status: PARTIALLY_RESOLVED_PRE_EXECUTION
+  resolution_status: pending_sandbox_input_creation
+  must_resolve_before_execution: true
+  unresolved_inputs:
+    - input_id: sandbox_project_sha256
+      input_name: UREEL_InvocationSandbox_0001.uproject
+      status: pending_file_creation
+      required_before_execution: true
+    - input_id: probe_script_sha256
+      input_name: scripts/invocation_probe.py
+      status: pending_file_creation
+      required_before_execution: true
+    - input_id: controller_script_sha256
+      input_name: timeout_controller.sh
+      status: pending_file_creation
+      required_before_execution: true
+    - input_id: invocation_command_digest
+      input_name: exact_invocation_command
+      status: pending_sandbox_path_resolution
+      required_before_execution: true
+  version: 1
+  created: "2026-07-05T00:00:00Z"
