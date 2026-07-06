@@ -1,14 +1,32 @@
 schema: ruora.worldstate/v0.1
 world_id: ureel-unreal-003
-world_version: 1
-timestamp: "2026-07-05T00:00:00Z"
+world_version: 2
+timestamp: "2026-07-06T03:14:47Z"
 certification:
   unreal.invoke_python:
-    current_state: sandbox_candidate
+    current_state: sandbox_verified
     desired_state: sandbox_verified
-    observed_state: statically_indicated
-    last_state_change: "2026-07-05T00:00:00Z"
-    authority_for_transition: human_turn_88c1f6f
+    observed_state: runtime_verified
+    last_state_change: "2026-07-06T03:14:47Z"
+    authority_for_transition: human_turn_gate_0007_scoped_certification
+    certification_scope: UE_5_7_MACOS_GOVERNED_SANDBOX
+    verified_by_gate: gate-0007
+    verified_attempt: gate-0007-sandbox-invocation-0001-attempt-0001
+    verified_evidence_commit: 927981ae0ea1103981c6202c3a0d3e13414b92d4
+gate_0007:
+  gate_state: sandbox_verified
+  primary_claim: verified
+  attempt_consumption: consumed
+  authorization: valid_at_execution
+  production_integrity: preserved
+  engine_integrity: preserved
+  capability_certification: sandbox_verified
+  production_eligible: false
+  phase_3: blocked_pending_post_verification_human_turn
+  rerun_authorized: false
+  behavioral_limitations:
+    ui: observation_incomplete
+    network: observation_incomplete
 observed:
   unreal_editor:
     present: true
@@ -26,12 +44,14 @@ observed:
     module_preload_present: true
     module_uncooked_present: true
     commandlet_source_present: true
-    runtime_loading_status: unknown_pending_sandbox_verification
+    runtime_loading_status: proven_by_gate_0007_attempt_0001
   production_project:
     present: true
     path_reference: PRODUCTION_PROJECT_ROOT
     integrity_hash: ebdf69f4edacf4c55b0a44f99e005323e498ab19725ddf6b398aadcfef59bba1
     integrity_verified: true
+    gate_0007_fresh_aggregate: 63f8ea51b3602f09b716d2af89cca40a45af76a86f5e3a11a43b1f4c030439fd
+    gate_0007_postexecution_result: PRODUCTION_INTEGRITY_PRESERVED
   active_processes:
     unreal: 0
     python: 0
@@ -41,10 +61,13 @@ observed:
 drift:
   - field: certification.unreal.invoke_python
     desired: sandbox_verified
-    observed: statically_indicated
-    gap: runtime_loading_behavior_unproven
-    reconciliation_required: sandbox_execution_and_verification
+    observed: runtime_verified
+    gap: none
+    resolution: reconciled_by_gate_0007_attempt_0001_verified_execution
+    resolved_at_utc: "2026-07-06T03:14:47Z"
   - field: python_script_plugin.runtime_loading_status
     desired: proven
-    observed: unknown
-    note: Commandlet source proves runtime loading possible; execution test required to verify
+    observed: proven_by_gate_0007_attempt_0001
+    gap: none
+    resolution: "LogPython nonce witnessed at line 981 of the Gate 0007 abslog file; plugin loaded and executed the probe at runtime"
+    resolved_at_utc: "2026-07-06T03:14:47Z"

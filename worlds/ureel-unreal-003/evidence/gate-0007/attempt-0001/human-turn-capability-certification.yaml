@@ -1,0 +1,54 @@
+schema: ruora.human-turn-capability-certification/v0.1
+created_at_utc: "2026-07-06T03:14:47Z"
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+decision: GRANT_SCOPED_SANDBOX_CAPABILITY_CERTIFICATION
+
+capability_id: unreal.invoke-python
+capability_version: "1.0.0"
+certification: SANDBOX_VERIFIED
+
+scope:
+  engine_family: Unreal Engine
+  engine_version: "5.7"
+  engine_observed_version: "5.7.4"
+  platform: macOS
+  invocation_mode: ExecutePythonScript
+  execution_boundary: isolated_governed_sandbox
+  authorization_model: human_turn_preauthorization_required
+  attempt_model: single_consumable_attempt
+  evidence_contract: gate-0007
+  canonical_log_requirement: abslog_exact_nonce
+  production_integrity_required: true
+  engine_integrity_required: true
+
+evidence_basis:
+  execution_authority: AUTHORIZED_EXECUTION
+  primary_claim: UNREAL_PYTHON_INVOCATION_VERIFIED
+  predicates_passed: 8
+  predicates_failed: 0
+  predicates_unproven: 0
+  evidence_admission: CANONICALLY_ADMITTED
+  verified_evidence_commit: 927981ae0ea1103981c6202c3a0d3e13414b92d4
+
+limitations:
+  ui_observation: observation_incomplete
+  network_observation: observation_incomplete
+  production_deployment_proven: false
+  production_mutation_safety_proven: false
+  unrestricted_execution_proven: false
+
+production_eligible: false
+phase_3: BLOCKED_PENDING_SEPARATE_HUMAN_TURN_GATE
+rerun_authorized: false
+
+explicit_statements:
+  - "This certification is scoped, not universal."
+  - "It applies only to the governed Unreal Engine 5.7 macOS isolated-sandbox invocation configuration under the Gate 0007 evidence contract."
+  - "Production eligibility remains false; production safety, deployment authority, and unrestricted Unreal automation are not established."
+  - "PHASE 3 remains blocked pending a separate Human_TURN gate."
+  - "UI and network observation limitations remain unresolved and are carried, not erased."
+  - "Attempt 0001 remains permanently consumed; no new execution is authorized by this certification."

@@ -106,5 +106,11 @@ capability:
     requires_isolation: true
     requires_deterministic_controller: true
   certification:
-    current: sandbox_candidate
+    current: SANDBOX_VERIFIED
+    previous: sandbox_candidate
+    verified_by_gate: gate-0007
+    verified_attempt: gate-0007-sandbox-invocation-0001-attempt-0001
+    verified_evidence_commit: 927981ae0ea1103981c6202c3a0d3e13414b92d4
+    scope: UE_5_7_MACOS_GOVERNED_SANDBOX
     production_eligible: false
+    phase_3: BLOCKED_PENDING_SEPARATE_HUMAN_TURN_GATE
