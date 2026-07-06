@@ -1,0 +1,27 @@
+schema: ruora.authority-timeline/v0.1
+created_at_utc: "2026-07-06T02:56:18Z"
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+timeline:
+  - event: preexecution_reseal_completed
+    timestamp_utc: "2026-07-06T02:20:42Z"
+  - event: human_turn_authorization_created
+    timestamp_utc: "2026-07-06T02:24:44Z"
+  - event: controller_authorization_validation_began
+    timestamp_utc: "2026-07-06T02:24:58Z"
+  - event: exclusive_attempt_reservation
+    timestamp_utc: "2026-07-06T02:24:58.627289Z"
+  - event: unreal_editor_popen
+    timestamp_utc: "2026-07-06T02:24:58.658955Z"
+  - event: unreal_editor_exit
+    timestamp_utc: "2026-07-06T02:25:25.356892Z"
+  - event: runtime_evidence_freeze
+    timestamp_utc: "2026-07-06T02:26:52Z"
+
+proven_ordering: "preexecution seal (02:20:42Z) < authorization creation (02:24:44Z) <= authorization validation (02:24:58Z) < attempt reservation (02:24:58.627289Z) <= Popen (02:24:58.658955Z)"
+authority_classification: AUTHORIZED_EXECUTION
+authorization_window_seconds: 900
+authorization_expired_before_reservation: false

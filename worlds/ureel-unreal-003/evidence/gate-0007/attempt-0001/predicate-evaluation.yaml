@@ -1,0 +1,44 @@
+schema: ruora.gate-predicate-evaluation/v0.1
+created_at_utc: "2026-07-06T02:56:18Z"
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+predicates:
+  - ordinal: 1
+    name: "Process launched against isolated sandbox"
+    classification: PASS
+    evidence: "PID 10449 launched via sealed argv against sandbox project; containment proven"
+  - ordinal: 2
+    name: "Marker exists"
+    classification: PASS
+    evidence: "evidence/runtime/python_execution_marker.txt present, frozen"
+  - ordinal: 3
+    name: "Marker contains exact fresh nonce"
+    classification: PASS
+    evidence: "UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 witnessed in marker"
+  - ordinal: 4
+    name: "Canonical Unreal log contains exact fresh nonce"
+    classification: PASS
+    evidence: "line 981 of evidence/runtime/unreal_engine.log: 'LogPython: UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001' in the Unreal-generated -abslog file"
+  - ordinal: 5
+    name: "Production integrity preserved"
+    classification: PASS
+    evidence: "all six before/after hashes match; aggregate 63f8ea51... matches"
+  - ordinal: 6
+    name: "Engine-target integrity preserved"
+    classification: PASS
+    evidence: "all six before/after hashes match; aggregate 1144a763... matches"
+  - ordinal: 7
+    name: "Production path absent from executable inputs"
+    classification: PASS
+    evidence: "sealed containment report, verdict CONTAINED"
+  - ordinal: 8
+    name: "Mutation inventory completed"
+    classification: PASS
+    evidence: "complete classification; zero unexpected/production/engine mutations"
+summary:
+  predicates_passed: 8
+  predicates_failed: 0
+  predicates_unproven: 0
+  primary_claim: UNREAL_PYTHON_INVOCATION_VERIFIED

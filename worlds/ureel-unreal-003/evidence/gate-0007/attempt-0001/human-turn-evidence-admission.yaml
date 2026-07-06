@@ -1,0 +1,40 @@
+schema: ruora.human-turn-evidence-admission/v0.1
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+decision: ADMIT_AS_VERIFIED_SANDBOX_EXECUTION_EVIDENCE
+
+execution_authority: AUTHORIZED_EXECUTION
+primary_claim: UNREAL_PYTHON_INVOCATION_VERIFIED
+attempt_consumption: CONSUMED
+rerun_authorized: false
+
+predicate_counts:
+  passed: 8
+  failed: 0
+  unproven: 0
+
+production_integrity: PRODUCTION_INTEGRITY_PRESERVED
+engine_integrity: ENGINE_TARGET_INTEGRITY_PRESERVED
+termination: natural
+clean_process_termination_verified: verified
+ui: observation_incomplete
+network: observation_incomplete
+
+capability_certification: NOT_YET_GRANTED
+sandbox_verified: false
+production_eligible: false
+phase_3: BLOCKED
+
+decision_timestamp_utc: "2026-07-06T02:56:18Z"
+
+explicit_statements:
+  - "The execution was authorized before reservation: authorization 2026-07-06T02:24:44Z preceded reservation 2026-07-06T02:24:58.627289Z."
+  - "Attempt 0001 is permanently consumed; no rerun is authorized."
+  - "All eight primary predicates passed with direct witness."
+  - "Marker evidence and canonical Unreal-log evidence are independently present; neither substituted for the other."
+  - "UI and network behavioral claims remain observation_incomplete and do not affect the primary claim."
+  - "Evidence admission does not itself grant capability certification."
+  - "Production eligibility remains false; PHASE 3 remains blocked."

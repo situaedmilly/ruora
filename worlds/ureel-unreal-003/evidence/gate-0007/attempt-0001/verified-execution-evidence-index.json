@@ -1,0 +1,113 @@
+{
+  "schema": "ruora.verified-execution-evidence-index/v0.1",
+  "created_at_utc": "2026-07-06T02:56:18Z",
+  "world_id": "ureel-unreal-003",
+  "gate_id": "gate-0007",
+  "plan_id": "gate-0007-sandbox-invocation-0001",
+  "attempt_id": "gate-0007-sandbox-invocation-0001-attempt-0001",
+  "sandbox_root": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001",
+  "canonical_head_at_execution": "9ea9ebe4a7f4e4267f12b187f5410b7273df04f0",
+  "authorization_artifact": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/human_turn_execution_authorization.json",
+    "relative_path": "evidence/human_turn_execution_authorization.json",
+    "byte_size": 869,
+    "sha256": "6820bae80bf98499bf8456876b4c11ce6b69069150cca25944152d2113b556ff"
+  },
+  "attempt_state": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/invocation_attempt_state.json",
+    "relative_path": "evidence/runtime/invocation_attempt_state.json",
+    "byte_size": 1134,
+    "sha256": "5ccbd834189528f207a09a09ad483e5e66b7d3c236b67d2be5d71197192b6852"
+  },
+  "marker": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/python_execution_marker.txt",
+    "relative_path": "evidence/runtime/python_execution_marker.txt",
+    "byte_size": 184,
+    "sha256": "88be7ad844a07fa0c3357fd8f0e8fd384c1095e23109a1703e4eec23a4ab16db"
+  },
+  "canonical_unreal_log": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/unreal_engine.log",
+    "relative_path": "evidence/runtime/unreal_engine.log",
+    "byte_size": 100417,
+    "sha256": "c7494a8155a3b39f84812b3877705a2f99408e2fdee399c0b494995e33f4664c"
+  },
+  "stdout": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/unreal_stdout.log",
+    "relative_path": "evidence/runtime/unreal_stdout.log",
+    "byte_size": 1149,
+    "sha256": "4c2c4e7aad62e0b38bf8ded30f86aab16fd8be76812b0e3fa99016afad28bc90"
+  },
+  "stderr": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/unreal_stderr.log",
+    "relative_path": "evidence/runtime/unreal_stderr.log",
+    "byte_size": 175,
+    "sha256": "0914b9848bf806f9bb16e100238fdef8268092abb348e9ecc1d87924cad7f501"
+  },
+  "execution_record": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/execution_record.json",
+    "relative_path": "evidence/runtime/execution_record.json",
+    "byte_size": 159,
+    "sha256": "fd9658686e8881b922118e52e73bab73c72c40e92e39cc255edf690e479b8dfe"
+  },
+  "exit_status_evidence": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/execution_record.json",
+    "relative_path": "evidence/runtime/execution_record.json",
+    "byte_size": 159,
+    "sha256": "fd9658686e8881b922118e52e73bab73c72c40e92e39cc255edf690e479b8dfe"
+  },
+  "process_observation": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/postexecution/process-observation.json",
+    "relative_path": "evidence/postexecution/process-observation.json",
+    "byte_size": 561,
+    "sha256": "8c2b0110caea54ea14aad603ef714445de896cb8e6dcdf889da88501a7f09020"
+  },
+  "mutation_inventory": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/postexecution/mutation-inventory.json",
+    "relative_path": "evidence/postexecution/mutation-inventory.json",
+    "byte_size": 6105,
+    "sha256": "d60a5ab8192ba2a68b3f7b89a863f705d140e2d43b1877421033b6edceca0d2e"
+  },
+  "production_preexecution_baseline": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/preexecution/production-integrity-baseline.yaml",
+    "relative_path": "evidence/preexecution/production-integrity-baseline.yaml",
+    "byte_size": 2760,
+    "sha256": "483b46998bef232db6b208504caa983ebe05fdfef3f32be5fef542bad4388832"
+  },
+  "production_postexecution_evidence": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/postexecution/production-integrity-postexecution.yaml",
+    "relative_path": "evidence/postexecution/production-integrity-postexecution.yaml",
+    "byte_size": 1875,
+    "sha256": "3e68ec4dd055beb809b9a1940574bbc5c828c329f996a6478673526daec4a934"
+  },
+  "production_aggregate_comparison": {
+    "preexecution": "63f8ea51b3602f09b716d2af89cca40a45af76a86f5e3a11a43b1f4c030439fd",
+    "postexecution": "63f8ea51b3602f09b716d2af89cca40a45af76a86f5e3a11a43b1f4c030439fd",
+    "result": "MATCH"
+  },
+  "engine_preexecution_baseline": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/preexecution/engine-integrity-baseline.yaml",
+    "relative_path": "evidence/preexecution/engine-integrity-baseline.yaml",
+    "byte_size": 2890,
+    "sha256": "25e7e7d32b7704e4364c711829eadde555cc8be0fc816fe9e8cbf569151107a9"
+  },
+  "engine_postexecution_evidence": {
+    "absolute_path": "/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/postexecution/engine-integrity-postexecution.yaml",
+    "relative_path": "evidence/postexecution/engine-integrity-postexecution.yaml",
+    "byte_size": 1992,
+    "sha256": "6b2620f065680c7d6ac884f6cc8e73b8e0fa774c707f172abe28bb3484298681"
+  },
+  "engine_aggregate_comparison": {
+    "preexecution": "1144a763fefa79f0e482cbd8da460d8ebc0555900389ed068683f43af02554c4",
+    "postexecution": "1144a763fefa79f0e482cbd8da460d8ebc0555900389ed068683f43af02554c4",
+    "result": "MATCH"
+  },
+  "authority_classification": "AUTHORIZED_EXECUTION",
+  "predicate_counts": {
+    "passed": 8,
+    "failed": 0,
+    "unproven": 0
+  },
+  "primary_claim": "UNREAL_PYTHON_INVOCATION_VERIFIED",
+  "evidence_frozen": true,
+  "rerun_authorized": false
+}
