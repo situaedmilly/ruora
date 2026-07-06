@@ -25,7 +25,7 @@ phases:
     executes_runtime: false
   - phase: 4
     name: executable_input_construction
-    action: "Construct and statically validate the controller, probe, project file, and canonical invocation argv including the -abslog argument targeting evidence/unreal_engine.log."
+    action: "Construct and statically validate the controller, probe, project file, and canonical invocation argv including the -abslog argument targeting evidence/runtime/unreal_engine.log."
     executes_runtime: false
   - phase: 5
     name: preexecution_seal

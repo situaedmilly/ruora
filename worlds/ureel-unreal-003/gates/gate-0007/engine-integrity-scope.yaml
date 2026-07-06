@@ -37,7 +37,7 @@ abslog_provenance:
   witnessed_semantic: "FParse::Value parses ABSLOG= from the Unreal command line and routes the primary engine log to the given absolute path."
   observed_source_line: 86
   line_number_note: "The line number is the value observed during this design inspection; it is not permanently authoritative if the file later changes. The file hash in this scope is authoritative."
-  planned_invocation_argument: "-abslog=/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/unreal_engine.log"
+  planned_invocation_argument: "-abslog=/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/unreal_engine.log"
   shell_interpolation_prohibited: true
 
 hash_requirements:

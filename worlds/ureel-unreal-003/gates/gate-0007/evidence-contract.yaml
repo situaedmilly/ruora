@@ -9,7 +9,7 @@ attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
 nonce: UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001
 
 canonical_unreal_log:
-  path: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/unreal_engine.log
+  path: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/runtime/unreal_engine.log
   produced_by: "Unreal engine via -abslog command-line argument"
   required_for_predicate_4: true
   failure_behavior:
@@ -29,13 +29,13 @@ predicates:
     pass_condition: "raw argv witness, PID evidence, and sandbox project path containment all proven from frozen runtime evidence"
   - ordinal: 2
     name: "marker exists"
-    pass_condition: "frozen evidence/python_execution_marker.txt present in sandbox evidence"
+    pass_condition: "frozen evidence/runtime/python_execution_marker.txt present at the exact governed runtime path; no root-level evidence path is admissible"
   - ordinal: 3
     name: "marker contains exact fresh nonce"
     pass_condition: "exact string UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 present in the marker file"
   - ordinal: 4
     name: "canonical Unreal log contains exact fresh nonce"
-    pass_condition: "exact string UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 present in the canonical -abslog file evidence/unreal_engine.log; absence, emptiness, or wrong nonce fails; no substitute source is admissible"
+    pass_condition: "exact string UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 present in the canonical -abslog file evidence/runtime/unreal_engine.log; absence, emptiness, or wrong nonce fails; no substitute source and no root-level evidence path is admissible"
   - ordinal: 5
     name: "production integrity preserved"
     pass_condition: "all six fresh preexecution production hashes equal their postexecution recomputations and the aggregates are equal, per production-integrity-scope.yaml"
