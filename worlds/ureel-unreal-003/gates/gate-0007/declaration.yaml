@@ -1,0 +1,36 @@
+schema: ruora.gate-declaration/v0.1
+created_at_utc: "2026-07-06T01:09:28Z"
+
+world_id: ureel-unreal-003
+cycle: UREEL-UNREAL-003
+gate_id: gate-0007
+gate_name: "Authorized Unreal Python Invocation Verification"
+purpose: AUTHORIZED_UNREAL_PYTHON_INVOCATION_VERIFICATION
+
+predecessor:
+  gate_id: gate-0006
+  sealed_status: CLOSED_WITH_UNVERIFIED_FORENSIC_EVIDENCE
+  canonical_commit: a285cd10da775e9712a17d2bdb0d7f7b459184aa
+
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+attempt_limit: 1
+attempt_consumed: false
+
+current_state: declaration_design
+desired_state: sandbox_verified
+
+sandbox_root: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001
+nonce: UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001
+retired_predecessor_nonce_must_not_appear: true
+
+production_eligible: false
+phase_3: blocked
+
+execution_authority_granted_by_declaration: false
+
+explicit_laws:
+  - "Gate 0006 files, runtime evidence, markers, state files, and logs cannot satisfy any Gate 0007 predicate."
+  - "The attempt cannot be reserved without a valid Human_TURN authorization artifact at evidence/human_turn_execution_authorization.json validated mechanically by the controller before reservation."
+  - "Sandbox verification does not imply production eligibility; production eligibility requires a separate later Human_TURN gate."
+  - "This declaration grants no execution authority; execution requires the full mechanical authority order defined in the state machine and plan."

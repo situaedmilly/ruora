@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ruora.human-turn-execution-authorization/v0.1",
+  "title": "Gate 0007 Human_TURN Execution Authorization",
+  "description": "Mechanical authorization artifact required at evidence/human_turn_execution_authorization.json before the Gate 0007 controller may reserve the attempt. The controller must verify identity constants, hash bindings, seal binding, and the mandatory 900-second window, and must refuse reservation when current_utc >= expires_at_utc.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "world_id",
+    "gate_id",
+    "plan_id",
+    "attempt_id",
+    "authorization_status",
+    "authorized_at_utc",
+    "expires_at_utc",
+    "authorized_controller_sha256",
+    "authorized_project_sha256",
+    "authorized_probe_sha256",
+    "authorized_invocation_digest",
+    "preexecution_seal_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ruora.human-turn-execution-authorization/v0.1"
+    },
+    "world_id": {
+      "const": "ureel-unreal-003"
+    },
+    "gate_id": {
+      "const": "gate-0007"
+    },
+    "plan_id": {
+      "const": "gate-0007-sandbox-invocation-0001"
+    },
+    "attempt_id": {
+      "const": "gate-0007-sandbox-invocation-0001-attempt-0001"
+    },
+    "authorization_status": {
+      "const": "AUTHORIZED"
+    },
+    "authorized_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "RFC 3339 UTC timestamp with Z suffix captured at the actual moment of Human_TURN authorization. Must be later than the preexecution seal timestamp."
+    },
+    "expires_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "RFC 3339 UTC timestamp with Z suffix. Mandatory. Must equal authorized_at_utc plus exactly 900 seconds. The controller must refuse reservation when current_utc >= expires_at_utc, with no grace period, automatic extension, or timestamp regeneration."
+    },
+    "authorized_controller_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authorized_project_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authorized_probe_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authorized_invocation_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "preexecution_seal_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the sealed preexecution manifest. The controller must recompute the manifest hash and refuse on mismatch."
+    }
+  },
+  "x-ruora-authorization-window": {
+    "duration_seconds": 900,
+    "begins_at": "authorized_at_utc",
+    "expires_at_required": true,
+    "controller_window_check": "expires_at_utc - authorized_at_utc == 900 seconds",
+    "controller_refusal_condition": "current_utc >= expires_at_utc",
+    "expiration_before_reservation_leaves_attempt_unconsumed": true
+  }
+}

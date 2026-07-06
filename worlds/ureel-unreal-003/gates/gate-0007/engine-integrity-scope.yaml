@@ -1,0 +1,65 @@
+schema: ruora.engine-integrity-scope/v0.1
+created_at_utc: "2026-07-06T01:09:28Z"
+
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+engine_root: "/Users/Shared/Epic Games/UE_5.7"
+engine_version_association: "5.7"
+
+governed_targets:
+  - ordinal: 1
+    name: build_version
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Build/Build.version"
+  - ordinal: 2
+    name: unreal_editor_executable
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor"
+  - ordinal: 3
+    name: python_script_plugin_descriptor
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin/PythonScriptPlugin.uplugin"
+  - ordinal: 4
+    name: python_script_commandlet_source
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin/Source/PythonScriptPlugin/Private/PythonScriptCommandlet.cpp"
+  - ordinal: 5
+    name: execute_python_script_implementation_source
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Plugins/Experimental/PythonScriptPlugin/Source/PythonScriptPlugin/Private/PythonScriptPlugin.cpp"
+  - ordinal: 6
+    name: abslog_parse_source
+    path: "/Users/Shared/Epic Games/UE_5.7/Engine/Source/Runtime/Core/Private/GenericPlatform/GenericPlatformOutputDevices.cpp"
+
+path_existence_verified_at_package_creation: true
+path_verification_timestamp_utc: "2026-07-06T01:09:28Z"
+
+abslog_provenance:
+  witness_file: "/Users/Shared/Epic Games/UE_5.7/Engine/Source/Runtime/Core/Private/GenericPlatform/GenericPlatformOutputDevices.cpp"
+  witnessed_semantic: "FParse::Value parses ABSLOG= from the Unreal command line and routes the primary engine log to the given absolute path."
+  observed_source_line: 86
+  line_number_note: "The line number is the value observed during this design inspection; it is not permanently authoritative if the file later changes. The file hash in this scope is authoritative."
+  planned_invocation_argument: "-abslog=/Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/unreal_engine.log"
+  shell_interpolation_prohibited: true
+
+hash_requirements:
+  preexecution_hashes_required: true
+  postexecution_hashes_required: true
+  fresh_capture_required: true
+  hash_algorithm: SHA-256
+  hash_format: "64 lowercase hexadecimal characters"
+
+aggregate_formula:
+  description: "Identical formula to the production scope, applied independently to the six engine-target hashes"
+  steps:
+    - "Take the six lowercase SHA-256 hex strings in the fixed ordinal order defined above (ordinal 1 through ordinal 6)."
+    - "Join them with exactly one LF byte (0x0A) between consecutive values."
+    - "Include no labels, no spaces, no CR bytes, and no trailing LF after the sixth value."
+    - "Compute SHA-256 over the resulting UTF-8 bytes."
+  aggregate_input_template: "H1\\nH2\\nH3\\nH4\\nH5\\nH6"
+  aggregate_sha256: "SHA256(aggregate_input_bytes)"
+
+predicate_6_law:
+  pass_condition: "each of the six postexecution hashes equals its preexecution hash and the postexecution aggregate equals the preexecution aggregate"
+  fail_condition: "any hash or aggregate differs"
+  unproven_condition: "any before or after value absent"
+  unproven_is_not_sufficient_for_verified_primary_claim: true
+  halt_code_on_missing_path: GATE_0007_ENGINE_SCOPE_PATH_MISMATCH

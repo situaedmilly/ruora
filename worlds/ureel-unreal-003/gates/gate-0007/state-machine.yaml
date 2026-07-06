@@ -1,0 +1,143 @@
+schema: ruora.gate-state-machine/v0.1
+created_at_utc: "2026-07-06T01:09:28Z"
+
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+dimensions:
+  gate_state:
+    values:
+      - declaration_design
+      - package_canonicalized
+      - sandbox_prepared
+      - preexecution_sealed
+      - authorized
+      - attempt_reserved
+      - executing
+      - evidence_frozen
+      - evidence_admitted
+      - closed
+    initial: declaration_design
+    ordered_transitions:
+      - from: declaration_design
+        to: package_canonicalized
+        requires: "seven-file canonical package validated and synchronized to canonical main"
+      - from: package_canonicalized
+        to: sandbox_prepared
+        requires: "fresh sandbox root constructed with no Gate 0006 file carried in"
+      - from: sandbox_prepared
+        to: preexecution_sealed
+        requires: "production baseline, engine baseline, executable inputs, and preexecution manifest sealed and hashed"
+      - from: preexecution_sealed
+        to: authorized
+        requires: "Human_TURN authorization artifact created after the seal, valid per authorization-schema.json"
+      - from: authorized
+        to: attempt_reserved
+        requires: "controller mechanically validated authorization identity, hashes, seal, and time window, then exclusively created attempt state"
+      - from: attempt_reserved
+        to: executing
+        requires: "single Popen of UnrealEditor"
+      - from: executing
+        to: evidence_frozen
+        requires: "process terminated under bounded runtime policy; no evidence edits after termination"
+      - from: evidence_frozen
+        to: evidence_admitted
+        requires: "Human_TURN evidence-admission decision"
+      - from: evidence_admitted
+        to: closed
+        requires: "canonical closure recorded"
+
+  primary_claim:
+    values:
+      - not_evaluated
+      - verified
+      - not_verified
+    initial: not_evaluated
+    law: "verified requires all eight evidence-contract predicates PASS; any FAIL or UNPROVEN yields not_verified"
+
+  attempt_consumption:
+    values:
+      - unconsumed
+      - consumed
+    initial: unconsumed
+    law: "consumed at exclusive-create success of the attempt-state file; expiration of authorization before reservation leaves the attempt unconsumed"
+
+  authorization:
+    values:
+      - absent
+      - valid
+      - invalid
+      - expired
+    initial: absent
+    window_seconds: 900
+    law: "valid only when the artifact matches authorization-schema.json, identity constants match, all four authorized hashes match independent recomputation, preexecution_seal_sha256 matches the recomputed manifest hash, authorized_at_utc is later than the seal timestamp, expires_at_utc equals authorized_at_utc plus exactly 900 seconds, and current_utc is earlier than expires_at_utc"
+
+  production_integrity:
+    values:
+      - not_evaluated
+      - preserved
+      - violated
+      - unproven
+    initial: not_evaluated
+
+  engine_integrity:
+    values:
+      - not_evaluated
+      - preserved
+      - violated
+      - unproven
+    initial: not_evaluated
+
+  capability_certification:
+    values:
+      - not_granted
+      - sandbox_verified
+    initial: not_granted
+    law: "sandbox_verified requires primary_claim verified and a Human_TURN certification decision; scope is the governed UE 5.7 macOS sandbox configuration only"
+
+  production_eligible:
+    values:
+      - false
+    initial: false
+    law: "no Gate 0007 state transition may set production eligibility true; production eligibility requires a separate later gate"
+
+  phase_3:
+    values:
+      - blocked
+      - blocked_pending_post_verification_human_turn
+    initial: blocked
+    law: "successful sandbox verification moves phase_3 to blocked_pending_post_verification_human_turn; it never unblocks within Gate 0007"
+
+mechanical_authority_order:
+  - "1. declaration package canonicalized"
+  - "2. fresh sandbox constructed"
+  - "3. preexecution production baseline captured"
+  - "4. preexecution engine baseline captured"
+  - "5. executable inputs sealed"
+  - "6. preexecution manifest sealed and hashed"
+  - "7. Human_TURN authorization artifact created"
+  - "8. controller validates authorization identity, hashes, seal, and time window"
+  - "9. controller exclusively reserves attempt"
+  - "10. controller launches one UnrealEditor process"
+
+controller_refusal_conditions_before_reservation:
+  - condition: "authorization artifact absent"
+    refusal: GATE_0007_REFUSED_NO_AUTHORIZATION
+  - condition: "world, gate, plan, or attempt identity mismatch"
+    refusal: GATE_0007_REFUSED_AUTHORIZATION_IDENTITY_MISMATCH
+  - condition: "authorization_status not AUTHORIZED"
+    refusal: GATE_0007_REFUSED_NOT_AUTHORIZED
+  - condition: "authorized_at_utc earlier than the preexecution seal timestamp"
+    refusal: GATE_0007_REFUSED_AUTHORIZATION_PREDATES_SEAL
+  - condition: "expires_at_utc minus authorized_at_utc not exactly 900 seconds"
+    refusal: GATE_0007_REFUSED_AUTHORIZATION_WINDOW_INVALID
+  - condition: "current_utc >= expires_at_utc"
+    refusal: GATE_0007_REFUSED_AUTHORIZATION_EXPIRED
+  - condition: "any authorized input hash mismatches independent recomputation"
+    refusal: GATE_0007_REFUSED_AUTHORIZATION_HASH_MISMATCH
+  - condition: "preexecution_seal_sha256 mismatches the recomputed manifest hash"
+    refusal: GATE_0007_REFUSED_SEAL_MISMATCH
+  - condition: "attempt-state file already exists"
+    refusal: GATE_0007_REFUSED_ATTEMPT_ALREADY_RESERVED

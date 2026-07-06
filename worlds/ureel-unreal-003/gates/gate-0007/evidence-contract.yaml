@@ -1,0 +1,57 @@
+schema: ruora.gate-evidence-contract/v0.1
+created_at_utc: "2026-07-06T01:09:28Z"
+
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+nonce: UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001
+
+canonical_unreal_log:
+  path: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001/evidence/unreal_engine.log
+  produced_by: "Unreal engine via -abslog command-line argument"
+  required_for_predicate_4: true
+  failure_behavior:
+    file_absent: PREDICATE_4_FAIL
+    file_empty: PREDICATE_4_FAIL
+    nonce_absent: PREDICATE_4_FAIL
+    wrong_nonce: PREDICATE_4_FAIL
+  substitution_prohibited:
+    - stdout
+    - stderr
+    - python_execution_marker
+    - "Saved/Logs directory contents"
+
+predicates:
+  - ordinal: 1
+    name: "process launched against isolated sandbox"
+    pass_condition: "raw argv witness, PID evidence, and sandbox project path containment all proven from frozen runtime evidence"
+  - ordinal: 2
+    name: "marker exists"
+    pass_condition: "frozen evidence/python_execution_marker.txt present in sandbox evidence"
+  - ordinal: 3
+    name: "marker contains exact fresh nonce"
+    pass_condition: "exact string UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 present in the marker file"
+  - ordinal: 4
+    name: "canonical Unreal log contains exact fresh nonce"
+    pass_condition: "exact string UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001 present in the canonical -abslog file evidence/unreal_engine.log; absence, emptiness, or wrong nonce fails; no substitute source is admissible"
+  - ordinal: 5
+    name: "production integrity preserved"
+    pass_condition: "all six fresh preexecution production hashes equal their postexecution recomputations and the aggregates are equal, per production-integrity-scope.yaml"
+  - ordinal: 6
+    name: "targeted engine integrity preserved"
+    pass_condition: "all six engine-target preexecution hashes equal their postexecution recomputations and the aggregates are equal, per engine-integrity-scope.yaml; UNPROVEN is not sufficient"
+  - ordinal: 7
+    name: "production path absent from executable inputs"
+    pass_condition: "sealed executable-input scan proves no production path appears in any executable input"
+  - ordinal: 8
+    name: "mutation inventory completed"
+    pass_condition: "complete internally consistent before/after sandbox mutation classification exists in frozen evidence"
+
+primary_claim_law:
+  verified_claim: UNREAL_PYTHON_INVOCATION_VERIFIED
+  verified_requires: "all eight predicates PASS"
+  any_fail_or_unproven_yields: UNREAL_PYTHON_INVOCATION_NOT_VERIFIED
+  marker_cannot_substitute_for_unreal_log: true
+  unproven_is_not_pass: true

@@ -1,0 +1,65 @@
+schema: ruora.gate-plan/v0.1
+created_at_utc: "2026-07-06T01:09:28Z"
+
+world_id: ureel-unreal-003
+gate_id: gate-0007
+plan_id: gate-0007-sandbox-invocation-0001
+attempt_id: gate-0007-sandbox-invocation-0001-attempt-0001
+
+sandbox_root: /Users/millysituated/UREEL-PROBE-SANDBOX/UNREAL-003-GATE-0007-MACOS-PYTHON-INVOCATION-0001
+nonce: UREEL_GATE_0007_UNREAL_PYTHON_ATTEMPT_0001
+
+phases:
+  - phase: 1
+    name: declaration_package_canonicalization
+    action: "Validate the seven-file Gate 0007 declaration package and synchronize it to canonical main via the governed worktree and fast-forward path."
+    executes_runtime: false
+    stop_boundary: "The package-creation action stops after this phase."
+  - phase: 2
+    name: fresh_sandbox_preparation
+    action: "Construct the fresh sandbox root with a fresh .uproject, fresh probe script, fresh controller copy, and fresh directory structure. No Gate 0006 runtime, evidence, marker, state, or log file may be copied in."
+    executes_runtime: false
+  - phase: 3
+    name: baseline_capture
+    action: "Capture fresh preexecution SHA-256 hashes and aggregates for the six production files and the six engine targets, per the two scope artifacts."
+    executes_runtime: false
+  - phase: 4
+    name: executable_input_construction
+    action: "Construct and statically validate the controller, probe, project file, and canonical invocation argv including the -abslog argument targeting evidence/unreal_engine.log."
+    executes_runtime: false
+  - phase: 5
+    name: preexecution_seal
+    action: "Seal the preexecution manifest binding all input hashes, baselines, and the invocation digest; compute the manifest SHA-256."
+    executes_runtime: false
+  - phase: 6
+    name: human_turn_authorization
+    action: "Human_TURN creates evidence/human_turn_execution_authorization.json after the seal, valid per authorization-schema.json, with a mandatory 900-second window."
+    executes_runtime: false
+  - phase: 7
+    name: one_bounded_invocation
+    action: "Controller mechanically validates the authorization artifact, exclusively reserves the attempt, and launches exactly one UnrealEditor process under the bounded timeout policy."
+    executes_runtime: true
+    attempt_limit: 1
+  - phase: 8
+    name: evidence_freeze
+    action: "Freeze all runtime evidence at process termination; no edits, normalization, renaming, truncation, or regeneration."
+    executes_runtime: false
+  - phase: 9
+    name: human_turn_evidence_admission
+    action: "Forensic reconciliation of frozen evidence against the eight predicates; Human_TURN admission decision."
+    executes_runtime: false
+  - phase: 10
+    name: conditional_sandbox_certification
+    action: "If and only if all eight predicates PASS and Human_TURN certifies: capability_certification becomes sandbox_verified. Production eligibility remains false."
+    executes_runtime: false
+  - phase: 11
+    name: post_verification_phase_3_decision
+    action: "Separate Human_TURN decision on PHASE 3; not part of Gate 0007 execution authority."
+    executes_runtime: false
+
+laws:
+  - "This plan authorizes no runtime action by itself."
+  - "Phase 7 cannot begin without the phase 6 authorization artifact validated mechanically by the controller."
+  - "Expiration of the authorization window before reservation leaves the attempt unconsumed."
+  - "The attempt limit is one; a consumed attempt is never reopened."
+  - "Sandbox verification does not establish production eligibility."
