@@ -25,3 +25,7 @@ quarantine/
 .env
 .env.*
 !.env.example
+
+# AgentBridge operational evidence store; governed as non-Git runtime
+# evidence by LIMITED_SELFLAUNCH_OPERATING_BOUNDARY.md
+/runtime/agentbridge/
