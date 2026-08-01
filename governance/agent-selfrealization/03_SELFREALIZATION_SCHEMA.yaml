@@ -1,10 +1,16 @@
 # 03_SELFREALIZATION_SCHEMA.yaml
 #
-# Suite status: CANDIDATE — not ratified, not wired into any runtime
-# validator. See 00_MANIFEST.md. This is a machine-readable CONTRACT for
-# the selfrealization_record produced under 02_SELFREALIZATION_PROMPT.md.
-# It is written as a JSON Schema (2020-12) expressed in YAML so it can be
-# validated by any standard JSON Schema tool without a bespoke parser.
+# Suite status: CANDIDATE — not ratified as a complete suite and not
+# runtime-enforced. See 00_MANIFEST.md.
+#
+# Ratified schema amendments (narrow; do not ratify the suite):
+#   - F-01 / F-02 / F-04 role-correspondence repair — FOUNDER-DISPOSITION-001
+#   - SR-EXEC-001 execute-ceiling amendment — FOUNDER-DISPOSITION-002
+#
+# This is a machine-readable CONTRACT for the selfrealization_record
+# produced under 02_SELFREALIZATION_PROMPT.md. It is written as a JSON
+# Schema (2020-12) expressed in YAML so it can be validated by any
+# standard JSON Schema tool without a bespoke parser.
 #
 # Design rules this schema enforces:
 #   - No field has an implicit default. Authority fields in particular

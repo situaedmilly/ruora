@@ -1,6 +1,8 @@
 # GATE 5 — ENGINEERING WITNESS
 
-STATUS: READY_FOR_FOUNDER_RATIFICATION_REVIEW — not yet dispositioned.
+STATUS: DISPOSITIONED (2026-07-30) — APPROVED. See
+  decisions/ratified/FOUNDER-DISPOSITION-007-GATE-5-WITNESS.md for the
+  constitutional record.
 CLASS: Engineering Evidence.
 EXECUTION_AUTHORITY: NONE.
 MUTATION_AUTHORITY: NONE. No runtime, routing, or code of any kind was

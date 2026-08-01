@@ -1,7 +1,9 @@
 # WORKFLOW-001 — HYPERBOLIC CHAMBER RUNTIME CONTRACT
 ## Canonical Specification
 
-STATUS: PARKED
+STATUS: DISPOSITIONED (2026-07-29) — APPROVED. See
+  decisions/ratified/FOUNDER-DISPOSITION-003-WORKFLOW-001-WITNESS.md for
+  the constitutional record.
 CLASSIFICATION: ARCHITECTURAL_DESIGN_CANDIDATE (Design stage only, per
   `governance/agentbridge/workflow/04_GATE_EXECUTION.md`'s lifecycle:
   Design → Implementation → Regression → Production Proof → Cold

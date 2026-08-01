@@ -1,7 +1,9 @@
 # GATE 5 — HYPERBOLIC CHAMBER IMPLEMENTATION CONTRACT
 ## Canonical Specification
 
-STATUS: PARKED
+STATUS: DISPOSITIONED (2026-07-30) — APPROVED. See
+  decisions/ratified/FOUNDER-DISPOSITION-007-GATE-5-WITNESS.md for the
+  constitutional record.
 CLASSIFICATION: IMPLEMENTATION_DESIGN_CANDIDATE (Design stage, per
   `04_GATE_EXECUTION.md`'s lifecycle — same stage as Gate 3/WORKFLOW-001/
   WORKFLOW-002, one level more concrete)
