@@ -1,0 +1,141 @@
+# 07_EXECUTION_WITNESS_SCHEMA.yaml
+#
+# Suite status: CANDIDATE — not ratified, not wired into any runtime
+# validator. See 00_MANIFEST.md. Machine-readable contract for the durable
+# execution witness produced at 06_RUNTIME_FLOW.md §16_MEMORY_COMMIT.
+
+"$schema": "https://json-schema.org/draft/2020-12/schema"
+"$id": "ourself.agent-runtime-execution-witness.v1"
+title: "OURSELF EXECUTION WITNESS"
+schema_version: "ourself.agent-runtime-execution-witness.v1"
+status: CANDIDATE_CONSTITUTIONAL_SCHEMA
+type: object
+additionalProperties: false
+required:
+  - witness_version
+  - timestamp
+  - session_id
+  - agent
+  - source_revision
+  - authorized_gate
+  - files_read
+  - files_changed
+  - commands_run
+  - verification_results
+  - commit
+  - seal_state
+  - remaining_contradictions
+  - next_lawful_gate
+  - rollback
+  - evidence_refs
+
+"$defs":
+  string_list:
+    type: array
+    items: { type: string }
+
+properties:
+  witness_version:
+    const: "ourself.agent-runtime-execution-witness.v1"
+
+  timestamp:
+    description: "UTC timestamp the witness was produced — required, no default."
+    type: string
+    format: date-time
+
+  session_id:
+    type: string
+    minLength: 1
+
+  agent:
+    type: object
+    additionalProperties: false
+    required: [agent_name, assigned_role, selfrealization_record_ref]
+    properties:
+      agent_name: { type: string }
+      assigned_role: { type: string }
+      selfrealization_record_ref:
+        description: "Reference to the accepted selfrealization_record this
+          execution was authorized under. Required — an execution witness
+          with no traceable REALIZED record behind it is invalid."
+        type: string
+
+  source_revision:
+    description: "Source-revision fields, pre- and post-mutation."
+    type: object
+    additionalProperties: false
+    required: [repository, branch, pre_head, post_head, working_tree_state]
+    properties:
+      repository: { type: string }
+      branch: { type: string }
+      pre_head: { type: string }
+      post_head:
+        description: "Equal to pre_head when no mutation occurred."
+        type: string
+      working_tree_state: { type: string }
+
+  authorized_gate:
+    type: string
+    description: "Must match the AUTHORIZED GATE field of the Runtime
+      Authorization Packet that permitted this execution."
+
+  files_read: { "$ref": "#/$defs/string_list" }
+  files_changed: { "$ref": "#/$defs/string_list" }
+  commands_run: { "$ref": "#/$defs/string_list" }
+
+  verification_results:
+    type: object
+    additionalProperties: false
+    required: [syntax, structure, behavior, security, containment,
+               regression, lineage, working_tree]
+    properties:
+      syntax: { type: string }
+      structure: { type: string }
+      behavior: { type: string }
+      security: { type: string }
+      containment: { type: string }
+      regression: { type: string }
+      lineage: { type: string }
+      working_tree: { type: string }
+
+  commit:
+    type: object
+    additionalProperties: false
+    required: [status]
+    properties:
+      status:
+        type: string
+        enum: [NOT_PERFORMED, COMMITTED, PUSHED]
+      detail: { type: string }
+
+  seal_state:
+    type: string
+    enum: [SEALED, READY_FOR_FOUNDER_SEAL, HOLD, FAILED, ROLLED_BACK]
+
+  remaining_contradictions: { "$ref": "#/$defs/string_list" }
+
+  next_lawful_gate:
+    type: string
+
+  rollback:
+    description: "Required even when no mutation occurred — state N/A
+      explicitly rather than omitting the field."
+    type: object
+    additionalProperties: false
+    required: [available, procedure_or_na]
+    properties:
+      available: { type: boolean }
+      procedure_or_na: { type: string }
+
+  evidence_refs:
+    description: "Explicit pointers to artifacts supporting every claim
+      above — an unmapped claim is not evidenced."
+    "$ref": "#/$defs/string_list"
+
+allOf:
+  - if:
+      properties: { seal_state: { const: SEALED } }
+    then:
+      properties:
+        remaining_contradictions: { maxItems: 0 }
+      required: [remaining_contradictions]
