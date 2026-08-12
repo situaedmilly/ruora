@@ -29,3 +29,9 @@ quarantine/
 # AgentBridge operational evidence store; governed as non-Git runtime
 # evidence by LIMITED_SELFLAUNCH_OPERATING_BOUNDARY.md
 /runtime/agentbridge/
+
+# Realm Mutation chamber — governed runtime/isolation infrastructure (source
+# mirrors, disposable candidates, manifests, evidence). Same ontological class
+# as projects/ and /runtime/agentbridge/: must exist beneath RUORA without
+# becoming doctrine-repo content. Mechanism sealed by REALM-MUTATION-R2.
+chambers/
