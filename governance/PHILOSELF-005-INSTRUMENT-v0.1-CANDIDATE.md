@@ -2,9 +2,10 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; A-I repair
-                     surfaces under Founder-hardened repair authority, four
-                     patches binding)
+REVISION:            v0.3-state-establishment-repair-001 + residual-ledger-001
+                     (2026-08-15; same authorization wave; residual surfaces:
+                     M-11 capability index cross-ref §3, M-20 dependency digest
+                     bindings §9)
 CLASS:               philoSELF foundation (5 — instrument layer)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -93,7 +94,9 @@ INSTRUMENT
 ├── chamber                      where it operates (PHILOSELF-003 dimensions);
 │                                the instrument is an OCCUPANT of this chamber
 │                                (003 §3 definition)
-├── capability                   what it can technically do (substrate-indexed)
+├── capability                   what it can technically do — the PHILOSELF-002
+│                                §6 index (manifestation @ substrate, chamber);
+│                                one home for capability estate-wide (M-11)
 ├── authorized_operation_class   which operations it may lawfully perform,
 │                                scoped by the cited grant's object_scope
 ├── forbidden_operation_class    which operations it may never perform
@@ -342,8 +345,15 @@ implements, and un-freezes nothing:
 - PHILOSELF-004 §4 INV-6 (commencement article) — founding instruments.
 - PHILOSELF-003 §4 INV-RC-ADMISSION-001 — admission instruments are the
   "authorized instrument" that invariant names.
-- `doctrine/specs/SELF-KERNEL-SPEC-V0.md` — Implementation→run entrance (§7.3).
-- `router/sia-registry.js` — fail-closed precedent (specimen S-2).
+- SELF-KERNEL-SPEC-V0 — Implementation→run entrance (§7.3). Binding (M-20):
+  repository RUORA, path
+  `systems/ourself-agent-bridge/doctrine/specs/SELF-KERNEL-SPEC-V0.md`, sha256
+  c74228e41e2720bd2a10be4a7ce69c053d55ff832b07e491ab23255f1bd0e86b.
+- sia-registry — fail-closed precedent (specimen S-2). Binding (M-20):
+  repository RUORA, path
+  `systems/ourself-agent-bridge/router/sia-registry.js`, sha256
+  1e4cd1bcf9a8f2c60d87bc0e07f74eb1ed86dbbd20cadd7291e1fd979b224752 (five
+  `-pass-21aN` siblings disclosed; this binding names the original only).
 - PHILOSELF-BOUNDARY-REVIEW-RETURN-001.md — design pressure (B4, B5, MAT-9,
   MAT-18, A4, A10; source evidence, undispositioned).
 

@@ -2,10 +2,10 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
-                     retains the v0.1 candidate slot; A-I repair surfaces under
-                     Founder-hardened repair authority, four patches binding;
-                     001 body unchanged this revision — header custody only)
+REVISION:            v0.3-state-establishment-repair-001 + residual-ledger-001
+                     (2026-08-15; same authorization wave; residual surfaces:
+                     MAT-18 INV-1 reword, M-22 promotion INV-6, M-20 dependency
+                     digest bindings, M-11 capability index cross-reference)
 CLASS:               philoSELF foundation (1 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -72,6 +72,7 @@ IDENTITY_CLAIM       != IDENTITY_PROJECTION != AUTHORITY_GRANT
 SYSTEM_CONSTITUTION  != OPERATOR_ROLE    (design input: FOUNDATION_001 finding F-06, undispositioned)
 LINEAGE_DESIGNATION  != INSTANTIABLE_ROLE (design input: FOUNDATION_001 finding F-02, undispositioned)
 SESSION_IDENTIFIER   != AUTHOR_SELF
+NAMED                != CONSTITUTED  (a name without a constitution is vocabulary — §6)
 ```
 
 ## 3. CONSTITUENTS
@@ -92,10 +93,17 @@ WITNESS       What establishes that this instantiated execution actually
 
 ## 4. INVARIANTS
 
-1. **Instrument-written identity.** The record binding a manifestation to a
-   SELF is written by an authority outside the manifesting runtime. The runtime
-   may read the record back; it may never author it. ("I am HBCSELF#001" is an
-   Observed-class fact under SELF-KERNEL-SPEC-V0, never a self-declaration.)
+1. **Identity binding is authored by authority; the fact of it is observed by
+   instrument.** (MAT-18 reword — the prior wording committed the kernel
+   spec's own illegal Constitution→Observed jump.) The record binding a
+   manifestation to a SELF is an Authority-axis artifact, authored by the
+   admitting authority, outside the manifesting runtime; the runtime may read
+   it back and may never author it. The FACT that the binding holds for a
+   given execution ("this execution IS HBCSELF#001's manifestation") becomes
+   Observed-class only through an eligible instrument's run evaluated under
+   PHILOSELF-005 §4 INV-8 — `Implementation → run`, the kernel spec's only
+   entrance to Observed. Authority authors the record; evaluation observes the
+   fact; neither substitutes for the other.
 2. **Append-only genesis.** Lineage is appended, never edited. Supersession is
    recorded; erasure is prohibited (ratification-binds-evidence-state law).
 3. **No self-widening of boundary.** A manifestation may narrow ambiguity in
@@ -104,6 +112,10 @@ WITNESS       What establishes that this instantiated execution actually
    by witnessed correspondence of invariants, never by name equality.
 5. **One name, one referent, per jurisdiction.** A referent collision blocks
    instantiation until adjudicated.
+6. **Witness conditions are law (M-22 promotion).** Realization of a SELF is
+   established only when §7's four conditions hold on record, and any required
+   predicate that is unobservable CAPS the identity verdict — it never
+   defaults true. Detailed prose remains in §7; this invariant is its force.
 
 ## 5. FAILURE MODES
 
@@ -175,15 +187,22 @@ FOUNDATION_001 finding F-03 (undispositioned source evidence, not authority).
 
 ## 9. DEPENDENCIES
 
-- `doctrine/specs/SELF-KERNEL-SPEC-V0.md` — three-axis truth model; identity as
-  Observed-class fact.
+- SELF-KERNEL-SPEC-V0 — three-axis truth model; the Implementation→run
+  entrance. Binding (M-20): repository RUORA, path
+  `systems/ourself-agent-bridge/doctrine/specs/SELF-KERNEL-SPEC-V0.md`, sha256
+  c74228e41e2720bd2a10be4a7ce69c053d55ff832b07e491ab23255f1bd0e86b.
 - OSAB SELFQUEUE FOUNDATION_001 return (SOURCE_RECORD — see header
   CAUSAL_PARENT) — findings F-02, F-03, F-06 are design inputs to this
   candidate (source evidence, undispositioned; not binding constraints).
 - `governance/SELFSYSTEM_AGENT_PROJECTION_001.md` — authored before this
   foundation; must be derivable from PHILOSELF-001…004 or amended.
 - `governance/SELFHTML-HBC-LINEAGE-ADOPTION-001-DOCTRINE.md` — HBCSELF referent.
-- `router/sia-registry.js` — static role constitutions, fail-closed precedent.
+- sia-registry — static role constitutions, fail-closed precedent. Binding
+  (M-20): repository RUORA, path
+  `systems/ourself-agent-bridge/router/sia-registry.js`, sha256
+  1e4cd1bcf9a8f2c60d87bc0e07f74eb1ed86dbbd20cadd7291e1fd979b224752. Disclosed:
+  five sibling copies exist under `-pass-21aN` trees (round-2 SPEC2-F2); THIS
+  binding names the control-plane original and only it.
 
 ## 10. OPEN QUESTIONS
 

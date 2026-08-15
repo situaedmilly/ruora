@@ -2,9 +2,10 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
-                     retains the v0.1 candidate slot; A-I repair surfaces under
-                     Founder-hardened repair authority, four patches binding)
+REVISION:            v0.3-state-establishment-repair-001 + residual-ledger-001
+                     (2026-08-15; same authorization wave; residual surfaces:
+                     M-11 capability retyping §6, M-22 promotion INV-8, M-20
+                     dependency digest bindings + unrealized-referent marks)
 CLASS:               philoSELF foundation (2 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -166,6 +167,14 @@ execution unlawful.
    causes a state of the process, never of the subject. This invariant states
    as constitutional law the separation previously stranded in frozen
    X1 §6.7/§6.8 (round-2 M-9).
+8. **Grant existence, admissibility, and non-exercise witness are law (M-22
+   promotion).** A grant exists only as a sovereign-side record — a grant
+   living only in a runtime's narration does not exist (§7.1). The §6
+   admissibility filter binds every SELFPUTE with its three distinct refusals
+   never collapsed. Non-exercise is witnessed only by digest pairs over the
+   FULL declared write-set inside the cited record or a separately bound
+   witness (§7.3). Detailed prose remains in §6/§7; this invariant is their
+   force.
 
 ## 5. FAILURE MODES
 
@@ -191,12 +200,21 @@ Admissibility filter (the relay's ratified correction — capability is the
 middle term, not a fifth foundation):
 
 ```
-T ∈ Capability(SELF)
+T ∈ Capability(manifestation @ substrate, Chamber)
 ∧ T ∈ Authority(SELF, Chamber)
 ∧ Preconditions(T, Chamber) = SATISFIED
         ↓
 ADMISSIBLE SELFPUTE(T)
 ```
+
+(M-11 retyping: capability is a property of a manifestation on a substrate
+within a chamber — never of the SELF in the abstract. The same SELF projected
+onto two substrates has two capability sets; `Capability(SELF)` was not a
+function. This §6 index is THE single home of capability; PHILOSELF-001 §3's
+CAPABILITY constituent and PHILOSELF-005 §3's capability field both refer
+here. A transition absent from this chamber's capability set is
+UNAVAILABLE-HERE; only a transition absent from every lawful manifestation's
+set is IMPOSSIBLE — the two refusals never collapse.)
 
 A transition outside Capability is impossible; outside Authority, unlawful;
 outside Chamber preconditions, inadmissible. Three distinct refusals, never
@@ -277,10 +295,20 @@ review's output.
 
 ## 9. DEPENDENCIES
 
-- `router/sia-registry.js` — fail-closed route/role authority precedent.
-- DESIGN/ADMISSION-REVOCATION-CHANNEL-01 — revocation semantics to reconcile.
-- ROBINHOOD-AGENT-001 / Ra-seal — live capability-vs-authority regime.
-- DESIGN/TRUSTED-TIME-SOURCE-01 — open; blocks clock-based expiration.
+- sia-registry — fail-closed route/role authority precedent. Binding (M-20):
+  repository RUORA, path
+  `systems/ourself-agent-bridge/router/sia-registry.js`, sha256
+  1e4cd1bcf9a8f2c60d87bc0e07f74eb1ed86dbbd20cadd7291e1fd979b224752 (five
+  `-pass-21aN` siblings disclosed; this binding names the original only).
+- ADMISSION-REVOCATION-CHANNEL-01 — **UNREALIZED_DESIGN_REFERENT** (M-20/
+  SPEC2-F5 honesty: no file at any `DESIGN/` path resolves; the referent is a
+  design-intent name, not an artifact; INV-6 and OQ-1 depend on its future
+  realization and gain nothing from it today).
+- ROBINHOOD-AGENT-001 / Ra-seal — live capability-vs-authority regime
+  (memory-scope referent, disclosed as such since round 1).
+- TRUSTED-TIME-SOURCE-01 — **UNREALIZED_DESIGN_REFERENT** (same class as
+  above; INV-6's clock prohibition therefore stands with no opening gate until
+  the referent is realized and dispositioned).
 - PHILOSELF-001 (an authority HOLDER must have SELFhood; instruments never
   hold authority — they operate UNDER a holder's grant cited by
   `constituting_grant_ref`, PHILOSELF-005 §3 — round-2 M-3 resolution),

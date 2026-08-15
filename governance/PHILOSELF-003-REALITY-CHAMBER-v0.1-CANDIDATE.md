@@ -2,9 +2,9 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
-                     retains the v0.1 candidate slot; A-I repair surfaces under
-                     Founder-hardened repair authority, four patches binding)
+REVISION:            v0.3-state-establishment-repair-001 + residual-ledger-001
+                     (2026-08-15; same authorization wave; residual surface:
+                     M-22 promotion INV-8)
 CLASS:               philoSELF foundation (3 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -167,6 +167,12 @@ subprocesses, inherited-memory evaluators, and agent types not yet named.
    per-class, per-grant enumeration is void — EXECUTION-class grants can never
    enter a REVIEW_ONLY chamber through a blanket boundary declaration
    (round-2 M-10 cure).
+8. **Independence computation and cap are law (M-22 promotion).** Independence
+   between two chambers is COMPUTED as the set of dimensions on which their
+   declared boundaries provably do not intersect (§6) — never established by
+   conversational impression; and any required predicate in the unobservable
+   class CAPS the verdict at INDEPENDENCE_PARTIAL (§7), never defaulting true.
+   Detailed prose remains in §6/§7; this invariant is their force.
 
 ## 5. FAILURE MODES
 

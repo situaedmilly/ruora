@@ -2,9 +2,10 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
-                     retains the v0.1 candidate slot; A-I repair surfaces under
-                     Founder-hardened repair authority, four patches binding)
+REVISION:            v0.3-state-establishment-repair-001 + residual-ledger-001
+                     (2026-08-15; same authorization wave; residual surfaces:
+                     MAT-1 INV-7 write-set confinement, M-22 promotion INV-8,
+                     M-20 dependency digest bindings incl. self_axiom dual copy)
 CLASS:               philoSELF foundation (4 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -142,6 +143,20 @@ SELFPUTE
    FOUNDING_WITNESS is FOUNDER_DERIVED and witnesses that sovereign act. This
    exemption is categorical, applies to commencement only, and this sentence
    is its explicit statement; nothing else inherits it.
+7. **Write-set confinement (MAT-1 cure).** A SELFPUTE's actual write-set is
+   confined to its ExecutionGrant's declared write_set (PHILOSELF-002 §3)
+   within the chamber's STATE BOUNDARY. A write outside the declared set is
+   OUT_OF_CHAMBER_WRITE regardless of every other invariant passing. The
+   write_set is declared by the ADMISSION side in the grant — never by the
+   transforming runtime — and non-exercise/exercise witness runs over the FULL
+   declared set (002 §4 INV-8, §7.2/§7.3). A named failure mode now has its
+   detecting invariant.
+8. **Battery and founding-witness constraints are law (M-22 promotion).** The
+   §6 adjudication battery (Q0–Q8) is answered one by one, never collapsed;
+   the FOUNDING_WITNESS constraints of §7 (single use, commencement-only,
+   byte-bound enacts[], post-commencement authority NONE, persistence
+   required) bind as law. Detailed prose remains in §6/§7; this invariant is
+   their force.
 
 ## 5. FAILURE MODES
 
@@ -251,13 +266,24 @@ review should confirm or correct this normalization.)
 
 ## 9. DEPENDENCIES
 
-- `doctrine/self_axiom.md` — ancestral law; this candidate must remain
-  derivable from it, not rival to it.
+- self_axiom — ancestral law; this candidate must remain derivable from it,
+  not rival to it. Binding (M-20, SPEC2-F4 disclosure): TWO divergent live
+  copies exist. This corpus binds the IN-TREE copy at its own custody commit —
+  path `doctrine/self_axiom.md` (this tree), sha256
+  6157819c5fd07152cb8617fa033a66f1838ece87dd3ad39dfd6783497c683cd9 — as its
+  dependency referent. The RUORA main-tree working copy (sha256
+  7080f1c1b5bf4b78818faba2aed8549b99967284267af0ff4e7a4e881e4284ab) carries an
+  additional `## Amendment Law` section absent from the in-tree copy; whether
+  that section governs this corpus, and the reconciliation of the two copies,
+  is an OPEN FOUNDER QUESTION — binding the in-tree referent resolves the
+  path ambiguity only and adjudicates nothing about the amendment law.
 - Realm Mutation ladder (R0–R2 sealed) — mutation adjudication by filesystem
   delta; Gate D content-witness hole is inherited here, not solved here.
 - Epistemic Systems Metrology — realization law; the C0 defect as specimen.
-- `doctrine/specs/SELF-KERNEL-SPEC-V0.md` — legal bridges between declared,
-  observed, and proven truth classes.
+- SELF-KERNEL-SPEC-V0 — legal bridges between declared, observed, and proven
+  truth classes. Binding (M-20): repository RUORA, path
+  `systems/ourself-agent-bridge/doctrine/specs/SELF-KERNEL-SPEC-V0.md`, sha256
+  c74228e41e2720bd2a10be4a7ce69c053d55ff832b07e491ab23255f1bd0e86b.
 - PHILOSELF-001, -002, -003 — SELFPUTE is the point where the other three
   foundations become operative; it has no independent standing without them.
 
