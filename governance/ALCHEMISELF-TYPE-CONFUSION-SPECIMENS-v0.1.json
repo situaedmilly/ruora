@@ -1,0 +1,117 @@
+{
+  "schema": "alchemiself.type_confusion_specimens.v0.1",
+  "act": "ALCHEMISELF_ROOT_RUNTIME_001",
+  "specimens": [
+    {
+      "id": "TYPE-CONFUSION-dd9da0b7-001",
+      "raw_reference": "dd9da0b7...",
+      "candidate_types": ["GIT_COMMIT_PREFIX", "ARTIFACT_DIGEST_PREFIX", "CONTENT_HASH_PREFIX", "SEAL_DIGEST_PREFIX", "SOURCE_HASH_PREFIX", "EXTERNAL_IDENTIFIER", "UNRESOLVED_TOKEN"],
+      "assumed_type": "GIT_COMMIT_PREFIX",
+      "actual_type": "ARTIFACT_DIGEST_PREFIX",
+      "missing_distinction": "DIGEST != COMMIT",
+      "expected_resolution": {
+        "resolved_type": "ARTIFACT_DIGEST",
+        "algorithm": "SHA256",
+        "digest": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82",
+        "repository": "situaedmilly/ruora",
+        "path": "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+        "source_commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d"
+      },
+      "blocked_collapse": "GitCommit(dd9da0b7) unresolved does not imply Object(dd9da0b7) nonexistent.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-9451d5d-002",
+      "raw_reference": "9451d5d...",
+      "candidate_types": ["GIT_COMMIT_PREFIX", "ARTIFACT_DIGEST_PREFIX", "MESSAGE_TOKEN", "UNRESOLVED_TOKEN"],
+      "assumed_type": "ARTIFACT_DIGEST_PREFIX",
+      "actual_type": "GIT_COMMIT_PREFIX",
+      "missing_distinction": "COMMIT != ARTIFACT",
+      "expected_resolution": {
+        "resolved_type": "GIT_COMMIT",
+        "repository": "situaedmilly/ruora",
+        "commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d"
+      },
+      "blocked_collapse": "A commit locating an artifact does not inherit the artifact's semantic standing.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-PASS-003",
+      "raw_reference": "PASS",
+      "candidate_types": ["PROOF_OBLIGATION_RESULT", "EPISTEMIC_STANDING", "ADJUDICATION_DISPOSITION", "STATUS_LABEL"],
+      "assumed_type": "EPISTEMIC_STANDING",
+      "actual_type": "PROOF_OBLIGATION_RESULT",
+      "missing_distinction": "PASS != VERIFIED",
+      "expected_resolution": {
+        "resolved_type": "PROOF_OBLIGATION_RESULT"
+      },
+      "blocked_collapse": "A passing check does not confer VERIFIED standing without the standing law and adjudication boundary.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-CHANGES-REQUIRED-004",
+      "raw_reference": "CHANGES_REQUIRED",
+      "candidate_types": ["REVIEW_DISPOSITION", "REPAIR_AUTHORITY", "RATIFICATION_STATUS", "TASK_STATUS"],
+      "assumed_type": "REPAIR_AUTHORITY",
+      "actual_type": "REVIEW_DISPOSITION",
+      "missing_distinction": "REVIEWED != REPAIR_AUTHORITY",
+      "expected_resolution": {
+        "resolved_type": "REVIEW_DISPOSITION"
+      },
+      "blocked_collapse": "A hostile review finding does not authorize a repair unless the next-authority field grants it.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-README-005",
+      "raw_reference": "README.md",
+      "candidate_types": ["PATH", "DOCTRINE_SOURCE", "REPOSITORY_SELF_DECLARATION", "EVIDENCE_ARTIFACT"],
+      "assumed_type": "DOCTRINE_SOURCE",
+      "actual_type": "PATH",
+      "missing_distinction": "FILENAME != DOCTRINE",
+      "expected_resolution": {
+        "resolved_type": "PATH"
+      },
+      "blocked_collapse": "A file name that resembles a doctrine surface is not doctrine until provenance and authority establish it.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-HBCSELF-006",
+      "raw_reference": "HBCSELF",
+      "candidate_types": ["FOUNDER_LINEAGE_NAME", "REPOSITORY_SELF_DECLARATION", "SYSTEM_IDENTITY", "REVIEWER_ROLE"],
+      "assumed_type": "REPOSITORY_SELF_DECLARATION",
+      "actual_type": "FOUNDER_LINEAGE_NAME",
+      "missing_distinction": "SYSTEM_NAME != IDENTITY_DECLARATION",
+      "expected_resolution": {
+        "resolved_type": "FOUNDER_LINEAGE_NAME"
+      },
+      "blocked_collapse": "A Founder lineage designation does not retroactively make a repository self-declare that identity.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-source-remote-null-007",
+      "raw_reference": "source_remote: null",
+      "candidate_types": ["TRANSPORT_STATUS", "SOURCE_ABSENCE", "REPOSITORY_ABSENCE", "REVIEW_BLOCKER"],
+      "assumed_type": "SOURCE_ABSENCE",
+      "actual_type": "TRANSPORT_STATUS",
+      "missing_distinction": "PROVENANCE != TRANSPORT_RESOLVABILITY",
+      "expected_resolution": {
+        "resolved_type": "TRANSPORT_STATUS"
+      },
+      "blocked_collapse": "No remote proves the handoff is not receiver-resolvable; it does not prove the source object does not exist.",
+      "must_fail_closed_if_raw": true
+    },
+    {
+      "id": "TYPE-CONFUSION-tool-success-008",
+      "raw_reference": "exit code 0",
+      "candidate_types": ["TOOL_SUCCESS", "SEMANTIC_PROOF", "RUNTIME_OBSERVATION", "ADJUDICATION"],
+      "assumed_type": "SEMANTIC_PROOF",
+      "actual_type": "TOOL_SUCCESS",
+      "missing_distinction": "SUCCESS != PROOF",
+      "expected_resolution": {
+        "resolved_type": "TOOL_SUCCESS"
+      },
+      "blocked_collapse": "A tool succeeded; semantic correctness still requires a proof obligation and adjudication.",
+      "must_fail_closed_if_raw": true
+    }
+  ]
+}
