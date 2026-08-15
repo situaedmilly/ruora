@@ -199,6 +199,15 @@ act as though invariants 1–5 applied to it. Round 2's independence critique of
 the battery — Q5 subsumes Q2/Q4; Q8 depends on the proof relation — is noted
 and undispositioned.)
 
+**Proof-rule evaluation is a SELFPUTE (R2 integration).** Running
+`EvaluateProof(w, c, r, χ)` is itself an act of this candidate's kind: it is
+performed under a SELF's identity (or by a constituted instrument under a
+cited grant), inside a chamber, within granted authority, and it causes a
+standing transition (`c: UNESTABLISHED -> ESTABLISHED@ceiling` on PASS). Its
+witness and memory obligations are those of any SELFPUTE; its authority is
+the evaluation grant, never the rule's authorship or registration
+(PHILOSELF-005 §6 registry laws; PHILOSELF-002 §6 activation authority).
+
 (Disclosure: the source relay enumerated these eight questions while naming
 "seven"; this candidate normalizes to the enumerated eight. The boundary
 review should confirm or correct this normalization.)
@@ -267,16 +276,24 @@ review should confirm or correct this normalization.)
 ## 9. DEPENDENCIES
 
 - self_axiom — ancestral law; this candidate must remain derivable from it,
-  not rival to it. Binding (M-20, SPEC2-F4 disclosure): TWO divergent live
-  copies exist. This corpus binds the IN-TREE copy at its own custody commit —
-  path `doctrine/self_axiom.md` (this tree), sha256
-  6157819c5fd07152cb8617fa033a66f1838ece87dd3ad39dfd6783497c683cd9 — as its
-  dependency referent. The RUORA main-tree working copy (sha256
-  7080f1c1b5bf4b78818faba2aed8549b99967284267af0ff4e7a4e881e4284ab) carries an
-  additional `## Amendment Law` section absent from the in-tree copy; whether
-  that section governs this corpus, and the reconciliation of the two copies,
-  is an OPEN FOUNDER QUESTION — binding the in-tree referent resolves the
-  path ambiguity only and adjudicates nothing about the amendment law.
+  not rival to it. **Lineage ruling (Founder disposition, R1, 2026-08-15):**
+  ```
+  COMMITTED_SELF_AXIOM (in-tree, sha256 6157819c5fd07152cb8617fa033a66f1838ece87dd3ad39dfd6783497c683cd9):
+    standing: LAST_ESTABLISHED_VERSIONED_BASELINE — governs this corpus
+  WORKING_SELF_AXIOM_AMENDMENT_LAW (RUORA working copy, sha256
+  7080f1c1b5bf4b78818faba2aed8549b99967284267af0ff4e7a4e881e4284ab,
+  divergent by its `## Amendment Law` section):
+    standing: UNADJUDICATED_CONSTITUTIONAL_AMENDMENT_CANDIDATE
+  ```
+  Required distinctions, ruled: WORKING_COPY != GOVERNING_BASELINE;
+  NEWER_TEXT != LAWFUL_AMENDMENT; INTERPRETATION != AMENDMENT;
+  AMENDMENT_TEXT != AMENDMENT_AUTHORITY; PRESENCE_ON_DISK !=
+  CONSTITUTIONAL_FORCE. The amendment text cannot self-authorize
+  retroactively — its own principle forbids it. It remains a dependency
+  referent for provenance; its normative force is NOT established. Neither
+  copy is deleted; no history is rewritten; nothing is silently adopted.
+  Later adoption, if desired, requires an explicit PROSPECTIVE Founder
+  amendment act.
 - Realm Mutation ladder (R0–R2 sealed) — mutation adjudication by filesystem
   delta; Gate D content-witness hole is inherited here, not solved here.
 - Epistemic Systems Metrology — realization law; the C0 defect as specimen.

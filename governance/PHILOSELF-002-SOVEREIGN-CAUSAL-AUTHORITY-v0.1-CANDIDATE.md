@@ -242,6 +242,18 @@ divergence's closure; RATIFICATION is sovereign and does not delegate
 (`DELEGATION != SOVEREIGNTY_TRANSFER`) — its exercise is recorded per act, and
 a surviving ratification power is the Founder's alone.
 
+**ProofRule activation authority (R2 integration).** Activating a ProofRule
+(PHILOSELF-005 §6) is an exercise of domain-scoped ADJUDICATION_AUTHORITY —
+grant shape `proof_rule_status: REGISTERED -> ACTIVE`, scoped to a claim-type
+domain. NO new authority class exists for this (`PROOF_RULE_AUTHORITY` is not
+a thing and must never become one). Separation of duty applies with full
+force: RULE_AUTHORSHIP != RULE_REGISTRATION != RULE_ACTIVATION !=
+RULE_APPLICATION != STANDING_ADJUDICATION — a rule's author is never its
+activator by default (INV-7 analogue over the rule's own lifecycle), a
+registry's custody of a rule confers no authority over it, and activation
+grants neither ratification authority nor standing beyond the rule's own
+standing_ceiling.
+
 **Finding chain** (REVIEW-class output law): `REVIEW_FINDING != TRUTH`. The
 chain runs REVIEW OUTPUT -> CLAIMED FINDING -> COUNTEREXAMPLE/EVIDENCE ->
 VALIDATION -> SITUATED DEFECT -> FOUNDER/AUTHORIZED DISPOSITION -> REPAIR

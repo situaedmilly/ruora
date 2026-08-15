@@ -61,6 +61,13 @@ INSTRUMENT_CAPABILITY      != INSTRUMENT_AUTHORITY
 FOUNDING_INSTRUMENT        != ORDINARY_INSTRUMENT
 TRANSPORT_INSTRUMENT       != RATIFICATION_INSTRUMENT
 MODEL_MESSAGE_RECORD       != PROOF_OF_DECLARED_PROPOSITION
+AUTHORIZED_RULE            != ACTIVE_RULE
+REGISTERED_RULE            != ACTIVE_RULE
+ACTIVE_RULE                != UNIVERSALLY_VALID_RULE
+RULE_APPLICATION_PASS      != VERIFIED
+RULE_AUTHOR                != RULE_ACTIVATOR_BY_DEFAULT
+REGISTRY_CUSTODY           != RULE_AUTHORITY
+PROOF_RULE                 != PROOF_RESULT
 ```
 
 Evidence discrimination (per-record law — the rule the round-1 review found
@@ -173,6 +180,14 @@ cited grant plus authorized_operation_class license.
    §7.3's Implementation→run entrance is licensed by THIS invariant and by no
    other route; §2/INV-3 remain true — no record class auto-proves anything;
    evaluation under an authorized rule is what does.
+   **Fail-closed conditions (R2 integration):** EvaluateProof(w, c, r, χ)
+   REJECTS unless ALL hold: `r.status = ACTIVE`; the rule's
+   `activation_grant_ref` covers `ClaimType(c)`; `χ` satisfies
+   `r.chamber_requirements`; `w` satisfies `r.admissible_witness_types`; the
+   source satisfies `r.admissible_source_types`. Any condition unmet or
+   unevaluable → no evaluation occurs (not FAIL — REJECTED_UNEVALUATED).
+   Activation confers no ratification authority; application confers no
+   standing above `r.standing_ceiling`.
 9. **INV-COMPOSITE-NON-MERGER-001.** Eligibility never merges across the
    composed classes of a COMPOSITE instrument: each record carries the class
    and eligibility of exactly one composed function, and a composite's
@@ -254,9 +269,56 @@ disposition (NO_OP_CLOSED / QUARANTINED / SUPERSEDED / INVALIDATED) — the
 duplicate-projection law, now content-parented (specimen:
 DUPLICATE_PROJECTION_UNBOUND, PHILOSELF-003 §8 S-3).
 
-Instrument classes: ADMISSION, WITNESS, PROOF, FOUNDING, TRANSPORT — and
-COMPOSITE (a constituted composition; eligibility never merges across the
-composed classes, per INV-2/INV-9 of §4).
+Instrument classes: ADMISSION, WITNESS, PROOF, FOUNDING, TRANSPORT, REGISTRY —
+and COMPOSITE (a constituted composition; eligibility never merges across the
+composed classes, per INV-2/INV-9 of §4). A REGISTRY instrument persists
+constituted records; its custody of a record confers NO authority over the
+record (`REGISTRY_CUSTODY != RULE_AUTHORITY`, §2).
+
+**PROOF RULE REGISTRY (R2 constitutionalization).** The ProofRuleRegistry is
+an INSTRUMENT of class REGISTRY, constituted like any other (§3, §4 INV-1) —
+never an authority. The five-way separation governs the whole mechanism:
+
+```
+RULE_AUTHORSHIP != RULE_REGISTRATION != RULE_ACTIVATION
+                != RULE_APPLICATION != STANDING_ADJUDICATION
+```
+
+A reviewer may propose a rule; an engineer may encode it; the registry
+persists it; NONE of those acts authorize the rule to elevate standing —
+activation is a domain-scoped ADJUDICATION_AUTHORITY act (PHILOSELF-002 §6),
+and application is a SELFPUTE (PHILOSELF-004 §6).
+
+**ProofRule** (governed record type, persisted by the registry):
+
+```
+ProofRule
+├── rule_id
+├── claim_type
+├── admissible_witness_types
+├── admissible_source_types
+├── chamber_requirements
+├── supported_scope
+├── standing_ceiling
+├── failure_conditions
+├── author
+├── registration_record
+├── activation_authority
+├── activation_grant_ref
+├── status
+├── activated_at
+├── expires_at
+├── supersedes
+└── provenance
+```
+
+Status discipline (candidate vocabulary — NOT asserted as a total lifecycle;
+evidence may show non-sequential paths, e.g. REGISTERED -> SUPERSEDED without
+activation):
+
+```
+DRAFT -> REGISTERED -> ACTIVE -> SUSPENDED | SUPERSEDED | RETIRED
+```
 
 **Parentage table** — the constitutional ancestry the round-1 A10 audit found
 missing. Standing note: this table parents the *classes*; it ratifies,
