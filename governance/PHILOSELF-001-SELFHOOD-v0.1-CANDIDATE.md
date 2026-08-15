@@ -2,8 +2,10 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.2-boundary-repair-001 (2026-08-15; filename retains the
-                     v0.1 candidate slot; Phase A authorized surfaces only)
+REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
+                     retains the v0.1 candidate slot; A-I repair surfaces under
+                     Founder-hardened repair authority, four patches binding;
+                     001 body unchanged this revision — header custody only)
 CLASS:               philoSELF foundation (1 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -15,7 +17,10 @@ CAUSAL_PARENT:
   path:              governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html
   sha256:            f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb
   line_count:        327
-  lineage_role:      CAUSAL_PARENT
+  lineage_role:      MATERIALIZED_CAUSAL_SOURCE_RECORD (renamed per Founder M-2
+                     ruling 2026-08-15: ee991b56 identity NOT ESTABLISHED as
+                     original filesystem artifact; this record is a post-hoc
+                     materialization of the foundation return)
   standing:          SOURCE_RECORD (materialized to disk 2026-08-15 AFTER original
                      authoring — repair evidence, not retroactive original custody)
 CO_PARENT:           SELFSYSTEM_AGENT_PROJECTION_001 (X1),

@@ -2,8 +2,9 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.2-boundary-repair-001 (2026-08-15; filename retains the
-                     v0.1 candidate slot; Phase A authorized surfaces only)
+REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
+                     retains the v0.1 candidate slot; A-I repair surfaces under
+                     Founder-hardened repair authority, four patches binding)
 CLASS:               philoSELF foundation (3 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -15,7 +16,10 @@ CAUSAL_PARENT:
   path:              governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html
   sha256:            f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb
   line_count:        327
-  lineage_role:      CAUSAL_PARENT
+  lineage_role:      MATERIALIZED_CAUSAL_SOURCE_RECORD (renamed per Founder M-2
+                     ruling 2026-08-15: ee991b56 identity NOT ESTABLISHED as
+                     original filesystem artifact; this record is a post-hoc
+                     materialization of the foundation return)
   standing:          SOURCE_RECORD (materialized to disk 2026-08-15 AFTER original
                      authoring — repair evidence, not retroactive original custody)
 CO_PARENT:           SELFSYSTEM_AGENT_PROJECTION_001 (X1),
@@ -79,7 +83,9 @@ ten, never by default:
 
 ```
 REALITY CHAMBER
-├── IDENTITY BOUNDARY     which SELF projections exist inside
+├── IDENTITY BOUNDARY     which inhabitants exist inside — SELF projections AND
+│                         constituted instruments (round-2 orphan N-1: an
+│                         instrument is an inhabitant, and an occupant)
 ├── SEMANTIC BOUNDARY     which vocabulary and doctrine govern meaning
 ├── MEMORY BOUNDARY       which memory is readable / writable inside
 ├── AUTHORITY BOUNDARY    which grants are exercisable inside
@@ -102,6 +108,14 @@ property. COMPUTE names a realized transformation — SELFPUTE territory
 single COMPUTE dimension of revision v0.1 conflated EXECUTION and MODEL and
 gave SESSION no home (boundary review finding A8/MAT-8, design input); it is
 superseded by the EXECUTION, SESSION, and MODEL dimensions above.
+
+**OCCUPANT (definition — governs the relation, not today's actor names):** an
+OCCUPANT of chamber C with respect to boundary B is any SELF, projection,
+instrument, process, or execution whose epistemic inputs or operational
+behavior are subject to B. Formally: `AffectedByBoundary(x, B)`. The
+enumeration is illustrative; the relation is the law — it reaches reviewers,
+issuing parents, admission instruments running inside the chamber,
+subprocesses, inherited-memory evaluators, and agent types not yet named.
 
 ## 4. INVARIANTS
 
@@ -135,6 +149,24 @@ superseded by the EXECUTION, SESSION, and MODEL dimensions above.
    by: the admission side; an authorized instrument (PHILOSELF-005); or an
    explicitly scoped Founder-derived commencement mechanism
    (PHILOSELF-004 §4 INV-6, FOUNDING_WITNESS — commencement scope only).
+   OCCUPANT takes its §3 definition: `AffectedByBoundary(x, B)` — so an
+   instrument operating inside the chamber IS an occupant for the boundaries
+   it is subject to (round-2 C2 cure).
+7. **INV-ADMISSION-SEPARATION-001 (admission separation of duty).**
+   `AffectedByBoundary(x, B) ⇒ x` may not be the sole adjudicator of
+   `Standing(B)`, unless an explicit constitutional exception governs the case
+   (the sole current exception: the Founder-derived commencement mechanism,
+   PHILOSELF-004 §4 INV-6). This reaches the issuing parent as well as the
+   occupant — round 2's live failure was the issuer constructing the chamber
+   AND establishing its properties. Two corollaries: (a) **breach disclosure
+   forces re-adjudication**: an occupant's `BOUNDARY_BREACH_DISCLOSURE` never
+   establishes the boundary fact, but it obligates the admission side to
+   re-adjudicate `Standing(B)` — a false admission-side certification is no
+   longer unfalsifiable from inside (round-2 M-8 cure); (b) **authority
+   inheritance is class-indexed**: a declaration `inherit: authority` without
+   per-class, per-grant enumeration is void — EXECUTION-class grants can never
+   enter a REVIEW_ONLY chamber through a blanket boundary declaration
+   (round-2 M-10 cure).
 
 ## 5. FAILURE MODES
 
@@ -155,6 +187,41 @@ Chamber stack (nesting, each level an explicit instantiation):
 ```
 OURSELF -> PROJECT -> SELFSYSTEM -> MISSION -> SESSION -> AGENT_PROJECTION -> OPERATION
 ```
+
+Chambers also relate as **PEERS** (round-2 orphan N-2): a crossing between
+chambers of distinct SELFs (e.g., CLAUDESELF ↔ CHATGPTSELF via a transport
+instrument) is a peer crossing, not a nesting relation; INV-4 "nesting
+narrows" applies only to ancestry and constrains peer crossings not at all —
+peer crossings are governed by INV-2 (witnessed events) and by the receiving
+chamber's EVIDENCE BOUNDARY.
+
+**CHAMBER LIFECYCLE** (the bounded reality's own states — candidate
+vocabulary; deliberately DISTINCT from the instrument, record-custody, and
+receiver-disposition models of PHILOSELF-005 §6, which must never be
+reinstalled here):
+
+```
+PROPOSED -> ADMISSION_PENDING -> ADMITTED -> ACTIVE
+  -> COMPROMISED | SUSPENDED -> RESTORED | CLOSED -> SUPERSEDED
+```
+
+Admission is not a one-time boolean. A chamber holds ongoing integrity
+obligations while ACTIVE, and an integrity event moves it to COMPROMISED
+without any new admission act — live specimen: a second institutional-memory
+injection fired mid-review in the round-2 chamber (ACTIVE -> COMPROMISED, had
+this lifecycle existed to record it). Grants scoped to a chamber terminate no
+later than the chamber's CLOSED or SUPERSEDED state (with PHILOSELF-002 §6
+termination defaults, this closes the round-1 B2 "chamber-description-relative
+authority" hole: a later chamber reproducing the same declared boundaries is a
+NEW chamber; grants do not re-attach).
+
+**HYPERBOLIC CHAMBER (proving mode, not a separate chamber type):** a
+high-pressure mode in which constitutional objects are subjected to amplified
+cross-boundary, contradiction, provenance, lifecycle, authority, and
+failure-class attack while mutation authority remains externally bounded. Its
+optimization goal is MAXIMIZE DISTINCTION REVELATION subject to ZERO STANDING
+LAUNDERING and ZERO AUTHORITY EXPANSION — never more tokens, more agents, or
+more criticism for their own sake.
 
 Per-dimension declaration in the instantiating record:
 

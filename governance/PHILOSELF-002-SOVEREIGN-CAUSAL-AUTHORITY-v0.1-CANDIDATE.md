@@ -2,8 +2,9 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.2-boundary-repair-001 (2026-08-15; filename retains the
-                     v0.1 candidate slot; Phase A authorized surfaces only)
+REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
+                     retains the v0.1 candidate slot; A-I repair surfaces under
+                     Founder-hardened repair authority, four patches binding)
 CLASS:               philoSELF foundation (2 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -15,7 +16,10 @@ CAUSAL_PARENT:
   path:              governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html
   sha256:            f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb
   line_count:        327
-  lineage_role:      CAUSAL_PARENT
+  lineage_role:      MATERIALIZED_CAUSAL_SOURCE_RECORD (renamed per Founder M-2
+                     ruling 2026-08-15: ee991b56 identity NOT ESTABLISHED as
+                     original filesystem artifact; this record is a post-hoc
+                     materialization of the foundation return)
   standing:          SOURCE_RECORD (materialized to disk 2026-08-15 AFTER original
                      authoring — repair evidence, not retroactive original custody)
 CO_PARENT:           SELFSYSTEM_AGENT_PROJECTION_001 (X1),
@@ -64,6 +68,11 @@ TOOL_SUCCESS      != LEGITIMACY
 DISPOSITION       != RATIFICATION
 CONSENSUS         != AUTHORITY          (NO_CONSENSUS_LAUNDERING)
 DELEGATION        != SOVEREIGNTY_TRANSFER
+INITIATION_AUTHORITY != ADMISSION_AUTHORITY != EXECUTION_AUTHORITY
+                  != REVIEW_AUTHORITY != ADJUDICATION_AUTHORITY
+                  != RATIFICATION_AUTHORITY
+EXECUTION_DISCRETION != AUTHORITY_CLASS  (SELFauto is a grant property, §6)
+REVIEW_FINDING    != SITUATED_DEFECT != REPAIR_OBLIGATION  (finding chain, §6)
 ```
 
 - CAPABILITY: what this execution can technically do.
@@ -97,6 +106,38 @@ HBCSELF-role grant
   MAY NOT CAUSE: candidate  * -> CANONICAL
 ```
 
+**ExecutionGrant** — the fully-shaped EXECUTION-class grant (round-2 C12 D7
+derivation, Founder-locked):
+
+```
+ExecutionGrant
+├── holder                          the SELF holding the grant
+├── SELFPUTE                        the authorized transformation (target)
+├── chamber                         where it may be exercised (PHILOSELF-003)
+├── write_set                       declared by the ADMISSION side in the grant,
+│                                   never self-declared by the holder
+├── authorized_transition_set       X -> Y families the holder may cause
+├── subordinate_transition_closure  intermediate transitions (reads, scratch
+│                                   writes, verification commands, retries)
+│                                   inside the write_set are covered by the
+│                                   grant without item-by-item authorization
+├── prohibited_transition_set       what may never be caused
+├── execution_discretion            SELFauto — autonomous selection of
+│                                   subordinate operations WITHIN the closure
+├── witness_requirements            what records exercise must produce
+├── expiry                          by named event (INV-6)
+├── revocation                      channel + propagation obligation
+└── accountability                  who answers for exercise
+```
+
+SELFauto law: `execution_discretion` operates only inside
+`subordinate_transition_closure`. It cannot create, widen, review, adjudicate,
+or ratify its own grant. An operation that is a new state-transition proposal
+rather than a subordinate execution choice exits the closure: STOP, new
+authority required. This resolves the subordinate-operation gap (round-2 C12
+D7): without the closure, a literal reading of this section makes every real
+execution unlawful.
+
 ## 4. INVARIANTS
 
 1. **Fail closed.** Unknown holder, unknown object, or unknown transition
@@ -116,6 +157,15 @@ HBCSELF-role grant
    output receipt; results produced beyond grant are rejected, not adopted.
 6. **Expiration requires trusted time.** Until TRUSTED-TIME-SOURCE-01 is
    dispositioned, grants expire by named event, not by clock.
+7. **INV-AUTH-SEPARATION-001 (separation of duty).** For the same transition
+   family T of the same object O: `EXECUTION(a,T) ⇒ ¬REVIEW(a,T)`;
+   `REVIEW(a,T) ⇒ ¬RATIFICATION(a,T)`; `REVIEW(a,D) ⇒ ¬ADJUDICATION(a,D)` for
+   the same divergence D. ADMISSION_AUTHORITY over a chamber's boundary facts
+   may not be held by any entity `AffectedByBoundary` of those facts
+   (PHILOSELF-003 §4 INV-7). INITIATION composes freely with any class — it
+   causes a state of the process, never of the subject. This invariant states
+   as constitutional law the separation previously stranded in frozen
+   X1 §6.7/§6.8 (round-2 M-9).
 
 ## 5. FAILURE MODES
 
@@ -151,6 +201,35 @@ ADMISSIBLE SELFPUTE(T)
 A transition outside Capability is impossible; outside Authority, unlawful;
 outside Chamber preconditions, inadmissible. Three distinct refusals, never
 collapsed into one.
+
+**Six authority classes as grant shapes** (round-2 C12 D1, accepted): each
+class is an equivalence class of §3 grants under "same permitted_transition
+family" — a relation between a holder and a transition family, not a role and
+not a new authority type:
+
+```
+INITIATION     process_instance : ∅         -> REQUESTED
+ADMISSION      chamber_boundary : UNDECLARED -> DECLARED ; standing established
+EXECUTION      artifact_content : c         -> c'
+REVIEW         verdict_record   : UNKNOWN   -> {PASS|CHANGES_REQUIRED|BLOCKED}
+ADJUDICATION   divergence       : OPEN      -> DISPOSED
+RATIFICATION   standing         : CANDIDATE -> IN_FORCE
+```
+
+Termination defaults (candidate law; each rebuttable only by explicit grant
+text): INITIATION exhausts on use; REVIEW exhausts on return delivery;
+EXECUTION is bounded by its declared write_set and terminal conditions;
+ADMISSION exhausts on the chamber's closure; ADJUDICATION exhausts on the
+divergence's closure; RATIFICATION is sovereign and does not delegate
+(`DELEGATION != SOVEREIGNTY_TRANSFER`) — its exercise is recorded per act, and
+a surviving ratification power is the Founder's alone.
+
+**Finding chain** (REVIEW-class output law): `REVIEW_FINDING != TRUTH`. The
+chain runs REVIEW OUTPUT -> CLAIMED FINDING -> COUNTEREXAMPLE/EVIDENCE ->
+VALIDATION -> SITUATED DEFECT -> FOUNDER/AUTHORIZED DISPOSITION -> REPAIR
+OBLIGATION. A reviewer cannot create a repair obligation by labeling something
+a finding; `finding` remains an ordinary evidence term for an instrumented
+review's output.
 
 ## 7. WITNESS CONDITIONS
 
@@ -202,8 +281,11 @@ collapsed into one.
 - DESIGN/ADMISSION-REVOCATION-CHANNEL-01 — revocation semantics to reconcile.
 - ROBINHOOD-AGENT-001 / Ra-seal — live capability-vs-authority regime.
 - DESIGN/TRUSTED-TIME-SOURCE-01 — open; blocks clock-based expiration.
-- PHILOSELF-001 (holder must have SELFhood), PHILOSELF-003 (authority is
-  chamber-relative), PHILOSELF-004 (authority is exercised only as SELFPUTE).
+- PHILOSELF-001 (an authority HOLDER must have SELFhood; instruments never
+  hold authority — they operate UNDER a holder's grant cited by
+  `constituting_grant_ref`, PHILOSELF-005 §3 — round-2 M-3 resolution),
+  PHILOSELF-003 (authority is chamber-relative), PHILOSELF-004 (authority is
+  exercised only as SELFPUTE).
 
 ## 10. OPEN QUESTIONS
 

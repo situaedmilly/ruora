@@ -2,8 +2,9 @@
 
 ```
 STATUS:              CONSTITUTIONAL_CANDIDATE_v0.1
-REVISION:            v0.2-boundary-repair-001 (2026-08-15; filename retains the
-                     v0.1 candidate slot; Phase A authorized surfaces only)
+REVISION:            v0.3-state-establishment-repair-001 (2026-08-15; filename
+                     retains the v0.1 candidate slot; A-I repair surfaces under
+                     Founder-hardened repair authority, four patches binding)
 CLASS:               philoSELF foundation (4 of 4)
 AUTHORED:            2026-08-15
 AUTHOR_SELF:         Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4
@@ -15,7 +16,10 @@ CAUSAL_PARENT:
   path:              governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html
   sha256:            f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb
   line_count:        327
-  lineage_role:      CAUSAL_PARENT
+  lineage_role:      MATERIALIZED_CAUSAL_SOURCE_RECORD (renamed per Founder M-2
+                     ruling 2026-08-15: ee991b56 identity NOT ESTABLISHED as
+                     original filesystem artifact; this record is a post-hoc
+                     materialization of the foundation return)
   standing:          SOURCE_RECORD (materialized to disk 2026-08-15 AFTER original
                      authoring — repair evidence, not retroactive original custody)
 CO_PARENT:           SELFSYSTEM_AGENT_PROJECTION_001 (X1),
@@ -123,6 +127,21 @@ SELFPUTE
    PRE_CONSTITUTIONAL_STATE. Nothing in this article weakens the ordinary
    rule: the transforming runtime is never the witness of its own
    transformation.
+   **Uniqueness and byte-binding.** Exactly one `CONSTITUTION_ENTERED_INTO_FORCE`
+   may hold per corpus lineage; return to PRE_CONSTITUTIONAL_STATE is
+   prohibited; commencing a successor corpus requires a recorded supersession
+   relation to the predecessor (no silent re-commencement — round-2 C5/M-7,
+   M-17 composition). Commencement enacts a ConstitutionalCorpus of BYTE
+   bindings — per artifact: path, sha256, artifact_type, lineage_role, standing
+   — never a filename set: `PATH != ARTIFACT`. Later in-place mutation at a
+   retained filename produces NEW BYTES = a NEW constitutional artifact whose
+   standing must be re-established; filename continuity alone establishes
+   nothing.
+   **Sovereign exemption, stated (round-2 item 8 step 4).** The commencement
+   act's transforming party is the Founder — a sovereign non-runtime. The
+   FOUNDING_WITNESS is FOUNDER_DERIVED and witnesses that sovereign act. This
+   exemption is categorical, applies to commencement only, and this sentence
+   is its explicit statement; nothing else inherits it.
 
 ## 5. FAILURE MODES
 
@@ -148,6 +167,8 @@ POSSIBILITY SPACE -> REALITY CHAMBER -> SELFHOOD -> AUTHORITY -> CONSTRAINT
 Adjudication battery — answered one by one, never collapsed:
 
 ```
+0. Was the act within the jurisdiction of an in-force constitution
+   (post-commencement), or governed by the commencement article (§4 INV-6)?
 1. Did compute occur?
 2. Was it inside the correct chamber?
 3. Was the SELF projection valid?
@@ -157,6 +178,11 @@ Adjudication battery — answered one by one, never collapsed:
 7. Was the result witnessed?
 8. Was the claim proven?
 ```
+
+(Q0 added per round-2 m-1 — the battery may not be run on a pre-constitutional
+act as though invariants 1–5 applied to it. Round 2's independence critique of
+the battery — Q5 subsumes Q2/Q4; Q8 depends on the proof relation — is noted
+and undispositioned.)
 
 (Disclosure: the source relay enumerated these eight questions while naming
 "seven"; this candidate normalizes to the enumerated eight. The boundary
@@ -177,17 +203,34 @@ review should confirm or correct this normalization.)
   (path nonexistent, verified), operation (file write), post-state (sha256
   recorded in the boundary packet), witness (governance repo status delta),
   memory (session memory + MEMORY.md index).
-- **FOUNDING_WITNESS** (commencement instrument class — §4 INV-6):
+- **FOUNDING_WITNESS** (commencement instrument class — §4 INV-6), full
+  identity — single-use is enforceable, not prose (round-2 B-2 cure):
   ```
-  standing:                     TRANSITIONAL
-  source:                       FOUNDER_DERIVED
-  scope:                        COMMENCEMENT_ONLY
-  reusable:                     false
-  post_commencement_authority:  NONE
+  FOUNDING_WITNESS
+  ├── witness_id                    unique identifier of THIS witness
+  ├── record_path                   persistence REQUIRED — a witness with no
+  │                                 record does not exist (004 §8 S-2)
+  ├── constituted_by                the Founder (sovereign)
+  ├── authority_grant               the sovereign act it derives from
+  ├── created_at                    stamped at record creation
+  ├── enacts[]                      the ConstitutionalCorpus — per artifact:
+  │     ├── path
+  │     ├── sha256                  BYTE binding, never filename binding
+  │     ├── artifact_type
+  │     └── lineage_role
+  ├── consumed_at                   set exactly once
+  ├── standing:                     TRANSITIONAL
+  ├── source:                       FOUNDER_DERIVED
+  ├── scope:                        COMMENCEMENT_ONLY
+  ├── reusable:                     false
+  └── post_commencement_authority:  NONE
   ```
-  The FOUNDING_WITNESS may establish exactly one fact — that commencement
-  occurred. It may never satisfy any ordinary post-commencement SELFPUTE
-  witness requirement, and it may never be reused.
+  Lifecycle: `AVAILABLE -> (used once) -> CONSUMED`. A CONSUMED witness has no
+  further force; an act citing a CONSUMED witness has no standing
+  (FOUNDING_REUSE now detectable against `consumed_at`). The FOUNDING_WITNESS
+  establishes exactly one fact — that commencement of exactly the `enacts[]`
+  byte set occurred. It may never satisfy any ordinary post-commencement
+  SELFPUTE witness requirement.
 
 ## 8. ADVERSARIAL SPECIMENS
 
