@@ -56,4 +56,3 @@ SHA256 dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82
 ```
 
 No existing SELFHTML candidate file was modified by this root runtime mutation.
-
