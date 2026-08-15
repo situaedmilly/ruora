@@ -1,0 +1,327 @@
+<title>SELFQUEUE Foundation 001</title>
+<style>
+  :root {
+    --ground: #F7F6F2;
+    --surface: #FFFFFF;
+    --ink: #201F1C;
+    --muted: #6B6862;
+    --accent: #33685C;
+    --accent-ink: #FFFFFF;
+    --monobg: #ECEAE4;
+    --rule: #DCD9D1;
+    --block: #A23B2E;
+    --material: #96691E;
+    --minor: #6B6862;
+    --chipbg-block: #F6E3DF;
+    --chipbg-material: #F3EAD5;
+    --chipbg-minor: #E8E6E1;
+    --chipbg-accent: #DFEAE6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #16181A;
+      --surface: #1D2023;
+      --ink: #E6E4DE;
+      --muted: #9A978F;
+      --accent: #62A896;
+      --accent-ink: #10201B;
+      --monobg: #212428;
+      --rule: #33363A;
+      --block: #C96B5C;
+      --material: #C79A4B;
+      --minor: #9A978F;
+      --chipbg-block: #3A2521;
+      --chipbg-material: #362C1A;
+      --chipbg-minor: #292B2E;
+      --chipbg-accent: #1F312C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #16181A;
+    --surface: #1D2023;
+    --ink: #E6E4DE;
+    --muted: #9A978F;
+    --accent: #62A896;
+    --accent-ink: #10201B;
+    --monobg: #212428;
+    --rule: #33363A;
+    --block: #C96B5C;
+    --material: #C79A4B;
+    --minor: #9A978F;
+    --chipbg-block: #3A2521;
+    --chipbg-material: #362C1A;
+    --chipbg-minor: #292B2E;
+    --chipbg-accent: #1F312C;
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Nova", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 3rem 1.25rem 5rem;
+  }
+  main { max-width: 72ch; margin: 0 auto; }
+  h1, h2, h3 { text-wrap: balance; line-height: 1.25; }
+  h1 { font-size: 1.9rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
+  h2 {
+    font-size: 1.28rem; font-weight: 600; margin: 2.8rem 0 0.8rem;
+    padding-top: 1.4rem; border-top: 1px solid var(--rule);
+  }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
+  p { margin: 0.7rem 0; }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0;
+  }
+  .subtitle { color: var(--muted); margin-top: 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.84em;
+  }
+  code { background: var(--monobg); padding: 0.1em 0.35em; border-radius: 3px; }
+  pre {
+    background: var(--monobg); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 1rem 1.1rem; overflow-x: auto; line-height: 1.5; margin: 1rem 0;
+  }
+  pre code { background: none; padding: 0; }
+  .instrument {
+    background: var(--monobg); border: 1px solid var(--rule); border-left: 4px solid var(--accent);
+    border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1.8rem 0;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.82rem;
+    line-height: 1.75; overflow-x: auto;
+  }
+  .instrument .k { color: var(--muted); display: inline-block; min-width: 13ch; }
+  .instrument .v-hold { color: var(--material); font-weight: 700; }
+  .instrument .v-ok { color: var(--accent); font-weight: 700; }
+  .chip {
+    display: inline-block; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 0.14em 0.55em; border-radius: 999px; vertical-align: 0.12em;
+    white-space: nowrap;
+  }
+  .chip-block { background: var(--chipbg-block); color: var(--block); }
+  .chip-material { background: var(--chipbg-material); color: var(--material); }
+  .chip-minor { background: var(--chipbg-minor); color: var(--minor); }
+  .chip-accent { background: var(--chipbg-accent); color: var(--accent); }
+  table {
+    border-collapse: collapse; width: 100%; margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .tablewrap { overflow-x: auto; }
+  th, td { text-align: left; padding: 0.45rem 0.8rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600;
+  }
+  td code { white-space: nowrap; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.35rem 0; }
+  .finding { margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid var(--rule); }
+  .finding.f-block { border-left-color: var(--block); }
+  .finding.f-material { border-left-color: var(--material); }
+  .finding h3 { margin-top: 0; }
+  .repair { color: var(--muted); }
+  .repair strong { color: var(--ink); }
+  .footnote { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; }
+  a { color: var(--accent); }
+  strong { font-weight: 650; }
+</style>
+
+<main>
+  <p class="eyebrow">Gate Return · OURSELF AgentBridge</p>
+  <h1>SELFQUEUE Foundation 001</h1>
+  <p class="subtitle">Return for <code>AUTHORIZE_OSAB_SELFQUEUE_AND_SELFBOOT_FOUNDATION_001</code> — discovery, semantic design, hostile review. No implementation performed.</p>
+
+  <div class="instrument">
+    <span class="k">RETURN</span> OSAB-SELFQUEUE-SELFBOOT-FOUNDATION-001-RETURN<br>
+    <span class="k">COMMAND</span> AUTHORIZE_OSAB_SELFQUEUE_AND_SELFBOOT_FOUNDATION_001<br>
+    <span class="k">MODE</span> DISCOVERY + SEMANTIC_DESIGN + HOSTILE_REVIEW<br>
+    <span class="k">DATE</span> 2026-08-15<br>
+    <span class="k">EXECUTED_BY</span> Claude Code session (Claude Fable 5) — itself a runtime projection, not OSAB<br>
+    <span class="k">MUTATIONS</span> <span class="v-ok">NONE</span> — read-only; no boot, no review execution, no repo writes<br>
+    <span class="k">FINDINGS</span> 9 total — 3 BLOCKING · 5 MATERIAL · 1 MINOR<br>
+    <span class="k">VERDICT</span> <span class="v-hold">FOUNDATION_DESIGN_ADMISSIBLE — NOT READY_FOR_IMPLEMENTATION — CHANGES_REQUIRED</span>
+  </div>
+
+  <p><strong>Summary.</strong> The failure class is real, correctly named, and already machine-recorded on disk: the HBC review packet itself contains the exact <code>STOP / REVIEW_INDEPENDENCE_NOT_ESTABLISHED</code> clause that fired. The existing stack situates <em>sessions</em> and admits <em>commands</em>, but owns no object that constitutes a SELF <em>instance</em> — SELFQUEUE and SELFBOOT are zero-hit vocabulary across all of RUORA. The proposed foundation is the right object in the right place. It is not yet lawful to implement: three blocking findings — an authority regress in who realizes OSAB, a referent collision on <code>HBCSELF</code> with a ratified doctrine that explicitly deferred that identity, and independence predicates that cannot currently be observed by any instrument — must be dispositioned first.</p>
+
+  <h2>Findings ledger</h2>
+
+  <div class="finding f-block">
+    <h3><span class="chip chip-block">BLOCKING</span> F-01 · OSAB realization regress — who boots OSAB?</h3>
+    <p>The command declares OSAB ≠ Claude ≠ Codex ≠ GPT, but names no realization for OSAB itself. Today, every act attributed to OSAB — admission, boot witness, authority binding — would be performed by a prompted model session wearing an OSAB label. That is <code>UNGOVERNED_SELF_INSTANTIATION</code> reproduced one level up: the boot witness would be narrative, and the whole structure inherits self-attestation at its root.</p>
+    <p class="repair"><strong>Repair:</strong> bind OSAB's v0 realization to the deterministic control plane, not to a session. The precedent already exists on disk: <code>router/sia-registry.js</code> is data + validation only, deep-frozen, fail-closed, never executes. OSAB v0 = schema + validator + append-only queue records + a witness-emitting instrument. A session may <em>operate</em> the instrument; it may not <em>be</em> the witness.</p>
+  </div>
+
+  <div class="finding f-block">
+    <h3><span class="chip chip-block">BLOCKING</span> F-02 · HBCSELF referent collision with ratified doctrine</h3>
+    <p><code>SELFHTML-HBC-LINEAGE-ADOPTION-001-DOCTRINE</code> (ratified, on disk) defines HBCSELF as <em>the Founder's lineage designation for the existing HBC system</em> — the Hyperbolic Build Chamber compiler at <code>~/RUORA/projects/hbc-html</code> — and explicitly holds that no document may make HBC a SELF "until a later identity gate deliberately reconciles it." The foundation command redefines HBCSELF as an instantiable hostile-reviewer role constitution (<code>HBCSELF#001…#003</code> across providers). Two incompatible referents; adopting the command as written would silently pre-adjudicate the deferred identity gate.</p>
+    <p class="repair"><strong>Repair (Founder's choice):</strong> either (a) name the hostile-reviewer role something unclaimed — e.g. <code>HOSTILEREVIEWSELF</code> — and let HBC review remain a mission it can be given, or (b) run the deferred HBC identity gate first and let its outcome settle the referent. Do not let the foundation command decide this as a side effect.</p>
+  </div>
+
+  <div class="finding f-block">
+    <h3><span class="chip chip-block">BLOCKING</span> F-03 · Independence predicates are not observable by any instrument</h3>
+    <p>Section 7's checklist includes predicates no instrument on this machine can evaluate for a third-party runtime: "does it inherit author-private reasoning," "was it instructed toward a preferred result." If the law admits these as required inputs without classing them, the independence verdict is once again produced by narrative — the exact failure this gate exists to close.</p>
+    <p class="repair"><strong>Repair:</strong> class every predicate as <code>OBSERVABLE_BY_INSTRUMENT</code> (same session id, subject digest match, runtime's prior mutation of subject via recorded lineage), <code>ATTESTABLE_BY_FOUNDER</code> (what was pasted where), or <code>UNOBSERVABLE</code>. Fail closed: any required predicate left <code>UNOBSERVABLE</code> caps the verdict at <code>INDEPENDENCE_PARTIAL</code>. <code>INDEPENDENCE_ESTABLISHED</code> becomes reachable only through instrument-observed plus Founder-attested predicates.</p>
+  </div>
+
+  <div class="finding f-material">
+    <h3><span class="chip chip-material">MATERIAL</span> F-04 · Ensemble quorum contradicts NO_CONSENSUS_LAUNDERING</h3>
+    <p>The example queue record carries <code>minimum_valid_returns: 2</code> while the closing command demands <code>aggregation = NO_CONSENSUS_LAUNDERING</code>. A 2-of-3 quorum <em>is</em> a consensus mechanism if agreement promotes a verdict.</p>
+    <p class="repair"><strong>Repair:</strong> state the aggregation law explicitly — instance verdicts are never merged, averaged, or vote-counted; each return stands alone in DATASELF; only the Founder (or a separately constituted adjudication gate) disposes across them. <code>minimum_valid_returns</code> may govern <em>sufficiency to close the request</em>, never <em>truth of the verdict</em>.</p>
+  </div>
+
+  <div class="finding f-material">
+    <h3><span class="chip chip-material">MATERIAL</span> F-05 · "OSAB" is an unrecorded naming act</h3>
+    <p>OSAB has zero real occurrences on disk (one hit is a base64 substring in an evidence blob). The ratified naming layer records the execution layer as <code>OURSELFAGENTBRIDGE</code>; the workflow stack self-identifies as <code>OURSELF-AGENTBRIDGE-WORKFLOW-v0.1</code>. The packet warns against two abbreviations becoming two identities while itself introducing a second alias (ABOS) — and the ecosystem already carries one live naming drift (the <code>INTITUSELF</code> bot misspelling, never fixed).</p>
+    <p class="repair"><strong>Repair:</strong> one recorded naming act in the naming layer: canonical name, canonical shorthand, alias standing (historical only), and where each may appear. Until then OSAB is conversational shorthand, not identity.</p>
+  </div>
+
+  <div class="finding f-material">
+    <h3><span class="chip chip-material">MATERIAL</span> F-06 · <code>HTMLSELF#001</code> example collapses a system constitution into an operator role</h3>
+    <p>Section 5 lists <code>HTMLSELF#001</code> as an instance example. HTMLSELF is a system's identity under the freshly ratified HTMLSELF/ResearchSELF identity law — a constitution to be governed, not an operator role to be instantiated N times. The example quietly reverses a distinction ratified this very day.</p>
+    <p class="repair"><strong>Repair:</strong> remove the example and add the distinction to the law: <em>role constitutions</em> (operators; instantiable) vs <em>system constitutions</em> (artifacts/systems; never instantiable through SELFQUEUE).</p>
+  </div>
+
+  <div class="finding f-material">
+    <h3><span class="chip chip-material">MATERIAL</span> F-07 · Queue state machine is incomplete and unreconciled with the revocation track</h3>
+    <p>The eleven states lack <code>DENIED</code> (admission refused — distinct from <code>FAILED</code>), <code>REVOKED</code> (admission withdrawn after grant), and <code>EXPIRED</code> (TTL lapse without return). "No state may be skipped silently" is unenforceable without a legal-transition table. An entire <code>ADMISSION-REVOCATION-CHANNEL-01</code> design track already exists in the control plane's DESIGN corpus (R01 returned CHANGES_REQUIRED; R02 repair queued) — SELFQUEUE revocation must reconcile with it, not fork it.</p>
+    <p class="repair"><strong>Repair:</strong> add the three states, author the transition table as part of the schema, and cite ADMISSION-REVOCATION-CHANNEL-01 as the controlling revocation design.</p>
+  </div>
+
+  <div class="finding f-material">
+    <h3><span class="chip chip-material">MATERIAL</span> F-08 · Missing bindings: trusted time, causal parent, quiescence</h3>
+    <p>DATASELF events require timestamps, but <code>TRUSTED-TIME-SOURCE-01</code> is still an open disposition candidate in the DESIGN corpus. The SELFBOOT request schema carries no <code>causal_parent_ref</code> / <code>supersedes_ref</code> — the exact fields whose absence produced the SFC-005 constitutional fork (the founder-decision-record problem). And queue records are mutable governed state, so writes fall under the ratified scoped-quiescence law.</p>
+    <p class="repair"><strong>Repair:</strong> add <code>causal_parent_ref</code>, <code>supersedes_ref</code>, <code>time_source_ref</code>, and a <code>quiescence_witness</code> obligation for queue mutations; bind timestamps to whatever TRUSTED-TIME-SOURCE-01 resolves to.</p>
+  </div>
+
+  <div class="finding">
+    <h3><span class="chip chip-minor">MINOR</span> F-09 · DATASELF / OBSERVERSELF standing and the observer's own bootstrap</h3>
+    <p>The Memory Organ doctrine that defines DATASELF is RESEARCH/DEFERRED — not adopted. And OBSERVERSELF has a witness regress: who observes the observer's boot? Both are resolvable without the organs.</p>
+    <p class="repair"><strong>Repair:</strong> v0 observer = a mechanical evidence instrument (the <code>selfgraph-witness</code> pattern: digests, diffs, process state — no narrative authority); v0 DATASELF = the existing <code>governance/evidence/</code> chamber pattern (append-only JSONL). Mark organ-level language <code>DESIGN_PENDING_ADOPTION</code>.</p>
+  </div>
+
+  <h2>1 · Architecture discovered on disk</h2>
+  <p>Four surfaces, all live, none of which constitutes SELF instances:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Surface</th><th>Location</th><th>What it is</th></tr>
+    <tr><td>Control plane</td><td><code>~/RUORA/systems/ourself-agent-bridge</code></td><td>command-mouth HTTP mouth; <code>router/</code> (route-classifier, SIA registry, Æ-packet builder, plan endpoint); <code>contracts/ae-kernel-envelope.v1.schema.json</code>; ~37 DESIGN governance packets (incl. ADMISSION-REVOCATION-CHANNEL-01, TRUSTED-TIME-SOURCE-01); 29 doctrine files; REVIEWS; command gates</td></tr>
+    <tr><td>Kernel</td><td><code>~/RUORA/projects/agent-bridge</code></td><td>server on :3001; <code>EXECUTION_CLASSES</code> registry; <code>persistence/pending-proposals.js</code> + <code>proposal-execution.js</code> (a governed <em>command</em> admission queue); <code>adapters/ourself-intake.js</code>; byte-identical envelope schema copy</td></tr>
+    <tr><td>Governance stack</td><td><code>~/RUORA/governance/agentbridge/</code></td><td>workflow documents 00–07 (<code>OURSELF-AGENTBRIDGE-WORKFLOW-v0.1</code>, FOUNDER_AUTHORIZED); <code>decisions/ratified/</code> holds 8 Founder disposition witnesses; <code>constitutions/</code> and <code>launch/</code> are empty chambers</td></tr>
+    <tr><td>Projection surface</td><td><code>~/.claude/agents/</code></td><td>4 agent definitions: two capability probes (<code>ourself-zero-tool-probe</code>, <code>ourself-min-grant-probe-02</code>) and <code>selfgraph-theorist</code> / <code>selfgraph-witness</code> — prompted runtime projections, exactly the object §4 says is not a SELF</td></tr>
+  </table></div>
+
+  <h2>2 · Existing boot / situation primitives</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Primitive</th><th>What it situates</th><th>What it lacks</th></tr>
+    <tr><td><code>01_SESSION_BOOTSTRAP.md</code></td><td>Terminal <em>sessions</em> — SESSION_CONTEXT from live state, fail-closed HOLD, no mutation without MUTATION_SIGNAL</td><td>No SELF identity, no instance, output is self-attested by the session it describes</td></tr>
+    <tr><td>SELF-BOOTSTRAP-RUNTIME-PROPAGATION-LAW v0.1</td><td>Distribution-layer kernel installs; carries the ancestral laws — §5 <em>"runtime, not roleplay"</em> and §11 <em>pre-proof projection pod</em> (a projection outside the ledger cannot write proof)</td><td>Doctrine capture only; no mechanism</td></tr>
+    <tr><td>SELF-KERNEL-SPEC-V0</td><td>The admission→constrain→compile→adapt→remember pipeline; three-axis truth model; truth-laundering law</td><td>Specification class; substrate-agnostic; unimplemented</td></tr>
+    <tr><td><code>SIA_REGISTRY</code> (router)</td><td>Role constitutions in code — allowed/forbidden routes, <code>can_mutate</code>, approval, handoff rules, proof obligations; unknown lookups fail closed</td><td>Static nouns only: no instances, no boot, no lifetime, no observer</td></tr>
+    <tr><td>Envelope contract + <code>pending-proposals</code></td><td>Governed admission of <em>commands</em> into the kernel — the architectural sibling of SELFQUEUE</td><td>Admits packets, not identities</td></tr>
+    <tr><td>selfgraph (<code>~/RUORA/projects/selfgraph</code>)</td><td>Ratified role lattice + 9-dimension authority law — the authority-envelope vocabulary already exists</td><td>Not wired to any instantiation surface</td></tr>
+  </table></div>
+  <p><strong>Verdict:</strong> situation primitives exist for sessions and for commands. None exists for SELF instances. <code>SELFQUEUE</code> and <code>SELFBOOT</code> return zero hits across RUORA — unrecorded vocabulary, free to constitute.</p>
+
+  <h2>3 · The exact gap the HTMLSELF incident exposed</h2>
+  <p>The stack can admit a command and situate a session, but owns no object binding <em>role constitution + instance identity + authority envelope + boot witness + lifetime</em>. The sharper mechanism failure sits inside the fixture itself: <code>HTMLSELF-v0.1-HBC-REVIEW-PACKET-001</code> §3 hands the independence gate to the <em>reviewer</em> — the candidate runtime is asked to attest its own independence. Self-attestation was the only mechanism available, so the only lawful move for an honest runtime was the STOP it produced. The packet's fail-closed clause worked exactly as designed; what is missing is a party other than the candidate that can produce the verdict. That is the seat SELFQUEUE admission fills.</p>
+
+  <h2>4–12 · Semantic design, as amended</h2>
+  <p>The proposed laws (§§0–11 of the command) are adopted as design with the following amendments. Everything not amended stands as drafted.</p>
+  <ul>
+    <li><strong>Root law (§1)</strong> — adopted, and strengthened by typing: under the kernel spec's three-axis model, a boot record is an <em>Observed</em>-class fact and only an instrument may write Observed facts. "I am HBCSELF#001" spoken by a session is Authority-axis theater; the sentence is only ever true as a <em>read from the queue</em>. This makes ungoverned self-instantiation structurally inert, not merely forbidden.</li>
+    <li><strong>SELFQUEUE states (§2)</strong> — add <code>DENIED</code>, <code>REVOKED</code>, <code>EXPIRED</code>; author the legal-transition table into the schema (F-07).</li>
+    <li><strong>SELFBOOT schema (§3)</strong> — add <code>causal_parent_ref</code>, <code>supersedes_ref</code>, <code>time_source_ref</code>, <code>quiescence_witness</code> (F-08). No other field additions; elegance clause honored.</li>
+    <li><strong>SELF ≠ RuntimeProjection (§4)</strong> — adopted; ground its lineage in bootstrap-law §5/§11 so the new law inherits rather than forks. Add the role-constitution vs system-constitution distinction (F-06).</li>
+    <li><strong>Instance identity (§5)</strong> — adopted; drop the <code>HTMLSELF#001</code> example (F-06); reviewer-role name pending the F-02 disposition.</li>
+    <li><strong>Ensemble law (§6)</strong> — adopted with the no-merged-verdicts aggregation clause (F-04).</li>
+    <li><strong>Independence law (§7)</strong> — adopted with predicate classing and the UNOBSERVABLE fail-closed cap (F-03).</li>
+    <li><strong>OSAB authority (§8)</strong> — adopted, plus one sentence that resolves F-01: <em>OSAB v0 is realized as a deterministic control-plane instrument; no model session may be OSAB.</em></li>
+    <li><strong>OBSERVERSELF (§9) / DATASELF (§10)</strong> — adopted at instrument grade for v0 (F-09): mechanical witness, append-only evidence chamber; organ language deferred with the Memory Organ doctrine.</li>
+    <li><strong>Failure vocabulary (§11)</strong> — adopted, extended: <code>SELF_ADMISSION_DENIED</code>, <code>SELF_ADMISSION_REVOKED</code>, <code>SELF_LIFETIME_EXPIRED</code>, <code>INDEPENDENCE_PREDICATE_UNOBSERVABLE</code>.</li>
+  </ul>
+
+  <h2>13 · The blocked HTMLSELF case, represented through SELFQUEUE</h2>
+  <p>The previous conversational failure, as a typed queue record. Digests are real, taken from the packet on disk. Under current conditions this record cannot pass admission — and that is the point: the failure is now data.</p>
+  <pre><code>self_request_id: SELFREQ-0001
+requested_self: &lt;PENDING F-02 DISPOSITION&gt;   # "HBCSELF" per packet; referent contested
+requested_by:
+  identity: OURSELF
+  actor: FOUNDER
+  provenance_ref: governance/HTMLSELF-v0.1-HBC-REVIEW-PACKET-001.md
+purpose: hostile review of HTMLSELF v0.1 constitutional reconciliation
+role_constitution_ref: NONE_ON_DISK            # no reviewer role constitution exists yet
+subject_bindings:
+  - path: governance/HTMLSELF-v0.1-CONSTITUTIONAL-RECONCILIATION-001.md
+    sha256: 07d77b709ac374150bd5e34b8572a9f9c67993181e82c9e5053eaafbb19abbe9
+  - path: ~/Desktop/SELFSERVCLOUD/HTMLSELF.md
+    sha256: f543d90c546f4cc1140b3d37100a2df23010853cf27a8bbb115d7d45c891372d
+jurisdiction:
+  read:  [subject_bindings]
+  write: []
+authority: { review: true, mutate: false, ratify: false, seal: false }
+independence_constraints:
+  must_not_equal_author_self: true
+  author_self_ref: bd059265
+independence_evaluation:
+  observable_by_instrument:
+    session_identity_differs_from_author: UNEVALUATED   # no instrument exists (F-01)
+    runtime_previously_mutated_subject:   UNEVALUATED
+    subject_digest_binding_intact:        TRUE          # verified this session
+  attestable_by_founder:
+    author_verdict_not_shared: UNATTESTED
+  unobservable:
+    inherits_author_private_reasoning: UNOBSERVABLE
+causal_parent_ref: AUTHORIZE_HBCSELF_HTMLSELF_V01_CONSTITUTIONAL_HOSTILE_REVIEW_001
+time_source_ref: UNRESOLVED                     # TRUSTED-TIME-SOURCE-01 open
+status: ADMISSION_REVIEW
+admission_outcome: DENIED
+denial_reason: [ SELF_IDENTITY_UNESTABLISHED,   # F-02 referent collision
+                 ROLE_CONSTITUTION_UNRESOLVED,
+                 BOOT_WITNESS_FAILED,           # no instrument (F-01)
+                 INDEPENDENCE_NOT_ESTABLISHED ] # predicates unevaluable (F-03)</code></pre>
+  <p>One consequence for the fixture itself: when review is eventually authorized, the packet needs a rev (<code>REVIEW-PACKET-002</code>) that moves the independence gate from the reviewer's side to the admission side. The reviewer receives an independence verdict; it never writes one.</p>
+
+  <h2>14 · Minimum implementation surface</h2>
+  <p>Four objects, all in the control-plane repo, all following the existing fail-closed registry pattern. No runtime spawning, no provider routing, no observer session in v0.</p>
+  <ol>
+    <li><code>contracts/selfboot-request.v0.schema.json</code> — the request schema with transition table (sibling of the envelope contract).</li>
+    <li><code>router/selfqueue-registry.js</code> — data + validation only, deep-frozen, fail-closed on unknown SELF, unknown state, illegal transition.</li>
+    <li><code>SELFQUEUE/</code> — append-only record directory; one file per request; supersession by appending.</li>
+    <li>A boot-witness instrument (script) that emits witness records — digests of role constitution, subject bindings, session identifiers — as Observed-class evidence. Sessions operate it; sessions do not replace it.</li>
+  </ol>
+
+  <h2>15 · What would require mutation (when authorized)</h2>
+  <ul>
+    <li><code>~/RUORA/systems/ourself-agent-bridge</code> — the four objects above plus one doctrine file (the SELF ≠ RuntimeProjection / instantiation law).</li>
+    <li><code>~/RUORA/governance/agentbridge/workflow/</code> — one new workflow document (or manifest amendment) admitting SELFQUEUE into the stack.</li>
+    <li>The naming layer — one recorded naming act for OSAB (F-05).</li>
+    <li>Kernel repo: <strong>nothing</strong> in v0. New repositories: <strong>none needed</strong> — the no-repo-genesis exclusion costs nothing.</li>
+  </ul>
+
+  <h2>16 · What can remain conceptual</h2>
+  <p>OBSERVERSELF as a constituted agent; the full DATASELF memory organ; ensemble scheduling; provider routing and credentials; multi-provider independence probing; SELFPI projections; any actual boot of any actual SELF.</p>
+
+  <h2>17 · What must become machine-readable first</h2>
+  <p>In order: the SELFBOOT request schema; the queue-state enum with its legal-transition table; the independence predicate checklist (observable subset only); the boot-witness record format. Everything else can stay prose until these four exist.</p>
+
+  <h2>18 · Readiness verdict</h2>
+  <p><span class="chip chip-material">NOT READY_FOR_IMPLEMENTATION</span> &nbsp;The foundation is <strong>FOUNDATION_DESIGN_ADMISSIBLE</strong> — the right primitive, correctly scoped, with clean ancestry in existing doctrine — and <strong>CHANGES_REQUIRED</strong> before any schema is written: F-01, F-02, F-03 are blocking; F-04 through F-08 are material and cheap to fold into the same disposition; F-09 resolves by v0 instrument-grade substitution.</p>
+
+  <h2>19 · Next lawful gate</h2>
+  <ol>
+    <li><strong>Founder disposition on F-01…F-09</strong> — chiefly: OSAB's v0 realization (instrument, per F-01), the HBCSELF referent (F-02), and the naming act (F-05).</li>
+    <li>Then <code>AUTHORIZE_OSAB_SELFQUEUE_SCHEMA_AUTHORING_002</code> — bounded write of the four-object surface into the control-plane repo, carrying the amended laws.</li>
+    <li>Then re-enter <code>SELFREQ-0001</code> as the first real queue record and watch it be lawfully DENIED by machinery instead of conversation — the foundation's first integration test, exactly as the command intended.</li>
+    <li>Hostile review of the authored schema by a session that did not author it — with its independence recorded through the very mechanism under review.</li>
+  </ol>
+
+  <h2>End question</h2>
+  <p>Before a runtime can lawfully say <em>"I am HBCSELF#001"</em>, OSAB must hold a ratified role constitution with a settled referent; an admitted, digest-bound request with causal parent; a bound authority envelope and jurisdiction; an independence verdict produced at admission, from classed predicates, by a party that is not the candidate; a boot witness written by an instrument; an observer record; and an open lifetime with defined termination.</p>
+  <p>But the structural answer is smaller than the list: under the three-axis law, <em>"I am HBCSELF#001" is never a sentence the runtime is entitled to author.</em> It is an Observed-class fact that only the queue's instrument may write, and the runtime may at most read back. A model session prompted to act like HBCSELF can produce the same words — it can never produce the record. The record is the identity.</p>
+
+  <p class="footnote">Executed read-only on 2026-08-15 by a Claude Code session — itself an ungoverned runtime projection under the law it examined, which is lawful for discovery and design, and is disclosed here because the law demands it. No boot performed, no review executed, no repository mutated. This return is a Specification-class artifact: it binds nothing until Founder disposition.</p>
+</main>
