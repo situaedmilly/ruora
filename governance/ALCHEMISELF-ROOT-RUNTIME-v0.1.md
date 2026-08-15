@@ -252,4 +252,3 @@ The dd9da0b7 incident is not an embarrassment artifact. It is the first canonica
 - advance SELFHTML repository genesis;
 - grant repair authority from a hostile review;
 - seal this law as unsupersedable canon.
-
