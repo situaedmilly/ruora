@@ -43,3 +43,12 @@ Interpret it.
 Predict the result.
 Execute it.
 Verify the result.
+
+## Amendment Law
+
+Interpretation is not amendment.
+Reasoning may explain law.
+Reasoning may clarify law.
+Reasoning may reveal implications of law.
+Reasoning alone shall not modify law.
+Only an explicitly authorized constitutional amendment may alter governing doctrine.
