@@ -55,16 +55,16 @@ standing: SEMANTIC_CANDIDATE / NONCANONICAL / NOT_RATIFIED / NOT_IMPLEMENTED
 
 ## 2. Bounded Repair Plan
 
-This section records the bounded HBCSELF HYPEDU1P repair pressure applied after
+This section records the bounded HBCSELF HYPEDU2P repair pressure applied after
 the independent hostile review returned `CHANGES_REQUIRED`. This repair does
 not change standing, ratify the candidate, create a runtime, publish a signal,
-or open HYPEDU2P.
+or increment pressure standing.
 
 ```text
 Repair != Review
 Repair != HYPEDU2P
 InternalCheck != IndependentReview
-HYPEDU1P != PASS
+HYPEDU2P != PASS
 ```
 
 Mutation plan:
@@ -147,6 +147,41 @@ Comparison basis:
 This does not protect HOLLASELF as ontology. If a future reviewed
 SELFCOMMUNICATION or INSELFACTION law fully subsumes these semantics without
 collapse, HOLLASELF may be demoted to a role over existing law.
+
+## 3a. HR-009 Necessity Discriminators
+
+Discriminators:
+
+```text
+D1: emission-occurrence identity
+D2: typed intended receiver field
+D3: typed subject-reference graph
+D4: standing-at-emission preservation
+D5: custody resolution capability refs
+D6: optional requested-treatment semantics
+D7: cross-SELF identity typing
+D8: privacy/disclosure constraints
+```
+
+| Competitor | Discriminator fit |
+| --- | --- |
+| CONTEXT_SIGNAL | D1=DNE, D2=partial, D3=weak, D4=weak, D5=no, D6=partial, D7=weak, D8=weak |
+| SELFCOMMUNICATION | D1=DNE, D2=partial, D3=weak, D4=partial, D5=partial, D6=no, D7=partial, D8=partial |
+| INSELFACTION | D1=DNE, D2=partial, D3=weak, D4=partial, D5=partial, D6=no, D7=partial, D8=partial |
+| ordinary message/event | D1=DNE, D2=no, D3=no, D4=no, D5=no, D6=no, D7=no, D8=partial |
+| artifact-publication event | D1=DNE, D2=no, D3=partial, D4=no, D5=partial, D6=no, D7=partial, D8=partial |
+
+Disposition:
+
+- CONTEXT_SIGNAL = EXISTING_CLASS_INSUFFICIENT
+- SELFCOMMUNICATION = EXISTING_CLASS_WITH_PROFILE_INSUFFICIENT
+- INSELFACTION = EXISTING_CLASS_WITH_PROFILE_INSUFFICIENT
+- ordinary message/event = EXISTING_CLASS_INSUFFICIENT
+- artifact-publication event = EXISTING_CLASS_INSUFFICIENT
+
+HOLLASELF remains a candidate and is currently justified as:
+
+`SPECIALIZED_SIGNAL_CLASS_JUSTIFIED`.
 
 ## 4. Prime Decomposition
 
@@ -251,8 +286,10 @@ Candidate shape:
 nodefield:
   targeting_mode: TARGETED | ALL | UNDIRECTED | TARGET_UNKNOWN | NO_RECEIVER_INTENDED | DISCOVERY_SCOPE
   target_identity_level:
+  target_identity_namespace_version:
   jurisdiction_ref:
   population_ref:
+  population_state_ref:
   expansion_time:
   disclosure_policy_ref:
   targets: []
@@ -273,6 +310,35 @@ disclosure_policy_ref
 
 `ALL` resolves only to the governed population at that expansion time. If the
 population is unresolved, the NODEFIELD is `NOT_EVALUABLE` or `FAIL_CLOSED`.
+
+NF-001 conformance rules:
+
+```text
+CONFORMANCE_RULE:
+  subject: NODEFIELD
+  condition: NODEFIELD.targeting_mode = ALL
+  required_result:
+    - population_ref
+    - population_state_ref
+    - expansion_time
+    - disclosure_policy_ref
+    - jurisdiction_ref
+  failure_result: NODEFIELD_INVALID
+  unknown_result: NOT_EVALUABLE
+```
+
+```text
+IF NODEFIELD.targeting_mode = TARGETED
+THEN MUST for each target:
+  identity_namespace, identity_namespace_version, identity_level, identity, jurisdiction_ref
+  and deterministically evaluable targetability
+ELSE:
+  NODEFIELD_INVALID
+```
+
+If same input and same VerifierProfile:
+
+targeting-mode result is deterministic.
 
 The previous `NULL` mode is eliminated as overloaded shorthand. Its lawful
 successors are:
@@ -346,6 +412,22 @@ identity, relation, provenance, standing, custody, targeting, privacy, and
 authority distinctions must survive a change in form. Its formal role remains a
 validity relation, not a new universal primitive.
 
+### 7.1 NF-001 Determinism and Verifier Profile
+
+```text
+VerifierProfile != VerifierImplementation
+VerifierProfile:
+  profile_identity
+  profile_version
+  predicate_set
+  input_requirements
+  unknown_behavior
+  failure_behavior
+  evidence_requirements
+
+SameProfile + SameAdmittedInputs -> SameSemanticVerdict
+```
+
 ## 8. Invariant Contract
 
 Every preservation invariant must be evaluable. A claimed invariant has the
@@ -383,6 +465,18 @@ StandingAtEmission != CurrentStanding
 AuthorityAtEmission != AuthorityAtTreatment
 ```
 
+Invariant predicate closure:
+
+```text
+identity_addressability -> IdentityAddressabilityPredicate(profile, source, result)
+relation_fidelity -> RelationFidelityPredicate(profile, source, result)
+provenance_traceability -> ProvenancePredicate(profile, source, result)
+standing_at_emission_preservation -> StandingPredicate(profile, source, result)
+authority_ceiling_nonexpansion -> AuthorityPredicate(profile, source, result)
+nodefield_fidelity -> NodefieldPredicate(profile, source, result)
+subject_scope_fidelity -> SubjectScopePredicate(profile, source, result)
+```
+
 MORPH validity fails if transformation silently widens authority or converts a
 candidate standing into a ratified standing.
 
@@ -418,6 +512,23 @@ OMITTED_PROHIBITED = MORPH_FAILURE
 
 `UNRESOLVED` is a MORPH failure unless the target profile explicitly permits
 unresolved output and the signal makes no completeness claim.
+
+Loss evidence ceiling:
+
+```text
+STRUCTURAL: mechanically provable dependency
+DECLARED: authoritative source declares dependency
+CORROBORATED: independent admitted sources corroborate dependency
+UNRESOLVED: dependency cannot be established
+```
+
+If omission can alter identity, authority, standing, receiver scope, subject scope,
+provenance, privacy, or treatment and dependency is UNRESOLVED:
+
+```text
+LOSS_VERDICT = UNRESOLVED
+MORPH_VALID != COMPLETE_PRESERVATION
+```
 
 ```text
 LossyProjection != InvalidProjection
@@ -471,6 +582,14 @@ subject state observed earlier
 It may not silently transform old subject state into current Reality. If
 `source_state_time` is unknown, any subject freshness claim is
 `UNKNOWN` or `NOT_EVALUABLE`, not inferred.
+
+Population snapshot law for NODEFIELD.ALL:
+
+```text
+population_ref + population_state_ref + expansion_time -> historical population interpretation
+CurrentPopulation != rewrite HistoricalTargetSet
+HistoricalTargetSet reconstructible or explicit UNRESOLVED
+```
 
 ## 11. Recursion, Replay, Forwarding, And Traversal
 
@@ -541,6 +660,27 @@ CanTargetReceiver != CanPubliclyRevealReceiver
 CanResolveSubject != CanReadSubject
 ```
 
+NF-002 consent-capability model:
+
+```text
+ELIGIBLE(receiver, signal_class)
+DISCLOSABLE(receiver_identity, audience)
+DELIVERABLE(signal, receiver)
+READABLE(subject_ref, receiver)
+CONSENT_REQUIRED(signal_class, jurisdiction)
+CONSENT_SATISFIED(receiver, signal_class, authority_ref)
+```
+
+Private targeting is lawful when all are established:
+
+```text
+ELIGIBLE && DELIVERABLE && READABLE && CONSENT_SATISFIED
+```
+
+If `CONSENT_REQUIRED` and not satisfied:
+
+`FAIL_CLOSED` or `UNKNOWN` per jurisdiction policy.
+
 Public signal plus private subject does not automatically permit revealing that
 the private subject exists. If disclosure authority is unresolved, the signal
 fails closed. Universal emission remains blocked unless scope and disclosure
@@ -565,6 +705,8 @@ SELFIdentity != RuntimeProjection
 RuntimeProjection != SessionIdentity
 SessionIdentity != NodeIdentity
 NodeIdentity != RoleIdentity
+IdentityNamespace != Identity
+IdentityNamespaceVersion != IdentityVersion
 ```
 
 Examples:
@@ -586,6 +728,9 @@ subject_ref:
   identity_namespace:
   identity_level:
   identity:
+  identity_namespace_version:
+  historical_aliases:
+  migration_ref:
   relation:
   relation_direction:
   pinned_state_ref:
@@ -604,6 +749,7 @@ SubjectMutation does not silently rewrite historical emission meaning
 ForkedSubject requires pinned_state_ref or explicit unresolved standing
 Duplicate lexical IDs across namespaces remain distinguishable
 AttachedReference != IdentityReplacement
+OccurrenceIdentity != CurrentRuntimeLocation
 ```
 
 Without typed reference roles, HOLLASELF degrades into a bag of IDs.
@@ -653,15 +799,32 @@ GOCHECK_ADMITTED
 GOCHECK_AUTHORIZED
 GOCHECK_EXECUTED
 GOCHECK_RESULT_ACCEPTED
+GOCHECK_REFUSED
+GOCHECK_FAILED
+GOCHECK_EXPIRED
 ```
 
-Required:
+Deterministic transitions:
 
 ```text
-REQUESTED != ADMITTED
-ADMITTED != AUTHORIZED
-AUTHORIZED != EXECUTED
-EXECUTED != ACCEPTED
+REQUESTED -> ADMITTED [admission_criteria]
+REQUESTED -> REFUSED [admission_denial]
+REQUESTED -> FAILED [protocol_error]
+REQUESTED -> EXPIRED [expiry_condition]
+ADMITTED -> AUTHORIZED [receiver_authorization]
+ADMITTED -> FAILED | EXPIRED
+AUTHORIZED -> EXECUTED [execution_authorization]
+AUTHORIZED -> FAILED | EXPIRED
+EXECUTED -> RESULT_ACCEPTED | FAILED
+```
+
+Blocked:
+
+```text
+REQUESTED -> EXECUTED disallowed
+ADMITTED -> EXECUTED disallowed
+AUTHORIZED -> RESULT_ACCEPTED disallowed
+EXECUTED -> ACCEPTED disallowed
 ```
 
 The receiving jurisdiction decides admission and authorization. The emitting
@@ -675,6 +838,12 @@ Receiving HOLLASELF != Authorized to perform GOCHECK
 ```
 
 No execution implementation is created by this candidate.
+
+## 16a. Unknown-State Algebra
+
+```text
+UNKNOWN != UNRESOLVED != NOT_APPLICABLE != INVALID != FAIL_CLOSED
+```
 
 ## 17. Speech-Act Dimension
 
@@ -914,7 +1083,7 @@ CompactSignal != MeaningPreserved
 The compact signal is valid only when omitted reality remains addressable and
 reconstructible by governed references and declared loss.
 
-## 24. Positive Specimens A-L
+## 24. Positive Specimens A-Q
 
 These specimens are semantic examples only. They do not allocate live HOLLASIG
 IDs, build routing, or authorize treatment.
@@ -933,6 +1102,11 @@ IDs, build routing, or authorize treatment.
 | J. Declared but unverifiable omission | MORPH_VALID FAIL | DeclaredButUnverifiableLoss = MORPH_FAILURE |
 | K. HOL-A -> HOL-B -> HOL-A traversal | BOUNDED_UNRESOLVED or FAIL_CLOSED after cycle classification | SignalCycle != AuthorityCycle |
 | L. HOLLASELF requests GOCHECK but receiver lacks authorization | REQUESTED -> ADMITTED or REFUSED; never EXECUTED | REQUESTED != AUTHORIZED != EXECUTED |
+| M. PRIVATE TARGETING allowed while receiver identity remains undisclosed | LEGAL when `CONSENT_SATISFIED` and not `CanRevealReceiver` | CanTargetReceiver != CanPubliclyRevealReceiver |
+| N. Namespace migration preserves historical identity | NamespaceMigration with migration_ref and identity_namespace_version | Subject mutation does not become new identity |
+| O. Namespace migration unverified | migration_ref unresolved -> resolution_state = UNRESOLVED; no new identity claim | Namespace migration unresolved -> UNRESOLVED |
+| P. Population snapshot survives later membership change | expansion with population_state_ref at T1 remains binding at T2 | CurrentGroupMembership != rewrite HistoricalTargetSet |
+| Q. Loss ceiling for prose omission dependency | dependency omission cannot claim complete preservation if UNRESOLVED | LOSS_VERDICT = UNRESOLVED
 
 ## 25. Kill-Test Replay K1-K12
 
@@ -954,17 +1128,45 @@ IDs, build routing, or authorize treatment.
 No mandatory kill test remains `FAILED`. No `UNRESOLVED` kill-test result blocks
 readiness for a separate HYPEDU2P review.
 
+## 25a. Repair-002 Mandatory Kill and Minimality Closure
+
+| Mandatory kill | Status |
+| --- | --- |
+| NF1-A | HELD |
+| NF1-B | HELD |
+| NF1-C | HELD |
+| NF2-A | HELD |
+| NF2-B | HELD |
+| NF2-C | HELD |
+| NF3-A | HELD |
+| NF3-B | HELD |
+| NF3-C | HELD |
+| HR9-A | HELD |
+| MIN-A | HELD |
+| GOCHECK-A | HELD |
+| LOSS-A | HELD |
+
+| Field | Disposition |
+| --- | --- |
+| expansion_time | REQUIRED |
+| population_ref | REQUIRED |
+| population_state_ref | REQUIRED |
+| authority_evaluation_time | OPTIONAL |
+| historical_aliases | OPTIONAL |
+| metadata_visibility | OPTIONAL |
+| content_visibility | OPTIONAL |
+
 ## 26. HBCSELF Meta-Pressure Scan
 
 | Meta test | Result |
 | --- | --- |
 | META-01 excessive taxonomy | HELD_WITH_RISK: taxonomy is scoped to HR findings and may be compressed later |
 | META-02 renamed unresolved concept | HELD: fields carry fail-closed states and required evidence, not just names |
-| META-03 incompatible implementer behavior | NEW_FINDING_DEFERRED NF-001 |
+| META-03 incompatible implementer behavior | HELD: conformance grammar added |
 | META-04 unavailable emission-time information | HELD: unknowns become UNKNOWN/NOT_EVALUABLE/FAIL_CLOSED |
 | META-05 fail-closed makes ordinary signaling impossible | HELD_WITH_RISK: undirected/no-treatment signals remain possible |
-| META-06 privacy blocks legitimate private targeting | NEW_FINDING_DEFERRED NF-002 |
-| META-07 old signals after namespace evolution | HELD_WITH_RISK: historical interpretation needs namespace versioning |
+| META-06 privacy blocks legitimate private targeting | HELD_WITH_RISK: jurisdiction policy controls delivery |
+| META-07 old signals after namespace evolution | HELD: namespace_version + migration_ref + historical_aliases added |
 | META-08 custody adapter replacement | HELD: adapter identity and integrity algorithm are explicit |
 | META-09 replay infinite amplification | HELD: traversal limits and cycle classes bound it |
 | META-10 MORPH_VALID too strict for useful lossy projection | HELD: declared/verifiable loss can pass |
@@ -974,19 +1176,7 @@ readiness for a separate HYPEDU2P review.
 Deferred findings:
 
 ```yaml
-NEW_FINDING_DEFERRED:
-  - id: NF-001
-    description: independent implementers still need a future conformance grammar for field cardinality, canonical serialization, and verifier behavior
-    severity: MATERIAL
-    why_outside_current_repair: HR-001..009 require semantic closure, not implementation schema
-  - id: NF-002
-    description: privacy law may need a consent-capability model for legitimate private targeted signaling
-    severity: MATERIAL
-    why_outside_current_repair: HR-007 requires fail-closed disclosure semantics, not a full consent protocol
-  - id: NF-003
-    description: namespace evolution requires versioned identity registries for long-lived historical interpretation
-    severity: MATERIAL
-    why_outside_current_repair: HR-008 requires identity-level separation, not a registry implementation
+NEW_FINDING_DEFERRED: []
 ```
 
 These deferred findings are not repaired here and do not require widening the
