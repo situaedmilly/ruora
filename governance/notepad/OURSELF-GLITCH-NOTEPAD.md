@@ -485,6 +485,89 @@ ACTIMANIRUN may expose, route, and preserve risks. It must not absorb every disc
 
 ---
 
+## GLITCH-0011 — Context-note trace accidentally depends on custody trace
+
+The independent NOTEPAD-000 hostile review found that the candidate definition of `T3 CONTEXT_NOTE` requires an admitted custody surface and source/path binding. That makes T3 depend on T5-like custody semantics, despite the previously recovered law that trace classes are independent vector axes rather than a durability ladder.
+
+```text
+TraceClass != DurabilityRank
+T3_CONTEXT_NOTE != T5_CUSTODY_BINDING
+MinimalNoteIdentityBinding != InstitutionalCustodyBinding
+```
+
+**Standing:** `TRACE_AXIS_COLLAPSE_OBSERVED_IN_CANDIDATE`
+
+**Next falsification:** define the minimum identity/source binding sufficient for T3 without requiring T5 institutional custody, then prove T3 and T5 can vary independently.
+
+---
+
+## GLITCH-0012 — Governed note custody can launder proposition trust
+
+The independent review found that one note-wide standing field cannot safely represent heterogeneous propositions. A perfectly governed/custodied note may contain a quotation, hypothesis, stale statement, joke, Founder declaration, false claim, or verified observation.
+
+```text
+RecordStanding != PropositionStanding
+CustodiedNote != TrustedPropositions
+NoteGovernance != PropositionVerification
+```
+
+**Standing:** `PROPOSITION_STANDING_LAUNDERING_RISK`
+
+**Next falsification:** require proposition-level attribution/standing for consumable claims, or default the whole note to attributed but unassessed context, and prove no consumer can promote note custody into proposition truth.
+
+---
+
+## GLITCH-0013 — Attachment metadata can leak restricted Reality
+
+The independent review found that even when note content is protected, attachment metadata may reveal restricted relationships, private repository identity, target existence, or sensitive context. The reviewed candidate had published private-source metadata without establishing disclosure authority for that metadata.
+
+```text
+CanReferenceTarget != CanDiscloseTargetMetadata
+CanReadNote != CanSeeAttachmentGraph
+PrivateSourceExistence != PublicMetadata
+RedactionOfContent != RedactionOfRelationship
+```
+
+**Standing:** `CONTEXT_GRAPH_METADATA_LEAKAGE_RISK`
+
+**Next falsification:** model content visibility and attachment-graph visibility independently, add privacy-safe discovery states, and test public notes attached to private targets without leaking target identity.
+
+---
+
+## GLITCH-0014 — Durable-trace-before-lease-end creates session-death recursion
+
+The candidate continuity law requires durable trace before lease end for consequential mutations, standing-bearing decisions, or unresolved obligations. The independent review found no semantics for abrupt process/session death before that trace is completed.
+
+```text
+TraceRequired != TraceGuaranteed
+SessionDeath != LeaseCompletion
+IncompleteTrace != NoMutationOccurred
+RecoveryCarrier != NotepadNecessarily
+```
+
+**Standing:** `TRACE_RECOVERY_RECURSION_CANDIDATE`
+
+**Next falsification:** define a degraded/fail-closed state, recovery authority, and non-Notepad recovery carrier for consequential work interrupted before trace completion.
+
+---
+
+## GLITCH-0015 — Context self-reference can recurse into identity and authority loops
+
+The independent review found no closed law for notes attaching to themselves, to their own attachment records, or through cyclic cross-references. This can create unbounded traversal, identity recursion, or authority-recursion bugs in downstream consumers.
+
+```text
+SelfReference != SelfAuthority
+CyclicContext != InfiniteTraversal
+NoteAboutAttachment != MutationOfAttachment
+ReferenceCycle != StandingCycle
+```
+
+**Standing:** `CONTEXT_RECURSION_BOUNDARY_CANDIDATE`
+
+**Next falsification:** classify allowed/forbidden cycles, impose traversal bounds, and prove no reference cycle can manufacture authority, standing, or target-selection precedence.
+
+---
+
 ## Glitch handling protocol for this Notepad
 
 For every future anomaly added here, preserve:
