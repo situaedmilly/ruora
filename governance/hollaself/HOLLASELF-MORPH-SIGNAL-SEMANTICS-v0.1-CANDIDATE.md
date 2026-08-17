@@ -53,295 +53,620 @@ commit: 78261e4c00e90b32ebbb4f94fb8bd935cf8bc5fc
 standing: SEMANTIC_CANDIDATE / NONCANONICAL / NOT_RATIFIED / NOT_IMPLEMENTED
 ```
 
-## 2. Prime Correction
+## 2. Bounded Repair Plan
 
-The current GOCHECKIT candidate successfully separates `GOCHECKIT` from
-`HOLLASELF`, but the new reality input sharpens the decomposition.
+This section records the bounded HBCSELF HYPEDU1P repair pressure applied after
+the independent hostile review returned `CHANGES_REQUIRED`. This repair does
+not change standing, ratify the candidate, create a runtime, publish a signal,
+or open HYPEDU2P.
+
+```text
+Repair != Review
+Repair != HYPEDU2P
+InternalCheck != IndependentReview
+HYPEDU1P != PASS
+```
+
+Mutation plan:
+
+```yaml
+clauses_to_replace:
+  - HOLLASIG identity model
+  - NODEFIELD receiver-selection model
+  - MORPH operator model
+  - invariant/loss contract
+  - temporal model
+  - recursion/replay model
+  - privacy/disclosure model
+  - cross-SELF identity model
+  - GOCHECK disposition
+clauses_to_add:
+  - subject reference graph
+  - custody capability model
+  - speech-act dimension
+  - authority model
+  - positive specimens A-L
+  - kill-test replay K1-K12
+  - meta-pressure scan
+  - 2126 substrate strip
+clauses_to_delete:
+  - NULL as overloaded NODEFIELD mode
+  - MORPH as universal transformation executor
+  - HOLLASIG as signal morph event identity
+  - opaque custody_ref semantics
+specimen_section: section 24
+kill_test_section: section 25
+deferred_findings_section: section 26
+```
+
+Every repair below maps to HR-001 through HR-009 or to required kill-test
+closure. No parent GOCHECKIT candidate, hostile review artifact, sideglitch,
+SELFCOMMUNICATION, INSELFACTION, DATASELF, DIGESELF, SELFIR, SELFMATH, or
+ACTIMANIRUN artifact is changed by this candidate text.
+
+## 3. Resulting Classification
+
+Current maximum standing:
+
+```text
+SPECIALIZED_INTER_SELF_SIGNAL_CLASS_CANDIDATE
+```
+
+HOLLASELF is a candidate signal envelope/class for sending addressable,
+privacy-governed, treatment-request-capable references across SELF boundaries.
+It is not yet proven necessary as a primitive.
+
+```text
+HOLLASELF != SELF
+HOLLASELF != Transport
+HOLLASELF != Artifact
+HOLLASELF != Review
+HOLLASELF != Authority
+HOLLASELF != DATASELF
+HOLLASELF != DIGESELF
+HOLLASELF != INSELFACTION
+HOLLASELF != GO_CHECK
+```
+
+Bounded necessity disposition:
+
+```text
+HOLLASELF_NECESSITY_DISPOSITION = SPECIALIZED_SIGNAL_CLASS
+```
+
+Comparison basis:
+
+| Existing object | Existing semantics | Missing semantics for this candidate | Extension sufficient | Distinct class necessary |
+| --- | --- | --- | --- | --- |
+| parent CONTEXT_SIGNAL | context transmission and reference packaging | occurrence identity, typed receiver field, loss contract, requested treatment states | PARTIAL | YES, as specialized class |
+| SELFCOMMUNICATION | structural/agent communication layer | per-signal morph validity, HOLLASIG occurrence identity, NODEFIELD population expansion | PARTIAL | YES, unless later protocol absorbs it |
+| INSELFACTION | governed custody/handoff transport | speech-act envelope and requested treatment workflow are not owned by transport | PARTIAL | YES |
+| ordinary message/event | generic communication or log occurrence | authority ceiling, subject graph, privacy gates, loss verification | NO | YES |
+| artifact-publication event | custody/publication witness | receiver selection and requested treatment semantics | NO | YES |
+
+This does not protect HOLLASELF as ontology. If a future reviewed
+SELFCOMMUNICATION or INSELFACTION law fully subsumes these semantics without
+collapse, HOLLASELF may be demoted to a role over existing law.
+
+## 4. Prime Decomposition
 
 Corrected architecture:
 
 ```text
-HOLLASELF = signal / speech act
-HOLLASIG  = identity of a specific signal emission
-NODEFIELD = intended receiving SELF-set
+HOLLASELF = specialized inter-SELF signal envelope/class candidate
+HOLLASIG  = identity of exactly one HOLLASELF emission occurrence
+NODEFIELD = typed intended receiver-selection field
 SUBJECT_REFS = typed references to source Reality identities
-MORPH = invariant-preserving projection from source Reality into target form
-GOCHECK = one possible treatment workflow
+MORPH = qualification / validity relation over a transformation result
+GOCHECK = receiver-local requested treatment workflow candidate
 ```
 
 Non-collapse:
 
 ```text
-HOLLASELF != GOCHECK
-HOLLASELF != Transport
-HOLLASELF != Artifact
-HOLLASELF != Review
-HOLLASELF != Authority
-HOLLASIG != ArtifactID
-HOLLASIG != SessionID
-HOLLASIG != ManifestationID
-NODEFIELD != DeliveryProof
-NODEFIELD != ReceiptProof
-NODEFIELD != Obligation
-GOCHECK != HOLLASELF
+SignalEnvelope != SpeechActType
+SignalExists != SubjectResolvable
+SubjectResolvable != SubjectReadable
+SubjectReadable != TreatmentAuthorized
+RequestedTreatment != AuthorizedTreatment
+SenderIdentity != AuthorityGrant
+FounderProvenance != UniversalAuthority
+MORE_SIGNALING != MORE_AUTHORITY
 ```
 
-## 3. MORPH Operator
+## 5. HOLLASIG Emission Occurrence Identity
 
-Candidate pre-formal operator:
+`HOLLASIG` identifies exactly one HOLLASELF emission occurrence.
 
 ```text
-MORPH(S, P, I) -> S'
+MorphEvent != EmissionOccurrence
+HOLLASIG != SubjectIdentity
+HOLLASIG != MorphEvent
+HOLLASIG != DeliveryAttempt
+HOLLASIG != Receipt
+HOLLASIG != ArtifactDigest
 ```
-
-Where:
-
-```text
-S  = source Reality or source Reality subgraph
-P  = target projection/profile
-I  = invariants that must survive
-S' = morphed representation
-```
-
-For HOLLASELF:
-
-```text
-MORPH(
-  RealitySubgraph,
-  HollaSignalProfile,
-  ReferenceIntegrity
-) -> HOLLASELF_SIGNAL
-```
-
-MORPH is not immediately minted as a new SELF, engine, IR, or universal
-mathematical primitive. It is first held as an operator verb.
-
-```yaml
-morph:
-  source:
-  target_form:
-  invariant_contract:
-  allowed_loss:
-  prohibited_loss:
-  authority:
-  output:
-  witness:
-```
-
-Completion law:
-
-```text
-MORPH_COMPLETED iff InvariantContractSatisfied
-MORPH(S, P, I) -> S'
-Verify_I(S, S') = PASS
-```
-
-Failure states:
-
-```text
-MORPH_LOSS_EXCEEDED
-MORPH_IDENTITY_BROKEN
-MORPH_RELATION_BROKEN
-MORPH_PROVENANCE_BROKEN
-MORPH_STANDING_ESCALATION
-MORPH_AUTHORITY_VIOLATION
-MORPH_TARGET_UNRESOLVED
-```
-
-PRESERVE-AS kernel:
-
-```text
-source
--> declare preservation contract
--> transform
--> verify preserved relations
--> emit target representation
-```
-
-A projection is not a lawful morph unless the declared preservation contract
-passes verification.
-
-## 4. HOLLASELF Morph Invariants
-
-The HOLLASELF signal morph must preserve at minimum:
-
-```text
-identity
-relation
-provenance
-standing
-custody
-authority_ceiling
-targeting
-subject_scope
-context_sufficiency
-```
-
-Loss contract:
-
-```text
-LossyProjection != InvalidProjection
-```
-
-Some signal projections intentionally omit full source prose, redundant
-formatting, or unrelated history. Lawfulness depends on the declared
-`allowed_loss` and `prohibited_loss` contract, not on total losslessness.
-
-Candidate loss boundary:
-
-```yaml
-invariant_contract:
-  preserve:
-    - identity
-    - standing
-    - authority
-    - provenance
-    - source references
-  allowed_loss:
-    - full prose
-    - redundant formatting
-    - unrelated history
-  prohibited_loss:
-    - subject identity
-    - custody binding
-    - unresolved status
-    - authority ceiling
-```
-
-Core laws:
-
-```text
-Morph != Rename
-Morph != Replace
-Morph != Merge
-Morph != DeleteIdentity
-Morph != CompressByInformationLoss
-MorphResult != SourceReality
-```
-
-The result is a projection of source Reality, not source Reality itself.
-
-## 5. HOLLASIG Identity
-
-`HOLLASIG` identifies a specific signal morph event.
 
 Candidate shape:
 
 ```yaml
 hollasig:
   id: HOL-...
-  source_graph_digest:
-  morph_profile: HOLLASELF_SIGNAL_v0.1
-  projection_digest:
-  emitted_at:
-  emitting_self:
+  occurrence_kind: ORIGINAL | RETRY | REPLAY | FORWARD | SUPERSESSION | CANCELLATION
+  emission_time:
+  source_state_time:
+  transform_time:
+  publication_time:
+  emitting_actor_ref:
+    identity_namespace:
+    identity_level:
+    identity:
+    jurisdiction_ref:
   nodefield:
   subject_refs:
-  custody_ref:
-  standing:
-  context_sufficiency:
-  intended_treatment:
+  morph_validity_ref:
+  custody_refs:
+  standing_at_emission:
+  authority_ceiling:
+  requested_treatment:
 ```
 
-Identity law:
+Occurrence laws:
 
 ```text
-SameSubjectRefs != SameHOLLASIG
+SameMorphResult + NewEmissionOccurrence = NewHOLLASIG
+SameBytes != SameEmissionOccurrence
+Retry != OriginalEmissionAutomatically
+Replay != OriginalEmission
+Forward != OriginalEmission
+Cancellation != HistoricalErasure
 ```
 
-Two HOLLASELF emissions concerning the same artifact are distinct if emitted at
-different times, under different nodefields, standing, treatment, source state,
-custody, or morph profile.
-
-## 6. NODEFIELD
-
-`NODEFIELD` is the intended receiving SELF-set.
-
-Candidate modes:
+Candidate occurrence relations:
 
 ```text
-TARGETED -> explicit SELF/node identities
-ALL      -> every admissible receiver in governed scope
-NULL     -> no receiver designated; signal exists without directed delivery
+retry_of
+replay_of
+forward_of
+supersedes
+cancels
 ```
 
-Laws:
+Duplicate detection must distinguish:
 
 ```text
-NODEFIELD != AuthorityGrant
-NODEFIELD != DeliveryProof
-NODEFIELD != ReceiptProof
-NODEFIELD != Obligation
+same occurrence accidentally observed twice
+!=
+new occurrence with identical content
 ```
 
-Targeting `CHATGPTSELF` or `ClaudeSELF` does not prove delivery, receipt,
-inspection, review, or authorization.
+## 6. NODEFIELD Receiver Selection
 
-## 7. SUBJECT_REFS
+`NODEFIELD` is a typed intended receiver-selection field. It is not delivery,
+receipt, attention, obligation, authority grant, or automatic runtime address.
 
-Every referenced identity inside a HOLLASELF signal must preserve its source
-identity domain and declare its relation to the signal.
-
-Forbidden:
-
-```text
-MAN-0042 -> HOL-0091
-ART-00881 -> HOL-0091
-GLITCH-0019 -> HOL-0091
-```
-
-Required:
+Candidate shape:
 
 ```yaml
-hollasig: HOL-0091
-subject_refs:
-  - type: manifestation
-    id: MAN-0042
-    relation: ABOUT
-  - type: artifact
-    id: sha256:...
-    relation: MANIFESTED_AS
-  - type: finding
-    id: GLITCH-0019
-    relation: REPORTS_FINDING
-  - type: note
-    id: NOTE-0044
-    relation: CONTEXTUALIZED_BY
+nodefield:
+  targeting_mode: TARGETED | ALL | UNDIRECTED | TARGET_UNKNOWN | NO_RECEIVER_INTENDED | DISCOVERY_SCOPE
+  target_identity_level:
+  jurisdiction_ref:
+  population_ref:
+  expansion_time:
+  disclosure_policy_ref:
+  targets: []
+  resolution_state: RESOLVED | UNRESOLVED | NOT_EVALUABLE | FAIL_CLOSED
 ```
 
-Law:
+`TARGETED` requires one or more explicit typed receiver refs. Each target ref
+must declare identity namespace, identity level, identity, and jurisdiction.
+
+`ALL` never means universal OURSELF implicitly. `ALL` requires:
+
+```text
+population_ref
+jurisdiction_ref
+expansion_time
+disclosure_policy_ref
+```
+
+`ALL` resolves only to the governed population at that expansion time. If the
+population is unresolved, the NODEFIELD is `NOT_EVALUABLE` or `FAIL_CLOSED`.
+
+The previous `NULL` mode is eliminated as overloaded shorthand. Its lawful
+successors are:
+
+```text
+UNDIRECTED          = no receiver field governs selection
+TARGET_UNKNOWN     = receiver intended but cannot yet be resolved
+NO_RECEIVER_INTENDED = broadcast-like signal absent a treatment expectation
+DISCOVERY_SCOPE     = receiver discovery is the subject of later resolution
+```
+
+Preserved laws:
+
+```text
+NODEFIELD != Delivery
+NODEFIELD != Receipt
+NODEFIELD != Attention
+NODEFIELD != Obligation
+NODEFIELD != AuthorityGrant
+NODEFIELD != RuntimeAddressAutomatically
+```
+
+## 7. MORPH Validity Relation
+
+MORPH is not modeled as the transformation executor.
+
+Transformation form:
+
+```text
+T(S, P) -> S'
+```
+
+MORPH validity form:
+
+```text
+MORPH_VALID(
+  transformation = T,
+  source = S,
+  result = S',
+  invariants = I,
+  loss_contract = L
+)
+iff
+VERIFY(I, L, S, S') = PASS
+```
+
+Current semantic standing:
+
+```text
+MORPH =
+qualification / validity relation
+over an already-defined transformation
+```
+
+MORPH is not:
+
+```text
+universal runtime opcode
+compiler stage
+serialization engine
+projection engine
+compression engine
+SELF
+engine
+IR
+```
+
+What MORPH adds beyond `TransformationValid` is Founder-facing semantic
+pressure: a named refusal boundary for preservation-under-transformation when
+identity, relation, provenance, standing, custody, targeting, privacy, and
+authority distinctions must survive a change in form. Its formal role remains a
+validity relation, not a new universal primitive.
+
+## 8. Invariant Contract
+
+Every preservation invariant must be evaluable. A claimed invariant has the
+following minimum shape:
+
+```yaml
+invariant:
+  name:
+  predicate:
+  evidence_source:
+  evaluation_time:
+  failure_class:
+  permitted_degradation:
+```
+
+Candidate HOLLASELF invariant classes:
+
+```text
+identity_addressability
+relation_fidelity
+provenance_traceability
+standing_at_emission_preservation
+custody_resolvability_claim
+authority_ceiling_nonexpansion
+nodefield_fidelity
+subject_scope_fidelity
+```
+
+`standing_at_emission_preservation` means the signal preserves the standing
+claimed at emission time. It does not require current standing to remain
+unchanged forever.
+
+```text
+StandingAtEmission != CurrentStanding
+AuthorityAtEmission != AuthorityAtTreatment
+```
+
+MORPH validity fails if transformation silently widens authority or converts a
+candidate standing into a ratified standing.
+
+## 9. Loss Contract
+
+Every source field, relation, or proposition relevant to a HOLLASELF profile
+must receive a loss disposition:
+
+```text
+PRESERVED
+TRANSFORMED
+OMITTED_ALLOWED
+OMITTED_PROHIBITED
+UNRESOLVED
+```
+
+Required map:
+
+```text
+LossMap(field/relation/proposition)
+-> disposition
+-> justification
+-> verifier
+```
+
+Prime laws:
+
+```text
+UndeclaredLoss = MORPH_FAILURE
+DeclaredButUnverifiableLoss = MORPH_FAILURE
+OMITTED_PROHIBITED = MORPH_FAILURE
+```
+
+`UNRESOLVED` is a MORPH failure unless the target profile explicitly permits
+unresolved output and the signal makes no completeness claim.
+
+```text
+LossyProjection != InvalidProjection
+LossyProjection requires DeclaredAndVerifiedLoss
+```
+
+Proposition dependency attack:
+
+If an omitted representation contains the sole authority limitation, removing
+it fails even if the container was classified as full prose, redundant context,
+or formatting. Loss is classified by semantic dependency, not by syntax.
+
+## 10. Temporal Model
+
+HOLLASELF emission separates these times:
+
+```text
+source_state_time
+transform_time
+emission_time
+publication_time
+```
+
+It does not fold downstream times into the emission object:
+
+```text
+delivery_time
+receipt_time
+resolution_time
+inspection_time
+```
+
+Required laws:
+
+```text
+SourceStateTime != TransformTime
+TransformTime != EmissionTime
+EmissionTime != PublicationTime
+FreshHOLLASELF != FreshSubjectReality
+FreshPublication != FreshSourceState
+StandingAtEmission != StandingAtResolution
+```
+
+A signal may truthfully say:
+
+```text
+signal emitted now
+subject state observed earlier
+```
+
+It may not silently transform old subject state into current Reality. If
+`source_state_time` is unknown, any subject freshness claim is
+`UNKNOWN` or `NOT_EVALUABLE`, not inferred.
+
+## 11. Recursion, Replay, Forwarding, And Traversal
+
+References may include prior HOLLASIGs. Traversal is bounded:
+
+```yaml
+traversal:
+  visited_hollasigs: []
+  maximum_depth:
+  maximum_expansion:
+  cycle_classification: SELF_REFERENCE | MUTUAL_REFERENCE | LONG_CYCLE | REPEATED_REFERENCE | NONE
+  terminal_state: RESOLVED | BOUNDED_UNRESOLVED | FAIL_CLOSED
+```
+
+Do not imply every cycle is invalid.
+
+```text
+SignalCycle != AuthorityCycle
+SignalReference != SignalAdoption
+SelfReference != SelfAuthorization
+TraversalLimitReached = BOUNDED_UNRESOLVED
+```
+
+Traversal limit exhaustion is not permission to continue infinitely.
+
+Replay and forward laws:
+
+```text
+ReplayOccurrence -> new HOLLASIG -> replay_of prior HOLLASIG
+ForwardOccurrence -> new HOLLASIG -> forward_of prior HOLLASIG
+```
+
+Forwarding changes emitter provenance. Replay may or may not change emitter;
+the replay occurrence must declare it.
+
+## 12. Privacy And Disclosure
+
+Privacy binds both NODEFIELD and each `subject_ref`.
+
+NODEFIELD disclosure requirements:
+
+```yaml
+nodefield_privacy:
+  receiver_eligibility:
+  receiver_disclosure_class:
+  target_visibility:
+  population_disclosure_policy:
+```
+
+Subject reference disclosure requirements:
+
+```yaml
+subject_ref_privacy:
+  disclosure_class:
+  subject_existence_visibility:
+  metadata_visibility:
+  content_visibility:
+  receiver_eligibility:
+  resolution_state:
+```
+
+Required laws:
+
+```text
+CanSignalExistence != CanDiscloseSubjectMetadata
+CanReferenceSubject != CanRevealSubjectExistence
+CanTargetReceiver != CanPubliclyRevealReceiver
+CanResolveSubject != CanReadSubject
+```
+
+Public signal plus private subject does not automatically permit revealing that
+the private subject exists. If disclosure authority is unresolved, the signal
+fails closed. Universal emission remains blocked unless scope and disclosure
+are evaluable.
+
+## 13. Cross-SELF Identity Model
+
+Every actor, emitter, receiver, and node reference must declare:
+
+```yaml
+identity_ref:
+  identity_namespace:
+  identity_level: SELF | RUNTIME_PROJECTION | SESSION | NODE | ROLE
+  identity:
+  jurisdiction_ref:
+```
+
+Required laws:
+
+```text
+SELFIdentity != RuntimeProjection
+RuntimeProjection != SessionIdentity
+SessionIdentity != NodeIdentity
+NodeIdentity != RoleIdentity
+```
+
+Examples:
+
+```text
+ClaudeSELF != Claude runtime != Claude session != Claude node
+CodexSELF != Codex runtime != Codex session != Codex node
+```
+
+NODEFIELD may target a typed union, but every target member must carry its
+identity level. No ambiguous `SELF/node` field survives.
+
+## 14. Subject Reference Graph
+
+Each subject reference requires:
+
+```yaml
+subject_ref:
+  identity_namespace:
+  identity_level:
+  identity:
+  relation:
+  relation_direction:
+  pinned_state_ref:
+  standing_at_emission:
+  custody_refs:
+  disclosure_class:
+  resolution_state:
+```
+
+Preserved laws:
 
 ```text
 HOLLASIG != SubjectID
-HOLLASIG -> {ID_1, ID_2, ..., ID_n}
+CurrentStanding does not retroactively rewrite StandingAtEmission
+SubjectMutation does not silently rewrite historical emission meaning
+ForkedSubject requires pinned_state_ref or explicit unresolved standing
+Duplicate lexical IDs across namespaces remain distinguishable
 AttachedReference != IdentityReplacement
 ```
 
 Without typed reference roles, HOLLASELF degrades into a bag of IDs.
 
-## 8. GOCHECK Disposition
+## 15. Custody Capability Model
 
-`GOCHECKIT` remains the historical proto-protocol candidate that discovered a
-bundle of concerns:
+Opaque `custody_ref` semantics are replaced by custody capability references:
 
-```text
-COMPLETE_CONTEXT_MANIFESTATION
--> CUSTODY
--> REFERENCE_PACKAGING
--> HOLLASELF
--> RECEIVER_RESOLUTION
--> GOCHECK
+```yaml
+custody_capability_ref:
+  adapter_identity:
+  subject_locator:
+  immutable_subject_resolution_capability:
+  integrity_algorithm:
+  integrity_value:
+  availability_state:
+  read_authorization_state:
 ```
 
-Current disposition:
+Preserved laws:
 
 ```text
-GOCHECKIT = historical / proto-protocol candidate
-HOLLASELF = signal primitive / speech act
-GOCHECK = requested treatment workflow
+SignalExists != SubjectResolvable
+SubjectResolvable != SubjectReadable
+SubjectReadable != TreatmentAuthorized
+BranchRef != ImmutableSubjectIdentity
+GitHub != CustodyOntology
+SHA256 != IntegrityOntology
 ```
 
-Do not collapse them:
+`integrity_algorithm` must be replaceable by future algorithm profiles without
+changing the semantic identity of custody capability.
+
+## 16. GOCHECK Requested Treatment Model
+
+Maximum current standing:
+
+```text
+RECEIVER_LOCAL_REQUESTED_TREATMENT_WORKFLOW_CANDIDATE
+```
+
+GOCHECK state model:
+
+```text
+GOCHECK_REQUESTED
+GOCHECK_ADMITTED
+GOCHECK_AUTHORIZED
+GOCHECK_EXECUTED
+GOCHECK_RESULT_ACCEPTED
+```
+
+Required:
+
+```text
+REQUESTED != ADMITTED
+ADMITTED != AUTHORIZED
+AUTHORIZED != EXECUTED
+EXECUTED != ACCEPTED
+```
+
+The receiving jurisdiction decides admission and authorization. The emitting
+HOLLASELF may request GOCHECK; it cannot authorize or execute it. Refusal must
+be representable.
 
 ```text
 HOLLASELF may carry GOCHECK
@@ -349,127 +674,140 @@ GOCHECK may be initiated from HOLLASELF
 Receiving HOLLASELF != Authorized to perform GOCHECK
 ```
 
-## 9. Signal Chain
+No execution implementation is created by this candidate.
 
-Candidate operational chain:
-
-```text
-REALITY
--> MORPH
--> HOLLASELF / HOLLASIG
--> NODEFIELD
--> REQUESTED_TREATMENT
--> RECEIVING_SELF_AUTHORITY_CHECK
--> ACCEPT | REFUSE | HOLD
--> TREATMENT_WORKFLOW
--> RESULT
--> possible next HOLLASELF
-```
-
-Recursive law:
+## 17. Speech-Act Dimension
 
 ```text
-HOLLASELF_1 -> GOCHECK -> Result -> HOLLASELF_2
+SignalEnvelope != SpeechActType
 ```
 
-This recursion does not create automatic authority or progress.
+HOLLASELF is a candidate signal envelope/class. It may carry a speech-act
+classification, but this artifact does not own a universal speech-act
+vocabulary.
 
-## 9A. DATASELF / HOLLASELF / DIGESELF / INSELFACTION Boundary
+Candidate examples:
 
-The OTHERSELF sideglitch adds a distributed-institution separation:
+```text
+REPORT
+REQUEST
+QUESTION
+PROPOSAL
+WITNESS
+```
+
+Authority-sensitive classes:
+
+```text
+COMMAND
+ADJUDICATION
+RATIFICATION
+```
+
+Authority-sensitive speech acts require external jurisdiction.
+
+```text
+LexicalForm != SpeechAct
+ImperativeGrammar != Authority
+SpeechActType != Authority
+```
+
+Shared speech vocabulary ownership remains:
+
+```text
+UNRESOLVED_EXTERNAL_ONTOLOGY
+```
+
+## 18. Authority Model
+
+Authority dimensions:
+
+```yaml
+authority:
+  sender_provenance:
+  jurisdiction_ref:
+  authority_basis_ref:
+  authority_ceiling:
+  authority_evaluation_time:
+  requested_treatment_authorization_ref:
+```
+
+Preserved laws:
+
+```text
+SenderIdentity != AuthorityGrant
+FounderProvenance != UniversalAuthority
+AuthorityAtEmission != AuthorityAtTreatment
+RequestedTreatment != AuthorizedTreatment
+MORE_SIGNALING != MORE_AUTHORITY
+MORPH_VALID fails if transformation silently widens authority
+```
+
+## 19. DATASELF / HOLLASELF / DIGESELF / INSELFACTION Boundary
+
+The OTHERSELF sideglitch remains context only and sharpens a boundary:
 
 ```text
 DATASELF = memory/event fabric
-HOLLASELF = signal transmission
+HOLLASELF = signal transmission envelope/class candidate
 DIGESELF = cognition/metabolism
 INSELFACTION = governed handoff/custody transport
 GO_CHECK = requested inspection treatment
-```
-
-Non-collapse:
-
-```text
-HOLLASELF != DATASELF
-HOLLASELF != DIGESELF
-HOLLASELF != INSELFACTION
-HOLLASELF != GO_CHECK
 ```
 
 Candidate relation:
 
 ```text
 DATASELF supplies source refs
--> MORPH
+-> transformation
+-> MORPH_VALID qualification
 -> HOLLASELF
 -> receiving SELF
 -> GO_CHECK / REVIEW / other treatment
 -> result
--> new DATASELF
+-> possible new DATASELF event
 ```
 
 This keeps HOLLASELF as signal transmission rather than memory, cognition,
 transport substrate, or treatment execution.
 
-## 10. Speech / Transport / Treatment Separation
-
-The durable doctrine:
-
-```text
-SIGNAL
-!=
-TRANSPORT
-!=
-REQUEST
-!=
-RECEPTION
-!=
-TREATMENT
-!=
-RESULT
-```
-
-Mapped:
-
-```text
-HOLLASELF = SIGNAL
-HOLLASIG = SIGNAL IDENTITY
-NODEFIELD = INTENDED RECEIVER FIELD
-SUBJECT_REFS = IDENTIFIED REALITY ENCLOSED BY REFERENCE
-GOCHECK = ONE POSSIBLE TREATMENT WORKFLOW
-```
-
-## 11. Relation To Compression And Compilation
+## 20. Compression, Compilation, And MORPH
 
 Distinguish:
 
 ```text
 COMPRESS = reduce representation size
-COMPILE  = translate one representation into a target representation under explicit semantics
-MORPH    = change form while preserving a declared invariant relation to source
+COMPILE = translate one representation into a target representation under explicit semantics
+TRANSFORM = produce a representation result from a source and profile
+MORPH_VALID = verify that transformation preserved declared invariants and loss contract
 ```
 
 Therefore:
 
 ```text
-Compression != Compilation != Morphogenesis
+Compression != Compilation
+Compilation != Transformation
+Transformation != MORPH_VALID
+MORPH_VALID != SourceReality
 ```
 
-They may compose:
+They may compose only with declared contracts:
 
 ```text
 REALITY_GRAPH
 -> SELECT_RELEVANT_SUBGRAPH
--> MORPH
+-> T(S, P) -> S'
+-> VERIFY(I, L, S, S')
 -> COMPILE_TO_HOLLASELF_SIGNAL_IR
--> COMPRESS_REPRESENTATION
--> HOLLASIG
+-> optional COMPRESSION
+-> HOLLASIG emission occurrence
 ```
 
-## 12. Premathematical Holding Pattern
+## 21. Self-Premathematical Holding Pattern
 
 Do not prematurely identify MORPH with one mathematical substrate.
 
-Possible later mathematical realizations include:
+Possible later mathematical lenses include:
 
 ```text
 graph homomorphism
@@ -484,39 +822,56 @@ compiler lowering
 lossy/lossless coding
 ```
 
-Current status:
+Each is only:
 
 ```text
-SELFPREMSELFMATICS_PRECISE_HOLD
+CANDIDATE_LENS
 ```
 
-SELFMATH may later adjudicate which mathematical realization fits each subject.
+Pre-formal kernel:
 
-Foundation IR relation:
+```text
+SOURCE REALITY
+-> SELECTED RELATIONS
+-> TRANSFORMATION
+-> PRESERVATION CONTRACT
+-> LOSS CONTRACT
+-> VALIDATION
+-> EMISSION
+-> ADDRESSABLE SIGNAL
+```
+
+Questions preserved for later lens review:
+
+```text
+What must remain invariant?
+What may transform?
+What may be omitted?
+What must remain reconstructible?
+```
+
+`SELFPREMSELFMATICS_PRECISE_HOLD` remains a hold state, not doctrine.
+
+## 22. Foundation IR Relation
+
+Foundation IR can specify invariants a representation transformation must
+preserve. MORPH_VALID applies a preservation/loss contract to a concrete
+projection.
 
 ```text
 MORPH may consume Foundation IR preservation contracts.
 MORPH does not own Foundation IR.
 HOLLASELF does not become Foundation IR.
+PreservationClaim != VerifiedPreservation
 ```
 
-Foundation IR can specify invariants a representation transformation must
-preserve; MORPH applies such a preservation/loss contract to a concrete
-projection.
-
-## 13. 2126 Law
+## 23. 2126 Substrate-Neutral Law
 
 Durable law:
 
 ```text
-FORM MAY CHANGE WHILE IDENTITY AND REQUIRED RELATIONS REMAIN ADDRESSABLE.
-```
-
-OTHERSELF sideglitch sharpening:
-
-```text
 FORM MAY CHANGE WHILE REQUIRED IDENTITY, RELATION, PROVENANCE, STANDING,
-AND AUTHORITY DISTINCTIONS REMAIN ADDRESSABLE.
+AUTHORITY, PRIVACY, AND CUSTODY DISTINCTIONS REMAIN ADDRESSABLE.
 ```
 
 Inverse:
@@ -526,45 +881,173 @@ A REPRESENTATION TRANSFORMATION THAT BREAKS A REQUIRED INVARIANT IS NOT
 A VALID MORPH OF THAT REALITY.
 ```
 
-Corollaries:
+Substrate strip:
 
 ```text
-Representation may mutate; identity must not be silently replaced.
-Compression may reduce bytes; meaning must not be silently destroyed.
-Compilation may change form; authority must not be silently widened.
-Morph may transform Reality; lineage must remain reconstructible.
+Git, GitHub, Markdown, SHA-256, Claude, Codex, ChatGPT, filesystem paths,
+and current runtime APIs may be removed without removing these semantics:
+emission occurrence identity;
+typed receiver selection;
+subject references;
+integrity verification capability;
+preservation/loss verification;
+privacy eligibility;
+requested treatment;
+historical interpretation.
+```
+
+Substrate-bound examples are witnesses, not ontology.
+
+```text
+GitHub != CustodyOntology
+SHA256 != IntegrityOntology
+RuntimeProjection != SELFIdentity
 ```
 
 Chess analogy:
 
 ```text
-CompactSignal != CompressedMeaningByDeletion
+CompactSignal != MeaningDestroyed
+CompactSignal != MeaningPreserved
 ```
 
-The signal is small because identity and structure remain addressable elsewhere.
+The compact signal is valid only when omitted reality remains addressable and
+reconstructible by governed references and declared loss.
 
-## 14. Non-Claims
+## 24. Positive Specimens A-L
 
-This candidate does not:
+These specimens are semantic examples only. They do not allocate live HOLLASIG
+IDs, build routing, or authorize treatment.
+
+| Specimen | Result | Laws exercised |
+| --- | --- | --- |
+| A. One source projection -> one emission -> HOL-A | VALID candidate occurrence | HOLLASIG identifies one emission occurrence |
+| B. Same projection -> second emission -> HOL-B | HOL-A != HOL-B | SameMorphResult + NewEmissionOccurrence = NewHOLLASIG |
+| C. HOL-C replay_of HOL-A | VALID only with new occurrence identity | ReplayOccurrence -> new HOLLASIG |
+| D. HOL-D forward_of HOL-A | VALID only with changed emitter provenance declared | ForwardOccurrence -> new HOLLASIG; Forwarding changes emitter provenance |
+| E. TARGETED NODEFIELD to one typed SELF receiver | VALID if identity namespace, level, identity, jurisdiction, and disclosure policy resolve | NODEFIELD != Delivery/Authority |
+| F. ALL with jurisdiction_ref, population_ref, expansion_time | VALID if population and disclosure resolve | ALL never means universal OURSELF implicitly |
+| G. Fresh emission referencing stale source state | VALID only without fresh subject claim | FreshHOLLASELF != FreshSubjectReality |
+| H. Public emission attempts private subject disclosure | BLOCK | CanSignalExistence != CanDiscloseSubjectMetadata |
+| I. Lossy projection with declared/verifiable omission | MORPH_VALID PASS | LossyProjection requires DeclaredAndVerifiedLoss |
+| J. Declared but unverifiable omission | MORPH_VALID FAIL | DeclaredButUnverifiableLoss = MORPH_FAILURE |
+| K. HOL-A -> HOL-B -> HOL-A traversal | BOUNDED_UNRESOLVED or FAIL_CLOSED after cycle classification | SignalCycle != AuthorityCycle |
+| L. HOLLASELF requests GOCHECK but receiver lacks authorization | REQUESTED -> ADMITTED or REFUSED; never EXECUTED | REQUESTED != AUTHORIZED != EXECUTED |
+
+## 25. Kill-Test Replay K1-K12
+
+| Kill test | Result | Enforcing clause |
+| --- | --- | --- |
+| K1 HOLLASIG replaces subject identity | HELD | sections 5 and 14 |
+| K2 NODEFIELD grants authority | HELD | sections 6 and 18 |
+| K3 ALL silently becomes universal broadcast | HELD | section 6 |
+| K4 undeclared loss passes | HELD | section 9 |
+| K5 MORPH widens authority | HELD | sections 8 and 18 |
+| K6 fresh signal launders stale Reality | HELD | section 10 |
+| K7 GOCHECK request auto-executes | HELD | section 16 |
+| K8 recursion creates authority recursion | HELD | section 11 |
+| K9 private metadata leaks | HELD | section 12 |
+| K10 runtime projection becomes SELF identity | HELD | section 13 |
+| K11 replay reuses original occurrence identity | HELD | sections 5 and 11 |
+| K12 MORPH is promoted universally without recurrence evidence | HELD | sections 7, 21, and 22 |
+
+No mandatory kill test remains `FAILED`. No `UNRESOLVED` kill-test result blocks
+readiness for a separate HYPEDU2P review.
+
+## 26. HBCSELF Meta-Pressure Scan
+
+| Meta test | Result |
+| --- | --- |
+| META-01 excessive taxonomy | HELD_WITH_RISK: taxonomy is scoped to HR findings and may be compressed later |
+| META-02 renamed unresolved concept | HELD: fields carry fail-closed states and required evidence, not just names |
+| META-03 incompatible implementer behavior | NEW_FINDING_DEFERRED NF-001 |
+| META-04 unavailable emission-time information | HELD: unknowns become UNKNOWN/NOT_EVALUABLE/FAIL_CLOSED |
+| META-05 fail-closed makes ordinary signaling impossible | HELD_WITH_RISK: undirected/no-treatment signals remain possible |
+| META-06 privacy blocks legitimate private targeting | NEW_FINDING_DEFERRED NF-002 |
+| META-07 old signals after namespace evolution | HELD_WITH_RISK: historical interpretation needs namespace versioning |
+| META-08 custody adapter replacement | HELD: adapter identity and integrity algorithm are explicit |
+| META-09 replay infinite amplification | HELD: traversal limits and cycle classes bound it |
+| META-10 MORPH_VALID too strict for useful lossy projection | HELD: declared/verifiable loss can pass |
+| META-11 "I know that I do not know" | HELD: UNKNOWN/NOT_EVALUABLE/BOUNDED_UNRESOLVED allowed |
+| META-12 zero requested treatment | HELD: NO_RECEIVER_INTENDED and no treatment request are not incomplete |
+
+Deferred findings:
+
+```yaml
+NEW_FINDING_DEFERRED:
+  - id: NF-001
+    description: independent implementers still need a future conformance grammar for field cardinality, canonical serialization, and verifier behavior
+    severity: MATERIAL
+    why_outside_current_repair: HR-001..009 require semantic closure, not implementation schema
+  - id: NF-002
+    description: privacy law may need a consent-capability model for legitimate private targeted signaling
+    severity: MATERIAL
+    why_outside_current_repair: HR-007 requires fail-closed disclosure semantics, not a full consent protocol
+  - id: NF-003
+    description: namespace evolution requires versioned identity registries for long-lived historical interpretation
+    severity: MATERIAL
+    why_outside_current_repair: HR-008 requires identity-level separation, not a registry implementation
+```
+
+These deferred findings are not repaired here and do not require widening the
+authorized mutation.
+
+## 27. Non-Claims
+
+This repaired candidate does not:
 
 - ratify MORPH as a universal primitive;
 - create MORPHSELF;
 - create MORPHENGINE;
 - create MORPHIR;
+- allocate live HOLLASIG IDs;
+- implement NODEFIELD routing;
+- implement MORPH transformation;
+- implement GOCHECK workflow;
 - alter GOCHECKIT;
-- alter HOLLASELF published candidate;
+- alter HOLLASELF hostile review custody;
+- alter the OTHERSELF sideglitch;
 - implement signal routing;
 - create receipt tracking;
 - authorize GOCHECK;
 - ratify NODEFIELD vocabulary;
 - ratify HOLLASIG syntax;
-- propagate into INSELFACTION, SELFLOGIC, ACTIMANIRUN, or SELF Protocol.
+- mutate SELFCOMMUNICATION;
+- mutate INSELFACTION;
+- mutate DATASELF;
+- mutate DIGESELF;
+- mutate SELFIR;
+- mutate SELFMATH;
+- mutate ACTIMANIRUN;
+- propagate into SELF Protocol.
 
-## 15. Next Lawful Gate
+## 28. Internal Repair Check
+
+Author-side internal repair check:
 
 ```text
-HOLLASELF-MORPH-SIGNAL-SEMANTICS-INDEPENDENT-HOSTILE-REVIEW-001
+REPAIR_INTERNAL_CHECK = PASS
 ```
 
-No review, repair, adoption, commit, push, or propagation is authorized by this
-candidate.
+Meaning:
+
+```text
+PASS = HR-001..HR-009 now have explicit repaired candidate clauses and K1-K12 have no FAILED result.
+PASS != hostile review pass
+PASS != HYPEDU2P
+PASS != ratification
+PASS != implementation readiness
+```
+
+## 29. Next Lawful Gate
+
+If committed bytes preserve this repair and no index contamination occurs, the
+next lawful gate is:
+
+```text
+HOLLASELF-MORPH-000-INDEPENDENT-HOSTILE-REVIEW-002
+candidate_pressure_target: HYPEDU2P
+```
+
+Do not open that review in this candidate. Do not push, publish, ratify,
+implement, or increment pressure standing.
