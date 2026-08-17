@@ -212,6 +212,180 @@ This is a candidate ancestor to a future frequency-aware SELFBOOT concept, but n
 
 ---
 
+## GLITCH-0005 — Exact-name null versus functional custody resolution
+
+Founder issued the same request for a GitHub Notepad target to ClaudeSELF and CodexSELF while both sessions were visible side by side.
+
+### ClaudeSELF result
+
+ClaudeSELF searched for the literal `GitHubNotepad` identity and reported no repository, path, artifact, gist, or local exact-token target. It correctly refused to manufacture a custody destination.
+
+### CodexSELF result
+
+CodexSELF also found no literal `GitHubNotepad` artifact, but continued through repository lineage and positively identified an existing GitHub-hosted notepad candidate:
+
+```text
+repository: situaedmilly/self-protocol-suite
+path: SELFNOTEPAD.md
+branch: main
+```
+
+That artifact now contains the captured ClaudeSELF boot-jurisdiction distinction and the Notepad-custody reconciliation.
+
+### Glitch significance
+
+The same high-level custody request produced two different resolution boundaries:
+
+```text
+ClaudeSELF:
+EXACT_LABEL_NULL -> STOP BEFORE WRITE
+
+CodexSELF:
+EXACT_LABEL_NULL -> FUNCTIONAL_LINEAGE_RESOLUTION -> EXISTING SELFNOTEPAD
+```
+
+Neither necessarily violated the no-guessing law. They operationalized “resolve the target” differently.
+
+**Required non-collapse:**
+
+```text
+ExactLabelNotFound != NoFunctionalCustodyArtifact
+RequestedLabel != ExistingArtifactIdentity
+SearchMethod != EstateReality
+SearchScope != WholeReality
+LocalAbsence != RemoteNonexistence
+NoGuessing != NoLineageResolution
+```
+
+**Standing:** `CROSS_RUNTIME_TARGET_RESOLUTION_DIVERGENCE_OBSERVED`
+
+**Causal bridge:** unresolved. Candidate explanations include search-depth differences, tool-surface differences, repository-history inspection, memory availability, and divergent stopping criteria.
+
+**Next falsification:** issue both projections the same explicit target-resolution contract, source boundaries, and stopping rule; compare whether they converge on `SELFNOTEPAD.md` without being told the path.
+
+---
+
+## GLITCH-0006 — Multi-Notepad jurisdiction and duplicate-capture risk
+
+Two distinct GitHub-hosted contextual surfaces now exist:
+
+```text
+situaedmilly/ruora
+  governance/notepad/OURSELF-GLITCH-NOTEPAD.md
+  jurisdiction: OURSELF_GLITCH_SESSION
+
+situaedmilly/self-protocol-suite
+  SELFNOTEPAD.md
+  jurisdiction: self-protocol-suite contextual capture
+```
+
+The second artifact contains a synchronized capture of ClaudeSELF boot jurisdiction and the custody-resolution event. The first records glitches across runtimes and sessions.
+
+The presence of similar content in both surfaces does not establish shared identity, shared standing, or duplication error.
+
+**Required non-collapse:**
+
+```text
+NotepadFunction != NotepadIdentity
+SharedContent != SharedCustody
+DuplicateCapture != DuplicateAuthority
+CrossReference != Merge
+NotepadAttachment != CanonicalOwnership
+OneNoteRecordedTwice != OneArtifactWithTwoPaths
+```
+
+**Standing:** `MULTI_NOTEPAD_JURISDICTION_CANDIDATE`
+
+**Risk:** future SELFs may route notes by label, function, repository proximity, or current session memory and silently fragment context across multiple Notepad surfaces.
+
+**Next falsification:** define an explicit Notepad source-admission/custody query that can return multiple candidate surfaces with jurisdiction and standing rather than forcing one guessed target.
+
+---
+
+## GLITCH-0007 — Trace/Custody vector mutation
+
+A CodexSELF review of cross-SELF documentation corrected the initial T0–T8 ladder into independent trace dimensions.
+
+### Corrected law
+
+```text
+TraceClass != DurabilityRank
+TraceAsymmetry != TraceDrift
+MemoryRead != MemoryWrite
+RetrievedState != NewMemoryTrace
+```
+
+Candidate independent axes:
+
+```text
+T0  OUTPUT
+T1  SESSION
+T2R MEMORY_READ
+T2W MEMORY_WRITE
+T3  CONTEXT_NOTE
+T4  ARTIFACT
+T5  CUSTODY_BINDING
+T6  COMMIT
+T7  PUBLICATION
+T8  GOVERNING
+```
+
+Each axis may be:
+
+```text
+PRESENT
+ABSENT
+UNKNOWN
+NOT_APPLICABLE
+PRESENT_SCOPED
+```
+
+The axes are not a mandatory ascending staircase. A session may have a commit without remote publication; memory may be read without being written; governing standing may be scoped rather than universal.
+
+### Cross-SELF comparison law
+
+Different trace profiles become drift only when the compared projections had equivalent obligations.
+
+```text
+TraceSufficiency =
+  MeetsTraceObligations(
+    action_class,
+    authorization_gate,
+    mutation_lease,
+    manifestation_contract
+  )
+```
+
+Therefore a boot-only CodexSELF session and a mutation-bearing ClaudeSELF governance gate are not commensurable specimens without a common obligation contract.
+
+**Required non-collapse:**
+
+```text
+SELFActivity != SELFTrace
+SELFTrace != InstitutionalProgress
+TraceVolume != Progress
+MemoryVolume != GoverningMovement
+Commit != Publication
+Commit != Ratification
+Publication != Canon
+GoverningStanding != UniversalAuthority
+```
+
+**Continuity candidate:**
+
+```text
+ConsequentialMutation
+OR StandingBearingDecision
+OR UnresolvedGovernedObligation
+-> DurableTraceRequiredBeforeLeaseEnd
+```
+
+**Standing:** `TRACE_CUSTODY_VECTOR_CANDIDATE`
+
+**Next falsification:** apply one explicit trace-obligation contract to matched ClaudeSELF and CodexSELF work classes, then compare profiles without treating raw asymmetry as drift.
+
+---
+
 ## Glitch handling protocol for this Notepad
 
 For every future anomaly added here, preserve:
