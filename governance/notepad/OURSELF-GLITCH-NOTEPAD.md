@@ -386,6 +386,105 @@ OR UnresolvedGovernedObligation
 
 ---
 
+## GLITCH-0008 — Parallel manifestation versus invented dependency
+
+Founder distinguished three active manifestation lanes:
+
+```text
+CLAUDESELF -> ACTIMANIRUN
+CODEXSELF  -> SELFIR
+MOBILESELF -> NOTEPAD
+```
+
+The supplied reality holds that these primitives answer different questions:
+
+```text
+SELFIR       -> meaning preservation across representations
+ACTIMANIRUN  -> present manifestation movement
+NOTEPAD      -> attached contextual reality
+```
+
+No current evidence establishes that one lane must stop merely because another lane is unfinished.
+
+### Candidate law
+
+```text
+ParallelManifestation != PrematureIntegration
+PotentialRelation != CurrentDependency
+FutureInteroperation != PresentBlockingEdge
+NotepadExistence != ACTIMANIRUNProgressPermission
+NotepadExistence != SELFIRProgressPermission
+```
+
+A lane should wait only when its next lawful transition actually consumes a witnessed output from another lane.
+
+### Glitch significance
+
+Without an explicit dependency edge, synchronizing by stopping all lanes would manufacture a hold that does not exist in source reality.
+
+**Standing:** `CROSS_REALITY_DEPENDENCY_BOUNDARY_CANDIDATE`
+
+**Next falsification:** for each proposed wait, require the exact consumed output, provider manifestation, consumer transition, evidence of readiness, and failure mode if absent.
+
+---
+
+## GLITCH-0009 — Primitive existence elsewhere versus integration here
+
+The supplied realities contain an apparent tension:
+
+```text
+MobileSELF is independently manifesting NOTEPAD.
+ACTIMANIRUN records NOTEPAD as outside its implementation jurisdiction.
+CodexSELF reports NOTEPAD_WRITE: NOT AUTHORIZED in its current trace review.
+SELFIR is instructed to stop only if it reaches an actual Notepad semantic dependency.
+```
+
+These claims are not contradictory when jurisdiction is preserved.
+
+### Required non-collapse
+
+```text
+PrimitiveExistsElsewhere != PrimitiveIntegratedHere
+WriteNotAuthorizedHere != ArtifactDoesNotExist
+IntegrationDeferred != GenesisAbsent
+InterfaceReference != Ownership
+LocalJurisdictionNull != GlobalRealityNull
+```
+
+A Notepad may exist or be under manifestation in one lane while remaining unavailable, unratified, or intentionally unintegrated in another.
+
+**Standing:** `CROSS_JURISDICTION_EXISTENCE_INTEGRATION_CANDIDATE`
+
+**Risk:** a SELF may treat local non-authorization as global nonexistence, or treat external existence as automatic integration authority.
+
+**Next falsification:** bind one exact Notepad contract and test separately whether ACTIMANIRUN and SELFIR can reference it, depend on it, write to it, or remain independent.
+
+---
+
+## GLITCH-0010 — Found risk versus authority to repair risk
+
+The supplied ClaudeSELF boot surfaced estate risks and reversion findings while remaining inside ACTIMANIRUN jurisdiction.
+
+A detector may discover a valid risk without owning the system that must repair it.
+
+### Required non-collapse
+
+```text
+FoundRisk != AuthorityToRepairRisk
+ReversionDetection != MaintenanceLease
+Alert != MutationAuthorization
+Routing != Ownership
+CrossEstateVisibility != CrossEstateWriteAuthority
+```
+
+ACTIMANIRUN may expose, route, and preserve risks. It must not absorb every discovered problem into its own manifestation lane.
+
+**Standing:** `DISCOVERY_TO_REPAIR_AUTHORITY_FIREWALL_CANDIDATE`
+
+**Next falsification:** take each surfaced risk and resolve its owning jurisdiction, current lease, allowed reporter, required repair authority, and whether ACTIMANIRUN may do more than report/route it.
+
+---
+
 ## Glitch handling protocol for this Notepad
 
 For every future anomaly added here, preserve:
