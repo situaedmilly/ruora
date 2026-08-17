@@ -55,48 +55,50 @@ standing: SEMANTIC_CANDIDATE / NONCANONICAL / NOT_RATIFIED / NOT_IMPLEMENTED
 
 ## 2. Bounded Repair Plan
 
-This section records the bounded HBCSELF HYPEDU2P repair pressure applied after
-the independent hostile review returned `CHANGES_REQUIRED`. This repair does
-not change standing, ratify the candidate, create a runtime, publish a signal,
-or increment pressure standing.
+This section records the bounded HYPEDU3P distillation repair pressure.
+It runs after `CHANGES_REQUIRED` and after Review-003 custody.
+This repair does not change standing, ratify the candidate, create a runtime,
+publish a signal, or increment pressure.
 
 ```text
 Repair != Review
-Repair != HYPEDU2P
+Repair != HYPEDU3P
 InternalCheck != IndependentReview
-HYPEDU2P != PASS
+HYPEDU3P != PASS
 ```
 
 Mutation plan:
 
 ```yaml
-clauses_to_replace:
-  - HOLLASIG identity model
-  - NODEFIELD receiver-selection model
-  - MORPH operator model
-  - invariant/loss contract
-  - temporal model
-  - recursion/replay model
-  - privacy/disclosure model
-  - cross-SELF identity model
-  - GOCHECK disposition
-clauses_to_add:
-  - subject reference graph
-  - custody capability model
-  - speech-act dimension
-  - authority model
-  - positive specimens A-L
-  - kill-test replay K1-K12
-  - meta-pressure scan
-  - 2126 substrate strip
-clauses_to_delete:
-  - NULL as overloaded NODEFIELD mode
-  - MORPH as universal transformation executor
-  - HOLLASIG as signal morph event identity
-  - opaque custody_ref semantics
+operation:
+  - id: CONVERGENCE
+    intent: reduce non-determinism under equivalent admissible inputs
+    preserve:
+      - deterministic governed outcome for SameSemanticInputs
+      - explicit unresolved when determinism is not provable
+  - id: JURISDICTION_CONFLICT
+    intent: force deterministic jurisdiction conflict outcome
+    preserve:
+      - competing rules resolved by precedence, not by prose ambiguity
+      - explicit unresolved for irreconcilable conflicts
+  - id: IDENTITY_CONFLICT
+    intent: force deterministic migration/fork arbitration
+    preserve:
+      - anchored identity migration or explicit unresolved
+      - no silent identity replacement
+  - id: DISTILL
+    intent: delete or demote clauses and fields not needed for 1-3 or anti-collapse
+    preserve:
+      - anti-collapse laws already in this subject
+      - explicit unresolved behavior
 specimen_section: section 24
 kill_test_section: section 25
 deferred_findings_section: section 26
+repair_boundary:
+  - bounded_to: Repair-003
+  - no_implementation: true
+  - no_publication: true
+  - no_hypedu_increment: true
 ```
 
 Every repair below maps to HR-001 through HR-009 or to required kill-test
@@ -425,7 +427,37 @@ VerifierProfile:
   failure_behavior
   evidence_requirements
 
-SameProfile + SameAdmittedInputs -> SameSemanticVerdict
+AdmissibleInputs(profile) =
+  normalized(profile.input_requirements) + normalized(profile.predicate_set)
+
+SameSemanticInputs(profileA, profileB) :=
+  profileA.input_requirements = profileB.input_requirements &&
+  profileA.predicate_set = profileB.predicate_set
+
+SameVerifierProfile(profileA, profileB) :=
+  profileA.profile_identity = profileB.profile_identity &&
+  profileA.profile_version = profileB.profile_version &&
+  AdmissibleInputs(profileA) = AdmissibleInputs(profileB) &&
+  profileA.unknown_behavior = profileB.unknown_behavior &&
+  profileA.failure_behavior = profileB.failure_behavior &&
+  profileA.evidence_requirements = profileB.evidence_requirements
+
+SameProfileVersion(profileA, profileB) :=
+  profileA.profile_version = profileB.profile_version
+
+Convergence Law:
+  SameSemanticInputs(profileA, profileB) &&
+  SameVerifierProfile(profileA, profileB) &&
+  SameProfileVersion(profileA, profileB) ->
+  SameGovernedOutcome
+
+If profile comparison is incomplete, inconsistent, or non-equivalent:
+
+  ExplicitUNRESOLVED
+
+Convergence Law requires:
+
+  Any variance in these predicates requires explicit unresolved result.
 ```
 
 ## 8. Invariant Contract
@@ -686,6 +718,26 @@ the private subject exists. If disclosure authority is unresolved, the signal
 fails closed. Universal emission remains blocked unless scope and disclosure
 are evaluable.
 
+Jurisdiction competition is lawful only when resolved deterministically:
+
+```text
+CompetingJurisdictionRules
+  -> DeterministicResolution
+  OR ExplicitUNRESOLVED
+```
+
+DeterministicResolution applies a total order over applicable jurisdiction rules:
+
+```text
+1) explicit/anchored deny rule
+2) scope specificity (more specific jurisdiction > less specific)
+3) rule_version timestamp (newer > older)
+4) fixed source authority preference order
+```
+
+If two grounded rules remain incomparable after this ordering, outcome is
+`ExplicitUNRESOLVED` and the result is `FAIL_CLOSED`.
+
 ## 13. Cross-SELF Identity Model
 
 Every actor, emitter, receiver, and node reference must declare:
@@ -750,6 +802,19 @@ ForkedSubject requires pinned_state_ref or explicit unresolved standing
 Duplicate lexical IDs across namespaces remain distinguishable
 AttachedReference != IdentityReplacement
 OccurrenceIdentity != CurrentRuntimeLocation
+```
+
+```text
+CompetingMigrationOrForkClaims ->
+  EstablishedResolution
+  OR ExplicitUNRESOLVED
+
+EstablishedResolution:
+  single provable migration graph from `migration_ref`
+  whose terminal vertex is anchored by `pinned_state_ref`
+  and has no unresolved branch at the same migration depth.
+
+If claims are incomparable -> ExplicitUNRESOLVED and no identity replacement.
 ```
 
 Without typed reference roles, HOLLASELF degrades into a bag of IDs.
@@ -1126,12 +1191,16 @@ IDs, build routing, or authorize treatment.
 | K12 MORPH is promoted universally without recurrence evidence | HELD | sections 7, 21, and 22 |
 
 No mandatory kill test remains `FAILED`. No `UNRESOLVED` kill-test result blocks
-readiness for a separate HYPEDU2P review.
+readiness for a separate independent hostile attack of this Repair-003 outcome.
 
-## 25a. Repair-002 Mandatory Kill and Minimality Closure
+## 25a. Repair-003 Distillation and Convergence Closure
 
 | Mandatory kill | Status |
 | --- | --- |
+| CONV-A | HELD |
+| CONV-B | HELD |
+| JUR-1 | HELD |
+| ID-1 | HELD |
 | NF1-A | HELD |
 | NF1-B | HELD |
 | NF1-C | HELD |
@@ -1146,15 +1215,18 @@ readiness for a separate HYPEDU2P review.
 | GOCHECK-A | HELD |
 | LOSS-A | HELD |
 
-| Field | Disposition |
+| Field | Repair-003 disposition |
 | --- | --- |
 | expansion_time | REQUIRED |
 | population_ref | REQUIRED |
 | population_state_ref | REQUIRED |
-| authority_evaluation_time | OPTIONAL |
-| historical_aliases | OPTIONAL |
-| metadata_visibility | OPTIONAL |
-| content_visibility | OPTIONAL |
+| jurisdiction_ref | REQUIRED |
+| migration_ref | REQUIRED if competing migration/fork claims |
+| pinned_state_ref | REQUIRED if competing migration/fork claims |
+| authority_evaluation_time | DEMOTED |
+| historical_aliases | DEMOTED (witness only) |
+| metadata_visibility | DEMOTED (witness only) |
+| content_visibility | DEMOTED (witness only) |
 
 ## 26. HBCSELF Meta-Pressure Scan
 
@@ -1222,22 +1294,25 @@ REPAIR_INTERNAL_CHECK = PASS
 Meaning:
 
 ```text
-PASS = HR-001..HR-009 now have explicit repaired candidate clauses and K1-K12 have no FAILED result.
-PASS != hostile review pass
-PASS != HYPEDU2P
-PASS != ratification
-PASS != implementation readiness
+  PASS = HR-001..HR-009 now have explicit repaired candidate clauses and K1-K12 have no FAILED result.
+  PASS != hostile review pass
+  PASS != HYPEDU3P
+  PASS != ratification
+  PASS != implementation readiness
+  PASS != HYPEDU increment
 ```
 
 ## 29. Next Lawful Gate
 
 If committed bytes preserve this repair and no index contamination occurs, the
-next lawful gate is:
+next lawful gate is conditional:
 
 ```text
-HOLLASELF-MORPH-000-INDEPENDENT-HOSTILE-REVIEW-002
-candidate_pressure_target: HYPEDU2P
+IF Repair-003 has not yet been independently re-attacked:
+  No Review-004, no implementation, no publication, no HYPEDU increment
+ELSE
+  candidate_pressure_target: next independent hostile review of Repair-003
 ```
 
-Do not open that review in this candidate. Do not push, publish, ratify,
-implement, or increment pressure standing.
+Do not open Review-004 in this candidate. Do not push, publish, ratify,
+implement, or increment pressure standing before this condition is met.
