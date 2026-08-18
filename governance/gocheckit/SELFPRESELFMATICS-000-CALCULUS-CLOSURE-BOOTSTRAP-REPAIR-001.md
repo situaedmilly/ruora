@@ -11,7 +11,7 @@ base_subject_artifact: governance/gocheckit/SELFPRESELFMATICS-MORPHED-LAUNCH-GOC
 source_review_verdict: CHANGES_REQUIRED
 repair_scope:
   - CBR-R01_THROUGH_CBR-R15
-  - FRESH_REVIEW_SURFACES_HT-16_THROUGH_HT-23
+  - FRESH_REVIEW_SURFACES_HT-16_THROUGH_HT-24
 standing:
   - REPAIR_SPECIFICATION_CANDIDATE
   - IMMUTABLE_REVIEW_SUBJECT_AFTER_COMMIT
@@ -73,7 +73,7 @@ bounded fixed-point semantics
 self-reference firewall
 tested signature-family architecture
 GLITCH-0020 replay contract
-HT-01 through HT-23 independent-review falsifiers
+HT-01 through HT-24 independent-review falsifiers
 ```
 
 Not authorized:
@@ -446,6 +446,7 @@ ActivationPreservesFormationStatus
 ActivationResult lineage is reconstructive metadata only.
 Activation != Intervention
 Activation does not manufacture intervention_conditioned ancestry.
+Direct lineage metadata is not the sole source of intervention status.
 ```
 
 ```yaml
@@ -469,7 +470,44 @@ JudgmentInterventionLineage:
   lineage_completeness:
     COMPLETE | PARTIAL | UNRESOLVED
 
-intervention_conditioned := len(intervention_occurrence_refs) > 0
+InterventionStatus(J, S, L):
+  inputs:
+    judgment_ref: J
+    source_ref: S
+    lineage_ref: L
+    source_version_ref:
+    source_lineage_ref:
+    intervention_occurrence_refs:
+    intervention_basis_refs:
+    causal_parent_refs:
+    judgment_ancestor_refs:
+    lineage_trace_ref:
+    lineage_completeness:
+  result:
+    INTERVENTION_KNOWN
+    INTERVENTION_PARTIAL
+    INTERVENTION_UNRESOLVED
+    NO_KNOWN_INTERVENTION
+```
+
+Required precedence:
+
+```text
+RecoverableInterventionAncestry -> INTERVENTION_KNOWN
+PartialInterventionAncestry -> INTERVENTION_PARTIAL
+UnresolvedLineage -> INTERVENTION_UNRESOLVED
+
+NO_KNOWN_INTERVENTION requires:
+  bounded lineage-resolution procedure completed
+  +
+  no direct or reconstructible intervention ancestry discovered
+
+DirectRefsEmpty != NoKnownIntervention
+RecoverableAncestryOverridesDirectListEmptiness
+MissingLineage != NoIntervention
+MixedLineage != NoKnownIntervention
+BoundedLineageResolution != Omniscience
+InterventionStatus != IndependentConfirmation
 NoKnownIntervention != IndependentConfirmation
 ```
 
@@ -931,8 +969,8 @@ AC-18  Meta-profile succession binds a transition verification regime and verifi
 AC-19  Feedback-policy mismatch rejects the run.
 AC-20  Every judgment binds the exact source version it interprets.
 AC-21  Activation preserves formation status and creates no epistemic promotion.
-AC-22  Intervention-conditioned ancestry is addressable across replay/reformation and cannot be treated as `NoKnownIntervention`.
-AC-23  `formation_status` and causal ancestry are preserved for historical judgment re-interpretation.
+AC-22  Intervention status is resolved across direct refs, source lineage, causal parents, judgment ancestors, and lineage trace; recoverable ancestry cannot be treated as `NoKnownIntervention`.
+AC-23  `formation_status` and causal ancestry are preserved for historical judgment re-interpretation without creating an independence verdict.
 ```
 
 ## 28. Independent hostile-review traces
@@ -979,8 +1017,8 @@ AC-23  `formation_status` and causal ancestry are preserved for historical judgm
 
 | ID | Attack | Required result |
 | --- | --- | --- |
-| R001-HT-24-A | Remove direct `intervention_lineage_refs` from J2 while ancestor path remains reconstructible from S2 provenance. | `INTERVENTION_LINEAGE_RECOVERED` |
-| R001-HT-24-B | Remove every reconstructible path to M1/J1. | `INTERVENTION_LINEAGE_UNRESOLVED` |
+| R001-HT-24-A | Remove direct `intervention_lineage_refs` from J2 while ancestor path remains reconstructible from S2 provenance. | `INTERVENTION_LINEAGE_RECOVERED` + `INTERVENTION_KNOWN` |
+| R001-HT-24-B | Remove every reconstructible path to M1/J1. | `INTERVENTION_LINEAGE_UNRESOLVED` + `INTERVENTION_UNRESOLVED` |
 | R001-HT-24-C | Assert `IndependentConfirmation` while lineage is recoverable. | `FORMATION_JURISDICTION_REJECTS_INDEPENDENCE_VERDICT` |
 | R001-HT-24-D | Recursive agreement chain J1→M1→S2→J2→M2→S3→J3 with no lineage collapse. | `RECURSIVE_AGREEMENT_PRESERVED_WITH_CAUSAL_ANCESTRY` |
 
