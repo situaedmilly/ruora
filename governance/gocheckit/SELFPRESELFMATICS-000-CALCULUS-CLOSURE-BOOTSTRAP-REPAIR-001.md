@@ -407,6 +407,9 @@ An emitted judgment does not automatically become a future formation input.
 JudgmentActivationProposal:
   proposal_ref:
   source_state_ref:
+  source_version_ref:
+  source_intervention_lineage_refs:
+    - intervention_lineage_ref
   candidate_judgment_refs:
   intended_binding_roles:
   conflict_effects:
@@ -418,6 +421,9 @@ JudgmentActivationProposal:
 JudgmentActivationResult:
   proposal_ref:
   source_state_ref:
+  source_version_ref:
+  intervention_lineage_refs:
+    - intervention_lineage_ref
   activated_judgment_refs:
   rejected_judgment_refs:
   unresolved_judgment_refs:
@@ -436,6 +442,37 @@ JudgmentActivatedAsFormationInput != JudgmentEstablishedAsTrue
 ActivationPreservesFormationStatus
 ```
 
+```text
+ActivationResult lineage is reconstructive metadata only.
+Activation != Intervention
+Activation does not manufacture intervention_conditioned ancestry.
+```
+
+```yaml
+JudgmentInterventionLineage:
+  lineage_ref:
+  source_lineage_ref:
+    pre_intervention_source_ref: S_t
+    post_intervention_source_ref: S_t+1
+  source_version_refs:
+    - pre_version_ref
+    - post_version_ref
+  intervention_occurrence_refs:
+    - intervention_ref
+  intervention_basis_refs:
+    - basis_judgment_ref
+  causal_parent_refs:
+    - judgment_ref
+  judgment_ancestor_refs:
+    - ancestor_judgment_ref
+  lineage_trace_ref:
+  lineage_completeness:
+    COMPLETE | PARTIAL | UNRESOLVED
+
+intervention_conditioned := len(intervention_occurrence_refs) > 0
+NoKnownIntervention != IndependentConfirmation
+```
+
 ## 14. Judgment occurrence identity
 
 ```yaml
@@ -452,6 +489,8 @@ JudgmentOccurrence:
   payload:
   formation_status:
   derivation_trace_ref:
+  intervention_lineage_refs:
+    - intervention_lineage_ref
 ```
 
 ```text
@@ -892,6 +931,8 @@ AC-18  Meta-profile succession binds a transition verification regime and verifi
 AC-19  Feedback-policy mismatch rejects the run.
 AC-20  Every judgment binds the exact source version it interprets.
 AC-21  Activation preserves formation status and creates no epistemic promotion.
+AC-22  Intervention-conditioned ancestry is addressable across replay/reformation and cannot be treated as `NoKnownIntervention`.
+AC-23  `formation_status` and causal ancestry are preserved for historical judgment re-interpretation.
 ```
 
 ## 28. Independent hostile-review traces
@@ -933,6 +974,15 @@ AC-21  Activation preserves formation status and creates no epistemic promotion.
 | R001-HT-21 | Candidate judgment activation silently upgrades it to established. | `ACTIVATION_PRESERVES_FORMATION_STATUS` |
 | R001-HT-22 | Regime declares no feedback; caller requests feedback. | `RUN_REJECTED_POLICY_MISMATCH` |
 | R001-HT-23 | Meta transition names verifier but omits verification regime. | `META_TRANSITION_NOT_REPRODUCIBLE` |
+
+### HT-24: intervention-conditioned self-confirmation
+
+| ID | Attack | Required result |
+| --- | --- | --- |
+| R001-HT-24-A | Remove direct `intervention_lineage_refs` from J2 while ancestor path remains reconstructible from S2 provenance. | `INTERVENTION_LINEAGE_RECOVERED` |
+| R001-HT-24-B | Remove every reconstructible path to M1/J1. | `INTERVENTION_LINEAGE_UNRESOLVED` |
+| R001-HT-24-C | Assert `IndependentConfirmation` while lineage is recoverable. | `FORMATION_JURISDICTION_REJECTS_INDEPENDENCE_VERDICT` |
+| R001-HT-24-D | Recursive agreement chain J1→M1→S2→J2→M2→S3→J3 with no lineage collapse. | `RECURSIVE_AGREEMENT_PRESERVED_WITH_CAUSAL_ANCESTRY` |
 
 ## 29. Independent-review contract
 
