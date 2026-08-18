@@ -596,3 +596,40 @@ GlitchDetected
 ```
 
 A glitch is preserved first, attacked second, and only later promoted into governed ontology if evidence and authority warrant it.
+
+---
+
+## GLITCH-0020 - Untyped representation to semantic-species collapse
+
+**Observed event:** SELFLOGIC presented three Boolean-shaped declarations whose
+semantic species diverged: one ALETHIC establishment claim and two DEONTIC
+requirements. DLARM separately presented an equation-shaped symbolic
+architecture that could be misread as empirical physical proof.
+
+**Mutation:** The coupled pressure exposed a candidate pre-formal typing
+membrane designated `SELFPRESELFMATICS`:
+
+```text
+PRETYPE(x, context) -> semantic_species
+```
+
+**Prime law:**
+
+```text
+SameRepresentation != SameSemanticSpecies
+```
+
+**Constitutional correction:** `SELFPRESELFMATICS` is a Founder-designated
+foundation candidate. Naming and documentation do not establish canonical
+identity.
+
+**Bound entry:**
+`governance/notepad/entries/GLITCH-0020-UNTYPED-REPRESENTATION-TO-SEMANTIC-SPECIES-COLLAPSE.md`
+
+**Bound GOCHECKIT memory:**
+`governance/gocheckit/SELFPRESELFMATICS-MORPHED-LAUNCH-GOCHECKIT-MEMORY-001.md`
+
+**Standing:** `RECORDED_CANDIDATE / NONCANONICAL / NOT_RATIFIED / NOT_IMPLEMENTED`
+
+**Next falsification:**
+`SELFPRESELFMATICS-000-FOUNDATION-DISTINCTION-AND-INVARIANT-REVIEW`
